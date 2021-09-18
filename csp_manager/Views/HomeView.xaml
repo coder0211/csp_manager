@@ -1,0 +1,84 @@
+﻿<UserControl x:Class="csp_manager.Views.HomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:csp_manager.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="650" d:DesignWidth="1000">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="0.3" >
+                <GradientStop Color="#20bf55" Offset="0"/>
+                <GradientStop Color="#01baef" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Border Grid.RowSpan="8"
+                Grid.Row="0"
+                CornerRadius="20"
+                Background="White"
+                Margin="10">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="20"
+                                      Opacity="0.2"
+                                      Color="#8B8B8B"/>
+            </Border.Effect>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Image Grid.RowSpan="2"
+                       Height="50"
+                       Width="50"
+                       Source="pack://application:,,,/Res/Icons/ic_logo.png"></Image>
+            </Grid>
+        </Border>
+        <Border Grid.Column="1"
+                Grid.ColumnSpan="5"
+                CornerRadius="20"
+                Background="White"
+                Margin="10">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="20"
+                                      Opacity="0.2"
+                                      Color="#8B8B8B"/>
+            </Border.Effect>
+            <Grid>
+                <!--To do write code for search bar-->
+            </Grid>
+        </Border>
+        <Frame x:Name="homeFrame"
+               Grid.Column="1"
+               Grid.ColumnSpan="4"
+               Grid.Row="1"
+               Grid.RowSpan="7"
+               NavigationUIVisibility = "Hidden" />
+    </Grid>
+</UserControl>

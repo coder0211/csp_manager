@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net5.0-windows</TargetFramework>
+		<UseWPF>true</UseWPF>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Folder Include="Models\" />
+		<Folder Include="Store\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Resource Include="Res\Fonts\SFUIDisplay-Black.otf" />
+		<Resource Include="Res\Fonts\SFUIDisplay-Bold.ttf" />
+		<Resource Include="Res\Fonts\SFUIDisplay-Heavy.otf" />
+		<Resource Include="Res\Fonts\SFUIDisplay-Light.ttf" />
+		<Resource Include="Res\Fonts\SFUIDisplay-Medium.otf" />
+		<Resource Include="Res\Fonts\SFUIDisplay-Regular.otf" />
+		<Resource Include="Res\Fonts\SFUIDisplay-Semibold.otf" />
+		<Resource Include="Res\Fonts\SFUIDisplay-Thin.otf" />
+		<Resource Include="Res\Fonts\SFUIDisplay-Ultralight.otf" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Resource Include="Res\Icons\ic_logo.png">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Res\Icons\ic_logo_white.png">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Res\Images\image_bg.png">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Res\Icons\ic_back.png">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Resource>
+	</ItemGroup>
+
+</Project>
