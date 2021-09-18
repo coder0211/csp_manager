@@ -7,11 +7,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="650" d:DesignWidth="1000">
     <Grid>
-        <Grid.Background>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="0.3" >
-                <GradientStop Color="#20bf55" Offset="0"/>
-                <GradientStop Color="#01baef" Offset="1"/>
-            </LinearGradientBrush>
+        <Grid.Background >
+            <ImageBrush ImageSource="pack://application:,,,/Res/Images/image_bg.png"/>
         </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -44,7 +41,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition/>
-                    <RowDefinition/>
+                    <RowDefinition Height="57.273"/>
                     <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
@@ -58,8 +55,117 @@
                        Height="50"
                        Width="50"
                        Source="pack://application:,,,/Res/Icons/ic_logo.png"></Image>
+                <Button  x:Name="btnAllList"
+                    Grid.Row="2"                    
+                    Foreground="#333333"
+                    FontWeight="Medium"
+                    HorizontalContentAlignment="Left"
+                    Content="TỔNG QUAN"
+                    FontSize="16" Click="btnAllList_Click" >
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#BFDFBC"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Trigger.EnterActions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)" To="#BFDFBC"/>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </Trigger.EnterActions>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType ="Button">
+                            <Border  
+                        Background="{TemplateBinding Background}"
+                        >
+                                <ContentPresenter   
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button  x:Name="btnStatistic"
+                    Grid.Row="3"                    
+                    Foreground="#333333"
+                    FontWeight="Medium"
+                    HorizontalContentAlignment="Left"
+                    Content="THỐNG KÊ"
+                    FontSize="16" Click="btnStatistic_Click" >
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Trigger.EnterActions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)" To="#BFDFBC"/>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </Trigger.EnterActions>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType ="Button">
+                            <Border  
+                        Background="{TemplateBinding Background}"
+                        >
+                                <ContentPresenter   
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button  x:Name="btnSetting"
+                    Grid.Row="4"                    
+                    Foreground="#333333"
+                    FontWeight="Medium"
+                    HorizontalContentAlignment="Left"
+                    Content="CÀI ĐẶT"
+                    FontSize="16" Click="btnSetting_Click" >
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Trigger.EnterActions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)" To="#BFDFBC"/>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </Trigger.EnterActions>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType ="Button">
+                            <Border  
+                        Background="{TemplateBinding Background}"
+                        >
+                                <ContentPresenter   
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
             </Grid>
         </Border>
+        
         <Border Grid.Column="1"
                 Grid.ColumnSpan="5"
                 CornerRadius="20"

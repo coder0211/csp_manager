@@ -25,5 +25,25 @@ namespace csp_manager.Views
             InitializeComponent();
             homeFrame.Content = new AllListingPlantView();
         }
+
+        private void btnAllList_Click(object sender, RoutedEventArgs e)
+        {
+            btnStatistic.Background = new SolidColorBrush();
+            btnSetting.Background = new SolidColorBrush(); 
+            homeFrame.Content = new AllListingPlantView();
+        }
+        private void btnStatistic_Click(object sender, RoutedEventArgs e)
+        {
+            btnAllList.Background = new SolidColorBrush();
+            btnSetting.Background = new SolidColorBrush();
+            homeFrame.Content = new StatisticView();
+        }
+
+        private void btnSetting_Click(object sender, RoutedEventArgs e)
+        {
+            btnAllList.Background = new SolidColorBrush();
+            btnStatistic.Background = new SolidColorBrush();
+            homeFrame.Content = new SettingView();
+        }
     }
 }
