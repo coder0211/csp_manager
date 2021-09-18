@@ -45,5 +45,10 @@ namespace csp_manager.Views
             btnStatistic.Background = new SolidColorBrush();
             homeFrame.Content = new SettingView();
         }
+
+        private void btnLogout_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

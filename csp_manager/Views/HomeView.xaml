@@ -29,9 +29,10 @@
         </Grid.RowDefinitions>
         <Border Grid.RowSpan="8"
                 Grid.Row="0"
-                CornerRadius="20"
+                CornerRadius="0,35,35,0"
                 Background="White"
-                Margin="10">
+                Margin="0,10,0,0"
+               >
             <Border.Effect>
                 <DropShadowEffect BlurRadius="20"
                                       Opacity="0.2"
@@ -55,8 +56,17 @@
                        Height="50"
                        Width="50"
                        Source="pack://application:,,,/Res/Icons/ic_logo.png"></Image>
+                <TextBlock
+                    Grid.RowSpan="2"
+                    FontSize="18"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Margin="0,80 ,0,0"
+                    FontWeight="Thin"
+                    Foreground="#5FAF57"
+                    >CS FOREST</TextBlock>
                 <Button  x:Name="btnAllList"
-                    Grid.Row="2"                    
+                    Grid.Row="3"                    
                     Foreground="#333333"
                     FontWeight="Medium"
                     HorizontalContentAlignment="Left"
@@ -92,7 +102,7 @@
                     </Button.Template>
                 </Button>
                 <Button  x:Name="btnStatistic"
-                    Grid.Row="3"                    
+                    Grid.Row="4"                    
                     Foreground="#333333"
                     FontWeight="Medium"
                     HorizontalContentAlignment="Left"
@@ -128,7 +138,7 @@
                     </Button.Template>
                 </Button>
                 <Button  x:Name="btnSetting"
-                    Grid.Row="4"                    
+                    Grid.Row="5"                    
                     Foreground="#333333"
                     FontWeight="Medium"
                     HorizontalContentAlignment="Left"
@@ -156,6 +166,43 @@
                             <Border  
                         Background="{TemplateBinding Background}"
                         >
+                                <ContentPresenter   
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button  x:Name="btnLogout"
+                    Grid.Row="10"                   
+                    Foreground="#C4C4C4"
+                    FontWeight="Bold"
+                    HorizontalContentAlignment="Left"
+                    Content="Đăng xuất"
+                    FontSize="16" Click="btnLogout_Click" >
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Trigger.EnterActions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)" To="#5FAF57"/>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </Trigger.EnterActions>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType ="Button">
+                            <Border    
+                        Height="40"
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="20">
                                 <ContentPresenter   
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"/>

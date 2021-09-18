@@ -25,7 +25,8 @@
         <Button  x:Name="btnBack"              
                     Foreground="#5FAF57"
                     FontWeight="Bold"
-                    
+                    HorizontalAlignment="Left"
+                    Margin="15,0,0,0"
                     FontSize="16" Click="btnBack_Click" >
             <Button.Style>
                 <Style TargetType="Button">
@@ -38,7 +39,7 @@
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
-                                <Image Grid.Column="0" Height="32"
+                                <Image Grid.Column="0" Height="25"
                                             Source="pack://application:,,,/Res/Icons/ic_back.png"  />
                                 <TextBlock Grid.Column="1"
                                            VerticalAlignment="Center"

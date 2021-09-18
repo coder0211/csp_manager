@@ -30,7 +30,7 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Text="CSP Manager"
+        <TextBlock Text="CS FOREST"
                    FontSize="45"
                    FontWeight="Thin"
                    Foreground="#333333"
