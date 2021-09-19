@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,13 +29,13 @@ namespace csp_manager.Views
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            LoginFrame.Content = new ItemLoginView();
+            LoginFrame.NavigationService.Navigate(new ItemLoginView());
             btnResigter.Background = new SolidColorBrush();
         }
 
         private void btnResigter_Click(object sender, RoutedEventArgs e)
         {
-            LoginFrame.Content = new ItemRegisterView();
+            LoginFrame.NavigationService.Navigate(new ItemRegisterView());
             btnLogin.Background = new SolidColorBrush();
         }
 

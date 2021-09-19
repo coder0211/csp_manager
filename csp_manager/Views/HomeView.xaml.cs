@@ -30,20 +30,20 @@ namespace csp_manager.Views
         {
             btnStatistic.Background = new SolidColorBrush();
             btnSetting.Background = new SolidColorBrush(); 
-            homeFrame.Content = new AllListingPlantView();
+            homeFrame.NavigationService.Navigate(new AllListingPlantView());
         }
         private void btnStatistic_Click(object sender, RoutedEventArgs e)
         {
             btnAllList.Background = new SolidColorBrush();
             btnSetting.Background = new SolidColorBrush();
-            homeFrame.Content = new StatisticView();
+            homeFrame.NavigationService.Navigate(new StatisticView());
         }
 
         private void btnSetting_Click(object sender, RoutedEventArgs e)
         {
             btnAllList.Background = new SolidColorBrush();
             btnStatistic.Background = new SolidColorBrush();
-            homeFrame.Content = new SettingView();
+            homeFrame.NavigationService.Navigate(new SettingView());
         }
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
