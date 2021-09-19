@@ -224,7 +224,82 @@
                                       Color="#8B8B8B"/>
             </Border.Effect>
             <Grid>
-                <!--To do write code for search bar-->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Image 
+                       Height="25"
+                       Width="25"
+                       Source="pack://application:,,,/Res/Icons/ic_search.png"></Image>
+                <TextBox x:Name="txtSearch"
+                             TextChanged="txtSearch_TextChanged"
+                             Grid.Column="1"
+                             Grid.ColumnSpan="9"
+                             VerticalAlignment="Center"
+                             VerticalContentAlignment="Center"
+                             Foreground="#333333"    
+                             FontWeight="Medium"
+                             FontSize="16"
+                            >
+                    <TextBox.Style>
+                        <Style TargetType = "TextBox">
+                            <Setter Property="Cursor" Value="IBeam"/>
+                            <Setter Property="FontWeight" Value="Light"/>
+                        </Style>
+                    </TextBox.Style>
+                    <TextBox.Template>
+                        <ControlTemplate TargetType="TextBox">
+                            <Border
+                                    Height="40" 
+                                    Background="{TemplateBinding Background}"
+                                   >
+                                <Grid>
+                                    <ScrollViewer x:Name="PART_ContentHost"/>
+                                    <TextBlock 
+                                            IsHitTestVisible="False"
+                                            Text="Tìm kiếm ..."
+                                            Foreground="#C4C4C4"
+                                            VerticalAlignment="Center"
+                                            HorizontalAlignment="Left"
+                                            FontWeight="Medium"
+                                            FontSize="16"
+                                           >
+                                        <TextBlock.Style>
+                                            <Style TargetType="TextBlock">
+                                                <Setter Property="Visibility" Value="Collapsed"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Text, ElementName=txtSearch}" Value="">
+                                                        <Setter Property="Visibility" Value="Visible"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                </Grid>
+                            </Border>
+                        </ControlTemplate>
+                    </TextBox.Template>
+                </TextBox>
+                <Image Grid.Column="10"
+                       Height="25"
+                       Width="25"
+                       Source="pack://application:,,,/Res/Icons/ic_import.png"></Image>
+                <Image Grid.Column="11"
+                       HorizontalAlignment="Left"
+                       Height="25"
+                       Width="25"
+                       Source="pack://application:,,,/Res/Icons/ic_cart.png"></Image>
             </Grid>
         </Border>
         <Frame x:Name="homeFrame"

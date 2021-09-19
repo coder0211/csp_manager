@@ -7,7 +7,239 @@
              d:DataContext="{d:DesignInstance Type=local:AllListingPlantView}"
              mc:Ignorable="d" 
              d:DesignHeight="568.75" d:DesignWidth="800">
-    <Grid Background="Orange">
-        <Border Background="Black" Visibility="{Binding IsShowLoading}"></Border>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Border Background="White"
+                    Grid.Column="4"
+                    CornerRadius="20"
+                    Margin="15">
+                <TextBlock Text="Tất cả"
+                           TextAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Foreground="#333333"
+                           FontWeight="Medium"
+                           FontSize="16"
+                           VerticalAlignment="Center"/>
+            </Border>
+        </Grid>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <!--This item test for list-->
+        <Border Height="186"
+                Background="White"
+                Grid.Row="1"
+                CornerRadius="20"
+                Margin="10"
+                BorderThickness="1"
+                BorderBrush="#DFDFDF">
+            <Grid> 
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Border Margin="12"
+                        CornerRadius="20">
+                    <Border.Background >
+                        <ImageBrush ImageSource="pack://application:,,,/Res/Images/image_demo.jpg"/>
+                    </Border.Background>
+                </Border>
+                <Grid Grid.Column="1" Margin="15,0,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.RowSpan="2"
+                               Grid.ColumnSpan="2"
+                               Text="Hoa Hồng"
+                               FontWeight="Bold"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                               Foreground="#333333"
+                               FontSize="20"/>
+                    <StackPanel Grid.Row="1"
+                                Grid.ColumnSpan="2"
+                                Margin="0,20,30,0">
+                        <Separator  VerticalAlignment="Center"
+                               Height="0.2" 
+                               Background="#8B8B8B"
+                              >
+                            <Separator.LayoutTransform>
+                                <RotateTransform Angle="0" />
+                            </Separator.LayoutTransform>
+                        </Separator>
+                    </StackPanel>
+                    <TextBlock Grid.Row="2"
+                               Text="Số lượng còn"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Left"
+                                Foreground="#333333"
+                               FontSize="16"/>
+                    <TextBlock Grid.Row="2"
+                               Grid.Column="1"
+                               Text="15000"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                                Foreground="#333333"
+                               FontSize="16"/>
+                    <TextBlock Grid.Row="3"
+                               Text="Giá"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Left"
+                                Foreground="#333333"
+                               FontSize="16"/>
+                    <TextBlock Grid.Row="3"
+                               Grid.Column="1"
+                               Text="20000 đ"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                                Foreground="#E04F5F"
+                               FontSize="16"/>
+                    <TextBlock Grid.Row="4"
+                               Text="Đã bán"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Left"
+                                Foreground="#333333"
+                               FontSize="16"/>
+                    <TextBlock Grid.Row="4"
+                               Grid.Column="1"
+                               Text="50000"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                                Foreground="#5FAF57"
+                               FontSize="16"/>
+                </Grid>
+                <Grid/>
+            </Grid>
+        </Border>
+        <Border Height="186"
+                 Grid.Row="1" 
+                Background="White"
+                CornerRadius="20"
+                Margin="10"
+                BorderThickness="1"
+                BorderBrush="#DFDFDF"
+                Grid.Column="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Border Margin="12"
+                        CornerRadius="20">
+                    <Border.Background >
+                        <ImageBrush ImageSource="pack://application:,,,/Res/Images/image_demo.jpg"/>
+                    </Border.Background>
+                </Border>
+                <Grid Grid.Column="1" Margin="15,0,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.RowSpan="2"
+                               Grid.ColumnSpan="2"
+                               Text="Hoa Hồng"
+                               FontWeight="Bold"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                                Foreground="#333333"
+                               FontSize="20"/>
+                    <StackPanel Grid.Row="1"
+                                Grid.ColumnSpan="2"
+                                Margin="0,20,30,0">
+                        <Separator  VerticalAlignment="Center"
+                               Height="0.2" 
+                               Background="#8B8B8B"
+                              >
+                            <Separator.LayoutTransform>
+                                <RotateTransform Angle="0" />
+                            </Separator.LayoutTransform>
+                        </Separator>
+                    </StackPanel>
+                    <TextBlock Grid.Row="2"
+                               Text="Số lượng còn"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Left"
+                                Foreground="#333333"
+                               FontSize="16"/>
+                    <TextBlock Grid.Row="2"
+                               Grid.Column="1"
+                               Text="15000"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                                Foreground="#333333"
+                               FontSize="16"/>
+                    <TextBlock Grid.Row="3"
+                               Text="Giá"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Left"
+                                Foreground="#333333"
+                               FontSize="16"/>
+                    <TextBlock Grid.Row="3"
+                               Grid.Column="1"
+                               Text="20000 đ"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                                Foreground="#E04F5F"
+                               FontSize="16"/>
+                    <TextBlock Grid.Row="4"
+                               Text="Đã bán"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Left"
+                                Foreground="#333333"
+                               FontSize="16"/>
+                    <TextBlock Grid.Row="4"
+                               Grid.Column="1"
+                               Text="50000"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                                Foreground="#5FAF57"
+                               FontSize="16"/>
+                </Grid>
+                <Grid/>
+            </Grid>
+        </Border>
     </Grid>
 </UserControl>

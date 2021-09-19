@@ -50,5 +50,10 @@ namespace csp_manager.Views
         {
 
         }
+
+        private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
