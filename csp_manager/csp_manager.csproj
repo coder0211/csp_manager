@@ -8,19 +8,8 @@
 
 	<ItemGroup>
 		<Folder Include="Models\" />
+		<Folder Include="Res\Fonts\" />
 		<Folder Include="Store\" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<Resource Include="Res\Fonts\SFUIDisplay-Black.otf" />
-		<Resource Include="Res\Fonts\SFUIDisplay-Bold.ttf" />
-		<Resource Include="Res\Fonts\SFUIDisplay-Heavy.otf" />
-		<Resource Include="Res\Fonts\SFUIDisplay-Light.ttf" />
-		<Resource Include="Res\Fonts\SFUIDisplay-Medium.otf" />
-		<Resource Include="Res\Fonts\SFUIDisplay-Regular.otf" />
-		<Resource Include="Res\Fonts\SFUIDisplay-Semibold.otf" />
-		<Resource Include="Res\Fonts\SFUIDisplay-Thin.otf" />
-		<Resource Include="Res\Fonts\SFUIDisplay-Ultralight.otf" />
 	</ItemGroup>
 
 	<!--ICONS-->
