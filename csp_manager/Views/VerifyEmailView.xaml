@@ -44,6 +44,7 @@
                                 <TextBlock Grid.Column="1"
                                            VerticalAlignment="Center"
                                            HorizontalAlignment="Left"
+                                           Foreground="White"
                                            TextAlignment ="Left"
                                            > Trở về</TextBlock>
                             </Grid>
@@ -80,8 +81,7 @@
               Grid.RowSpan="2">
             <Border Background="White"
                     CornerRadius="20"
-                    BorderThickness="1"
-                    BorderBrush="#DFDFDF">
+                  >
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition/>
