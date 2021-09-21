@@ -28,9 +28,57 @@ namespace csp_manager.Views
             InitializeComponent();
         }
 
-        private void tempButton_Click(object sender, RoutedEventArgs e)
+        
+
+        
+
+        private void txtSupplier_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void txtNote_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void txtLocation_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void txtName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void txtQuantity_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void txtUnit_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void txtPrice_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void txtType_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            _homeView.IsShowDialog = Visibility.Hidden;
+        }
+
+        private void btnCompleted_Click(object sender, RoutedEventArgs e)
+        {
             _homeView.IsShowDialog = Visibility.Hidden;
         }
     }
