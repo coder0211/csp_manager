@@ -11,6 +11,10 @@
 		<Folder Include="Store\" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <PackageReference Include="XamlAnimatedGif" Version="2.0.1" />
+	</ItemGroup>
+
 	<!--FONTS-->
 	
 	<ItemGroup>
@@ -55,6 +59,33 @@
 		<Resource Include="Res\Icons\ic_import.png">
 			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
 		</Resource>
+		<Resource Include="Res\Icons\ic_exit.png">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Res\Icons\ic_plant.png">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Res\Icons\ic_plant_selected.png">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Res\Icons\ic_setting.png">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Res\Icons\ic_setting_selected.png">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Res\Icons\ic_statistics.png">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Res\Icons\ic_statistics_selected.png">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Res\Icons\ic_history.png">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Res\Icons\ic_history_selected.png">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Resource>
 	</ItemGroup>
 
 	<!--IMAGES-->
@@ -69,6 +100,34 @@
 		<Resource Include="Res\Images\image_demo.jpg">
 			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
 		</Resource>
+	</ItemGroup>
+	
+	<!--GIF
+	Khi nào muốn dùng gif thì nhớ thêm   xlms: gif="https://github.com//XamlAnimatedGif/XamlAnimatedGif"-->
+	<ItemGroup>
+		<None Remove="Resources\ani_Loading.gif"/>
+		<None Remove="Resources\Animation_PackMan.gif"/>
+		<Resource Include="Resources\ani_Loading.gif">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Resources\Animation_PackMan.gif">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Resource>
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <Compile Update="Properties\Resources.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Resources.resx</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <EmbeddedResource Update="Properties\Resources.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
 	</ItemGroup>
 	
 	
