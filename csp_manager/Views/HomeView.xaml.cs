@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,18 +19,32 @@ namespace csp_manager.Views
     /// <summary>
     /// Interaction logic for HomeView.xaml
     /// </summary>
-    public partial class HomeView : UserControl
+    public partial class HomeView : UserControl, INotifyPropertyChanged
     {
+        private Visibility isShowDialog;
+
+        public Visibility IsShowDialog
+        {
+            get => isShowDialog; set
+            {
+                isShowDialog = value; 
+                OnPropertyChanged(nameof(IsShowDialog));
+            }
+        }
+
         public HomeView()
         {
             InitializeComponent();
+            this.DataContext = this;
             homeFrame.Content = new AllListingPlantView();
+            IsShowDialog = Visibility.Hidden;
+            dialogFrame.Content = new AddItemView(this);
         }
 
         private void btnAllList_Click(object sender, RoutedEventArgs e)
         {
             btnStatistic.Background = new SolidColorBrush();
-            btnSetting.Background = new SolidColorBrush(); 
+            btnSetting.Background = new SolidColorBrush();
             homeFrame.NavigationService.Navigate(new AllListingPlantView());
         }
         private void btnStatistic_Click(object sender, RoutedEventArgs e)
@@ -48,12 +63,18 @@ namespace csp_manager.Views
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
         {
-
+            IsShowDialog = Visibility.Visible;
         }
 
         private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnPropertyChanged(string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

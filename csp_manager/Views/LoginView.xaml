@@ -30,7 +30,7 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Text="CS FOREST"
+        <TextBlock Text="CS FOREST" 
                    FontSize="45"
                    FontWeight="Thin"
                    Foreground="#333333"
@@ -112,7 +112,7 @@
             </Button.Template>
         </Button>
         <Button  x:Name="btnInfor"
-                    Grid.Column="7"                   
+                    Grid.Column="7"              
                     Foreground="White"
                     FontWeight="Bold"
                     HorizontalContentAlignment="Left"
@@ -127,7 +127,7 @@
                             <Trigger.EnterActions>
                                 <BeginStoryboard>
                                     <Storyboard>
-                                        <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)" To="#5FAF57"/>
+                                        <ColorAnimation  Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)" To="#5FAF57"/>
                                     </Storyboard>
                                 </BeginStoryboard>
                             </Trigger.EnterActions>
@@ -159,8 +159,7 @@
             
             <Border Background="White"
                     CornerRadius="20"
-                    BorderThickness="1"
-                    BorderBrush="#DFDFDF">
+                   >
                 <Frame x:Name="LoginFrame" NavigationUIVisibility = "Hidden"/>
             </Border>
         </Grid>

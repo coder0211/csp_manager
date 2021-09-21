@@ -3,12 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:csp_manager.Views"
+             xmlns:local="clr-namespace:csp_manager.Views" 
+             d:DataContext="{d:DesignInstance Type=local:HomeView}"
              mc:Ignorable="d" 
              d:DesignHeight="650" d:DesignWidth="1000">
     <Grid>
         <Grid.Background >
-            <ImageBrush ImageSource="pack://application:,,,/Res/Images/image_bg.png"/>
+            <ImageBrush ImageSource="pack://application:,,,/Res/Images/image_bg_home.png"/>
         </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -308,5 +309,17 @@
                Grid.Row="1"
                Grid.RowSpan="7"
                NavigationUIVisibility = "Hidden" />
+        <StackPanel Visibility="{Binding IsShowDialog}"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="4"
+                    Grid.RowSpan="8"
+                    Grid.Row="1">
+            <Grid Height="568"
+                  >
+                <Frame x:Name="dialogFrame"
+                    NavigationUIVisibility = "Hidden"></Frame>
+            </Grid>
+            
+        </StackPanel>
     </Grid>
 </UserControl>

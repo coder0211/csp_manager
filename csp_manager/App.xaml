@@ -3,8 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:csp_manager">
     <Application.Resources>
-        <ResourceDictionary>
-            <FontFamily x:Key="SF">pack://application:,,,Res/Fonts/#SFUIDisplay</FontFamily>
-        </ResourceDictionary>
+        <FontFamily x:Key="Kanit">pack://application:,,,/Fonts/#Kanit</FontFamily>
     </Application.Resources>
 </Application>

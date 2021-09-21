@@ -8,8 +8,30 @@
 
 	<ItemGroup>
 		<Folder Include="Models\" />
-		<Folder Include="Res\Fonts\" />
 		<Folder Include="Store\" />
+	</ItemGroup>
+
+	<!--FONTS-->
+	
+	<ItemGroup>
+		<Resource Include="Res\Fonts\Kanit-Black.ttf" />
+		<Resource Include="Res\Fonts\Kanit-BlackItalic.ttf" />
+		<Resource Include="Res\Fonts\Kanit-Bold.ttf" />
+		<Resource Include="Res\Fonts\Kanit-BoldItalic.ttf" />
+		<Resource Include="Res\Fonts\Kanit-ExtraBold.ttf" />
+		<Resource Include="Res\Fonts\Kanit-ExtraBoldItalic.ttf" />
+		<Resource Include="Res\Fonts\Kanit-ExtraLight.ttf" />
+		<Resource Include="Res\Fonts\Kanit-ExtraLightItalic.ttf" />
+		<Resource Include="Res\Fonts\Kanit-Italic.ttf" />
+		<Resource Include="Res\Fonts\Kanit-Light.ttf" />
+		<Resource Include="Res\Fonts\Kanit-LightItalic.ttf" />
+		<Resource Include="Res\Fonts\Kanit-Medium.ttf" />
+		<Resource Include="Res\Fonts\Kanit-MediumItalic.ttf" />
+		<Resource Include="Res\Fonts\Kanit-Regular.ttf" />
+		<Resource Include="Res\Fonts\Kanit-SemiBold.ttf" />
+		<Resource Include="Res\Fonts\Kanit-SemiBoldItalic.ttf" />
+		<Resource Include="Res\Fonts\Kanit-Thin.ttf" />
+		<Resource Include="Res\Fonts\Kanit-ThinItalic.ttf" />
 	</ItemGroup>
 
 	<!--ICONS-->
@@ -41,9 +63,14 @@
 		<Resource Include="Res\Images\image_bg.png">
 			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
 		</Resource>
+		<Resource Include="Res\Images\image_bg_home.png">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Resource>
 		<Resource Include="Res\Images\image_demo.jpg">
 			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
 		</Resource>
 	</ItemGroup>
+	
+	
 
 </Project>
