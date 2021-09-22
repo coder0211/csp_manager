@@ -3,6 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:csp_manager">
     <Application.Resources>
-        <FontFamily x:Key="Kanit">pack://application:,,,/Fonts/#Kanit</FontFamily>
+        <ResourceDictionary>
+            <FontFamily x:Key="Kanit">pack://application:,,,/Fonts/#Kanit</FontFamily>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resource/Scroll.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
