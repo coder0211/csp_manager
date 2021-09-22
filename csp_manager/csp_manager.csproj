@@ -108,8 +108,8 @@
 	<!--GIF
 	Khi nào muốn dùng gif thì nhớ thêm   xlms: gif="https://github.com//XamlAnimatedGif/XamlAnimatedGif"-->
 	<ItemGroup>
-		<None Remove="Resources\ani_Loading.gif"/>
-		<None Remove="Resources\Animation_PackMan.gif"/>
+		<None Remove="Resources\ani_Loading.gif" />
+		<None Remove="Resources\Animation_PackMan.gif" />
 		<Resource Include="Resources\ani_Loading.gif">
 			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
 		</Resource>
