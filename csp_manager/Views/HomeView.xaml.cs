@@ -156,6 +156,11 @@ namespace csp_manager.Views
 
         private void btnCart_Click(object sender, RoutedEventArgs e)
         {
+            
+        }
+
+        private void btnImport_Click(object sender, RoutedEventArgs e)
+        {
             IsShowDialog = Visibility.Visible;
         }
     }

@@ -84,7 +84,7 @@
                                 <Setter.Value>
                                     <Grid>
                                         <Image Source="{Binding IcPlant}" Width="20" Height="20" Margin="-130 0 0 0"/>
-                                        <TextBlock Text="TỔNG QUAN" FontSize="16"/>
+                                        <TextBlock Text="TỔNG QUAN" FontSize="16" Margin="-5 0 0 0"/>
                                     </Grid>
                                 </Setter.Value>
                             </Setter>
@@ -106,8 +106,8 @@
                         <ControlTemplate TargetType ="Button">
                             <Border>
                                 <ContentPresenter   
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"/>
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"/>
                             </Border>
                         </ControlTemplate>
                     </Button.Template>
@@ -127,7 +127,7 @@
                                 <Setter.Value>
                                     <Grid>
                                         <Image Source="{Binding IcStatistics}" Width="20" Height="20" Margin="-130 0 0 0"/>
-                                        <TextBlock Text="THỐNG KÊ" FontSize="18"/>
+                                        <TextBlock Text="THỐNG KÊ" FontSize="18" Margin="-10 0 0 0"/>
                                     </Grid>
                                 </Setter.Value>
                             </Setter>
@@ -170,7 +170,7 @@
                                 <Setter.Value>
                                     <Grid>
                                         <Image Source="{Binding IcHistory}" Width="20" Height="20" Margin="-130 0 0 0"/>
-                                        <TextBlock Text="LỊCH SỬ" FontSize="18"/>
+                                        <TextBlock Text="LỊCH SỬ" FontSize="18" Margin="-30 0 0 0"/>
                                     </Grid>
                                 </Setter.Value>
                             </Setter>
@@ -213,7 +213,7 @@
                                 <Setter.Value>
                                     <Grid>
                                         <Image Source="{Binding IcSetting}" Width="20" Height="20" Margin="-130 0 0 0"/>
-                                        <TextBlock Text="CÀI ĐẶT" FontSize="18"/>
+                                        <TextBlock Text="CÀI ĐẶT" FontSize="18" Margin="-30 0 0 0"/>
                                     </Grid>
                                 </Setter.Value>
                             </Setter>
@@ -358,12 +358,12 @@
                     </TextBox.Template>
                 </TextBox>
 
-                <Button  x:Name="btnCart"
+                <Button  x:Name="btnImport"
                     Grid.Column="10"                   
                     Foreground="#C4C4C4"
                     FontWeight="Bold"
                     HorizontalContentAlignment="Left"                  
-                    FontSize="16" Click="btnCart_Click" >
+                    FontSize="16" Click="btnImport_Click" >
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="Background" Value="Transparent"/>
@@ -393,11 +393,41 @@
                     </Button.Template>
                 </Button>
 
-                <Image Grid.Column="11"
-                       HorizontalAlignment="Left"
-                       Height="25"
-                       Width="25"
-                       Source="pack://application:,,,/Res/Icons/ic_cart.png"></Image>
+                <Button  x:Name="btnCart"
+                    Grid.Column="11"                   
+                    Foreground="#C4C4C4"
+                    FontWeight="Bold"
+                    HorizontalContentAlignment="Left"                  
+                    FontSize="16" Click="btnCart_Click" >
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                            <Setter Property="Content">
+                                <Setter.Value>
+                                    <Grid>
+                                        <Image Source="pack://application:,,,/Res/Icons/ic_cart.png" Width="20" Height="20" />
+
+                                    </Grid>
+                                </Setter.Value>
+                            </Setter>
+
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType ="Button">
+                            <Border    
+                        Height="40"
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="20">
+                                <ContentPresenter   
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                
             </Grid>
         </Border>
         <Frame x:Name="homeFrame"
