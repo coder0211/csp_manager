@@ -136,7 +136,7 @@ namespace csp_manager.Views
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
         {
-            IsShowDialog = Visibility.Visible;
+            
             //btnAllList.Foreground = new SolidColorBrush(Color.FromRgb(20, 20, 20));
             //btnStatistic.Foreground = new SolidColorBrush(Color.FromRgb(20, 20, 20));
             //btnHistory.Foreground = new SolidColorBrush(Color.FromRgb(20, 20, 20));
@@ -154,6 +154,9 @@ namespace csp_manager.Views
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-
+        private void btnCart_Click(object sender, RoutedEventArgs e)
+        {
+            IsShowDialog = Visibility.Visible;
+        }
     }
 }
