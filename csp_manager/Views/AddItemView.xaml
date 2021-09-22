@@ -56,19 +56,20 @@
                </Separator>
         </StackPanel>
 
-                <Grid Grid.Row="1" Grid.RowSpan="9">
+        <Grid Grid.Row="1" Grid.RowSpan="9">
              <Grid.ColumnDefinitions>
                    <ColumnDefinition Width="150"/>
-                        <ColumnDefinition/>
+                   <ColumnDefinition/>
              </Grid.ColumnDefinitions>
 
-                    <Grid Grid.Column="0">
-                        <Border Margin="12"
-                        CornerRadius="20" Background="#E5E5E5">
-                            <Image Source="pack://application:,,,/Res/Icons/ic_uploadImage.png" Height="60"/>
+        <Grid Grid.Column="0">
+                        <Border Margin="0 1 0 0" Width="120" Height="180"
+                                CornerRadius="20" Background="#E5E5E5">
+                            <Image Source="pack://application:,,,/Res/Icons/ic_uploadImage.png" Height="60" Width="50"/>
                         </Border>
                     </Grid>
-                    <Grid Grid.Column="1">
+                    
+        <Grid Grid.Column="1">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="20"/>
                             <RowDefinition/>
@@ -84,7 +85,7 @@
                         HorizontalAlignment="Left"
                         Margin="10 0 0 0"
                         Foreground="#959595"
-                         FontSize="15"/>
+                        FontSize="15"/>
                         <TextBox x:Name="txtName"
                              TextChanged="txtName_TextChanged"
                              Grid.Row="1"                          
@@ -92,10 +93,11 @@
                              VerticalContentAlignment="Center"
                              HorizontalContentAlignment="Left"
                              TextWrapping="Wrap"
+                             FontWeight="Medium"
                              BorderThickness="0"
                              Foreground="Gray"
                              CaretBrush="Gray"
-                             Margin="0,-10,10,0">
+                             Margin="0,-10,30,0">
                             <TextBox.Style>
                                 <Style TargetType = "TextBox">
                                     <Setter Property="Cursor" Value="IBeam"/>
@@ -105,11 +107,12 @@
                             <TextBox.Template>
                                 <ControlTemplate TargetType="TextBox">
                                     <Border
-                                    Height="35"
-                                    CornerRadius="20"
-                                    Background="{TemplateBinding Background}"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1">
+                                        Padding="15 0 0 0"
+                                        Height="35"
+                                        CornerRadius="25"                                   
+                                        Background="{TemplateBinding Background}"
+                                        BorderBrush="Gray"
+                                        BorderThickness="1">
                                         <Grid>
                                             <ScrollViewer x:Name="PART_ContentHost"/>
                                             <TextBlock 
@@ -117,7 +120,7 @@
                                             Text="Tên Hoa"
                                             VerticalAlignment="Center"
                                             HorizontalAlignment="Left"
-                                            Margin="10,0,0,0">
+                                            Margin="0,0,0,0">
                                                 <TextBlock.Style>
                                                     <Style TargetType="TextBlock">
                                                         <Setter Property="Visibility" Value="Collapsed"/>
@@ -181,11 +184,12 @@
                                 <TextBox.Template>
                                     <ControlTemplate TargetType="TextBox">
                                         <Border
-                                    Height="35"
-                                    CornerRadius="20"
-                                    Background="{TemplateBinding Background}"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1">
+                                            Padding="15 0 0 0"
+                                            Height="35"
+                                            CornerRadius="25"
+                                            Background="{TemplateBinding Background}"
+                                            BorderBrush="Gray"
+                                            BorderThickness="1">
                                             <Grid>
                                                 <ScrollViewer x:Name="PART_ContentHost"/>
                                                 <TextBlock 
@@ -219,7 +223,7 @@
                              BorderThickness="0"
                              Foreground="Gray"
                              CaretBrush="Gray"
-                             Margin="0,-10,10,0">
+                             Margin="0,-10,30,0">
                                 <TextBox.Style>
                                     <Style TargetType = "TextBox">
                                         <Setter Property="Cursor" Value="IBeam"/>
@@ -229,11 +233,12 @@
                                 <TextBox.Template>
                                     <ControlTemplate TargetType="TextBox">
                                         <Border
-                                    Height="35"
-                                    CornerRadius="20"
-                                    Background="{TemplateBinding Background}"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1">
+                                            Padding="15 0 0 0"
+                                            Height="35"
+                                            CornerRadius="20"
+                                            Background="{TemplateBinding Background}"
+                                            BorderBrush="Gray"
+                                            BorderThickness="1">
                                             <Grid>
                                                 <ScrollViewer x:Name="PART_ContentHost"/>
                                                 <TextBlock 
@@ -305,11 +310,12 @@
                                 <TextBox.Template>
                                     <ControlTemplate TargetType="TextBox">
                                         <Border
-                                    Height="35"
-                                    CornerRadius="20"
-                                    Background="{TemplateBinding Background}"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1">
+                                            Padding="15 0 0 0"
+                                            Height="35"
+                                            CornerRadius="25"
+                                            Background="{TemplateBinding Background}"
+                                            BorderBrush="Gray"
+                                            BorderThickness="1">
                                             <Grid>
                                                 <ScrollViewer x:Name="PART_ContentHost"/>
                                                 <TextBlock 
@@ -343,7 +349,7 @@
                              BorderThickness="0"
                              Foreground="Gray"
                              CaretBrush="Gray"
-                             Margin="0,-10,10,0">
+                             Margin="0,-10,30,0">
                                 <TextBox.Style>
                                     <Style TargetType = "TextBox">
                                         <Setter Property="Cursor" Value="IBeam"/>
@@ -353,11 +359,12 @@
                                 <TextBox.Template>
                                     <ControlTemplate TargetType="TextBox">
                                         <Border
-                                    Height="35"
-                                    CornerRadius="20"
-                                    Background="{TemplateBinding Background}"
-                                    BorderBrush="Gray"
-                                    BorderThickness="1">
+                                            Padding="15 0 0 0"
+                                            Height="35"
+                                            CornerRadius="20"
+                                            Background="{TemplateBinding Background}"
+                                            BorderBrush="Gray"
+                                            BorderThickness="1">
                                             <Grid>
                                                 <ScrollViewer x:Name="PART_ContentHost"/>
                                                 <TextBlock 
@@ -392,7 +399,7 @@
                    FontWeight="Thin"
                    VerticalAlignment="Top"
                    HorizontalAlignment="Left"
-                   Margin="10 5 0 0"
+                   Margin="20 0 0 0"
                    Foreground="#959595"
                    FontSize="12"/>
             
@@ -407,7 +414,7 @@
                              BorderThickness="0"
                              Foreground="Gray"
                              CaretBrush="Gray"
-                             Margin="5,0,10,0">
+                             Margin="10,0,30,0">
                     <TextBox.Style>
                         <Style TargetType = "TextBox">
                             <Setter Property="Cursor" Value="IBeam"/>
@@ -418,6 +425,7 @@
                         <ControlTemplate TargetType="TextBox">
                             <Border
                                     Height="37"
+                                    Padding="15 0 0 0"
                                     CornerRadius="20"
                                     Background="{TemplateBinding Background}"
                                     BorderBrush="Gray"
@@ -429,7 +437,7 @@
                                             Text="Tên nhà cung cấp"
                                             VerticalAlignment="Center"
                                             HorizontalAlignment="Left"
-                                            Margin="10,0,0,0">
+                                           >
                                         <TextBlock.Style>
                                             <Style TargetType="TextBlock">
                                                 <Setter Property="Visibility" Value="Collapsed"/>
@@ -447,7 +455,7 @@
                     </TextBox.Template>
         </TextBox>
 
-                <TextBox x:Name="txtLocation"
+        <TextBox x:Name="txtLocation"
                              TextChanged="txtLocation_TextChanged"
                              Grid.Row="14" 
                              Grid.RowSpan="2"
@@ -458,7 +466,7 @@
                              BorderThickness="0"
                              Foreground="Gray"
                              CaretBrush="Gray"
-                             Margin="5,0,10,0">
+                             Margin="10,0,30,0">
                     <TextBox.Style>
                         <Style TargetType = "TextBox">
                             <Setter Property="Cursor" Value="IBeam"/>
@@ -469,6 +477,7 @@
                         <ControlTemplate TargetType="TextBox">
                             <Border
                                     Height="35"
+                                    Padding="15 0 0 0"
                                     CornerRadius="20"
                                     Background="{TemplateBinding Background}"
                                     BorderBrush="Gray"
@@ -480,7 +489,7 @@
                                             Text="Địa chỉ nhà cung cấp"
                                             VerticalAlignment="Center"
                                             HorizontalAlignment="Left"
-                                            Margin="10,0,0,0">
+                                            >
                                         <TextBlock.Style>
                                             <Style TargetType="TextBlock">
                                                 <Setter Property="Visibility" Value="Collapsed"/>
@@ -498,15 +507,16 @@
                     </TextBox.Template>
                 </TextBox>
 
-                <TextBlock Grid.Row="16"                 
+        <TextBlock Grid.Row="16"                 
                    Text="Ghi chú / Tình trạng"
                    FontWeight="Thin"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Left"
-                   Margin="10 0 0 0"
+                   Margin="20 10 0 0"
                    Foreground="#959595"
                    FontSize="12"/>
-                <TextBox x:Name="txtNote"
+            
+        <TextBox x:Name="txtNote"
                              TextChanged="txtNote_TextChanged"
                              Grid.Row="19" 
                              Grid.RowSpan="4"
@@ -517,7 +527,7 @@
                              BorderThickness="0"
                              Foreground="Gray"
                              CaretBrush="Gray"
-                             Margin="5,-100,10,10">
+                             Margin="10,-100,30,10">
                     <TextBox.Style>
                         <Style TargetType = "TextBox">
                             <Setter Property="Cursor" Value="IBeam"/>
@@ -526,7 +536,7 @@
                     </TextBox.Style>
                     <TextBox.Template>
                         <ControlTemplate TargetType="TextBox">
-                            <Border
+                            <Border Padding="10 0 0 0"
                                     Height="100"
                                     CornerRadius="20"
                                     Background="{TemplateBinding Background}"
@@ -535,6 +545,7 @@
                                 <Grid>
                                     <ScrollViewer x:Name="PART_ContentHost"/>
                                     <TextBlock 
+                                        
                                             IsHitTestVisible="False"                                           
                                             VerticalAlignment="Bottom"
                                             HorizontalAlignment="Left"
@@ -555,7 +566,8 @@
                         </ControlTemplate>
                     </TextBox.Template>
                 </TextBox>
-                <Grid Grid.Row="23">
+            
+        <Grid Grid.Row="23">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="350"/>
                         <ColumnDefinition/>
