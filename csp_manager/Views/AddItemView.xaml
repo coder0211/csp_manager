@@ -64,10 +64,8 @@
 
                     <Grid Grid.Column="0">
                         <Border Margin="12"
-                        CornerRadius="20" >
-                            <Border.Background >
-                                <ImageBrush ImageSource="pack://application:,,,/Res/Images/image_demo.jpg" />
-                            </Border.Background>
+                        CornerRadius="20" Background="#E5E5E5">
+                            <Image Source="pack://application:,,,/Res/Icons/ic_uploadImage.png" Height="60"/>
                         </Border>
                     </Grid>
                     <Grid Grid.Column="1">
@@ -513,7 +511,7 @@
                              Grid.Row="19" 
                              Grid.RowSpan="4"
                              VerticalAlignment="Bottom"
-                             VerticalContentAlignment="Center"
+                             VerticalContentAlignment="Top"
                              HorizontalContentAlignment="Left"
                              TextWrapping="Wrap"
                              BorderThickness="0"
@@ -538,7 +536,7 @@
                                     <ScrollViewer x:Name="PART_ContentHost"/>
                                     <TextBlock 
                                             IsHitTestVisible="False"                                           
-                                            VerticalAlignment="Center"
+                                            VerticalAlignment="Bottom"
                                             HorizontalAlignment="Left"
                                             Margin="10,-100,0,0">
                                         <TextBlock.Style>
