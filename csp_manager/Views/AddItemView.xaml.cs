@@ -27,11 +27,6 @@ namespace csp_manager.Views
             _homeView = homeView;
             InitializeComponent();
         }
-
-        
-
-        
-
         private void txtSupplier_TextChanged(object sender, TextChangedEventArgs e)
         {
 

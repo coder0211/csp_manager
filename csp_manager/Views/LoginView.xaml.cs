@@ -30,18 +30,18 @@ namespace csp_manager.Views
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
             LoginFrame.NavigationService.Navigate(new ItemLoginView());
-            btnResigter.Background = new SolidColorBrush();
+          
         }
 
         private void btnResigter_Click(object sender, RoutedEventArgs e)
         {
             LoginFrame.NavigationService.Navigate(new ItemRegisterView());
-            btnLogin.Background = new SolidColorBrush();
+         
         }
 
         private void btnInfor_Click(object sender, RoutedEventArgs e)
         {
-            btnInfor.Background = new SolidColorBrush();
+           
         }
     }
 }

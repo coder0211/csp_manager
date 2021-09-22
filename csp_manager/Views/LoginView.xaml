@@ -30,35 +30,55 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <Image Grid.Column="1"
+               VerticalAlignment="Center" 
+                Height="40"
+                       Width="40"
+                       Source="pack://application:,,,/Res/Icons/ic_logo_white.png"></Image>
         <TextBlock Text="CS FOREST" 
-                   FontSize="45"
+                   Grid.Column="1"
+                   Grid.Row="0"
+                   FontSize="18"
                    FontWeight="Thin"
-                   Foreground="#333333"
+                   Foreground="White"
                    HorizontalAlignment="Center"
+                   VerticalAlignment="Bottom"
+                   
+                   />
+        <TextBlock Text="Xin Chào"  
+                   Grid.Column="1"
+                   Grid.ColumnSpan="2"
+                   Grid.Row="2"
+                   FontSize="40"
+                   FontWeight="Thin"
+                   Foreground="White"
+                   HorizontalAlignment="Left"
                    VerticalAlignment="Center"
-                   Grid.ColumnSpan="3"/>
+                   
+                   />
+        <TextBlock Text="Đây là cửa hàng cây giống CS Forest nơi cung cấp toàn bộ các giống cây trong mà bạn đang tìm kiếm."  
+                   Grid.Column="1"
+                   Grid.ColumnSpan="4"
+                   Margin="0,0,30,0"
+                   TextWrapping="Wrap"
+                   Grid.Row="3"
+                   FontSize="16"
+                   FontWeight="Thin"
+                   Foreground="White"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"/>
         <Button  x:Name="btnLogin"
                     Grid.Column="5"                   
                     Foreground="White"
-                    FontWeight="Bold"
+                    FontWeight="Thin" 
                     HorizontalContentAlignment="Left"
                     Content="Đăng nhập"
-                    FontSize="16" Click="btnLogin_Click" >
+                    FontSize="18" Click="btnLogin_Click" >
             <Button.Style>
                 <Style TargetType="Button">
                     <Setter Property="Background" Value="#5FAF57"/>
                     <Setter Property="Cursor" Value="Hand"/>
-                    <Style.Triggers>
-                        <Trigger Property="IsPressed" Value="True">
-                            <Trigger.EnterActions>
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)" To="#5FAF57"/>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </Trigger.EnterActions>
-                        </Trigger>
-                    </Style.Triggers>
+                    
                 </Style>
             </Button.Style>
             <Button.Template>
@@ -77,25 +97,15 @@
         <Button  x:Name="btnResigter"
                     Grid.Column="6"                   
                     Foreground="White"
-                    FontWeight="Bold"
+                    FontWeight="Thin"
                     HorizontalContentAlignment="Left"
                     Content="Đăng ký"
-                    FontSize="16" Click="btnResigter_Click" >
+                    FontSize="18 " Click="btnResigter_Click" >
             <Button.Style>
                 <Style TargetType="Button">
                     <Setter Property="Background" Value="Transparent"/>
                     <Setter Property="Cursor" Value="Hand"/>
-                    <Style.Triggers>
-                        <Trigger Property="IsPressed" Value="True">
-                            <Trigger.EnterActions>
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)" To="#5FAF57"/>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </Trigger.EnterActions>
-                        </Trigger>
-                    </Style.Triggers>
+                  
                 </Style>
             </Button.Style>
             <Button.Template>
@@ -114,25 +124,15 @@
         <Button  x:Name="btnInfor"
                     Grid.Column="7"              
                     Foreground="White"
-                    FontWeight="Bold"
+                    FontWeight="Thin"
                     HorizontalContentAlignment="Left"
                     Content="Thông tin"
-                    FontSize="16" Click="btnInfor_Click" >
+                    FontSize="18 " Click="btnInfor_Click" >
             <Button.Style>
                 <Style TargetType="Button">
                     <Setter Property="Background" Value="Transparent"/>
                     <Setter Property="Cursor" Value="Hand"/>
-                    <Style.Triggers>
-                        <Trigger Property="IsPressed" Value="True">
-                            <Trigger.EnterActions>
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <ColorAnimation  Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)" To="#5FAF57"/>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </Trigger.EnterActions>
-                        </Trigger>
-                    </Style.Triggers>
+                   
                 </Style>
             </Button.Style>
             <Button.Template>
@@ -148,10 +148,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Image Grid.Column="8"
-                       Height="40"
-                       Width="40"
-                       Source="pack://application:,,,/Res/Icons/ic_logo_white.png"></Image>
+       
         <Grid Grid.Column="5"
               Grid.ColumnSpan="3"
               Grid.Row="1" 
