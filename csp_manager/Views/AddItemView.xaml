@@ -8,17 +8,33 @@
              d:DesignHeight="650" d:DesignWidth="600">
     
     <Grid Background="WhiteSmoke">
-        <Border Background="White" CornerRadius="20" Height="500" Width="400">
+        <Border Margin="0 -40 0 0" Background="White" CornerRadius="20" Height="520" Width="400">
         <Grid>
             <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
-            <RowDefinition Height="180"/>
-            <RowDefinition Height="20"/>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+             <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
             <RowDefinition Height="40"/>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="20"/>
-            <RowDefinition Height="110"/>
-            <RowDefinition/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0"                 
                    Text="Nhập mặt hàng mới"
@@ -28,8 +44,8 @@
                    Margin="10 0 0 0"
                    Foreground="#739D6F"
                    FontSize="20"/>
-        <StackPanel Grid.Row="2"
-                    Grid.ColumnSpan="2"
+        <StackPanel Grid.Row="10"
+                    Grid.ColumnSpan="1"
                     Margin="10,3,10,0">
                <Separator  VerticalAlignment="Center"
                            Height="0.5" 
@@ -40,7 +56,7 @@
                </Separator>
         </StackPanel>
 
-                <Grid Grid.Row="1">
+                <Grid Grid.Row="1" Grid.RowSpan="9">
              <Grid.ColumnDefinitions>
                    <ColumnDefinition Width="150"/>
                         <ColumnDefinition/>
@@ -373,18 +389,19 @@
             
         </Grid>
             
-        <TextBlock Grid.Row="2"                 
+        <TextBlock Grid.Row="11"                 
                    Text="Thông tin nhà cung cấp"
                    FontWeight="Thin"
-                   VerticalAlignment="Center"
+                   VerticalAlignment="Top"
                    HorizontalAlignment="Left"
-                   Margin="10 7 0 0"
+                   Margin="10 5 0 0"
                    Foreground="#959595"
                    FontSize="12"/>
             
         <TextBox x:Name="txtSupplier"
                              TextChanged="txtSupplier_TextChanged"
-                             Grid.Row="3"                          
+                             Grid.Row="12"    
+                            Grid.RowSpan="2"
                              VerticalAlignment="Bottom"
                              VerticalContentAlignment="Center"
                              HorizontalContentAlignment="Left"
@@ -402,7 +419,7 @@
                     <TextBox.Template>
                         <ControlTemplate TargetType="TextBox">
                             <Border
-                                    Height="35"
+                                    Height="37"
                                     CornerRadius="20"
                                     Background="{TemplateBinding Background}"
                                     BorderBrush="Gray"
@@ -434,7 +451,8 @@
 
                 <TextBox x:Name="txtLocation"
                              TextChanged="txtLocation_TextChanged"
-                             Grid.Row="4"                          
+                             Grid.Row="14" 
+                             Grid.RowSpan="2"
                              VerticalAlignment="Bottom"
                              VerticalContentAlignment="Center"
                              HorizontalContentAlignment="Left"
@@ -482,7 +500,7 @@
                     </TextBox.Template>
                 </TextBox>
 
-                <TextBlock Grid.Row="5"                 
+                <TextBlock Grid.Row="16"                 
                    Text="Ghi chú / Tình trạng"
                    FontWeight="Thin"
                    VerticalAlignment="Center"
@@ -492,7 +510,8 @@
                    FontSize="12"/>
                 <TextBox x:Name="txtNote"
                              TextChanged="txtNote_TextChanged"
-                             Grid.Row="6"                          
+                             Grid.Row="19" 
+                             Grid.RowSpan="4"
                              VerticalAlignment="Bottom"
                              VerticalContentAlignment="Center"
                              HorizontalContentAlignment="Left"
@@ -500,7 +519,7 @@
                              BorderThickness="0"
                              Foreground="Gray"
                              CaretBrush="Gray"
-                             Margin="5,0,10,0">
+                             Margin="5,-100,10,10">
                     <TextBox.Style>
                         <Style TargetType = "TextBox">
                             <Setter Property="Cursor" Value="IBeam"/>
@@ -510,7 +529,7 @@
                     <TextBox.Template>
                         <ControlTemplate TargetType="TextBox">
                             <Border
-                                    Height="110"
+                                    Height="100"
                                     CornerRadius="20"
                                     Background="{TemplateBinding Background}"
                                     BorderBrush="Gray"
@@ -538,7 +557,7 @@
                         </ControlTemplate>
                     </TextBox.Template>
                 </TextBox>
-                <Grid Grid.Row="7">
+                <Grid Grid.Row="23">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="350"/>
                         <ColumnDefinition/>
