@@ -86,6 +86,9 @@
 		<Resource Include="Res\Icons\ic_history_selected.png">
 			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
 		</Resource>
+		<Resource Include="Res\Icons\ic_uploadImage.png">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Resource>
 	</ItemGroup>
 
 	<!--IMAGES-->

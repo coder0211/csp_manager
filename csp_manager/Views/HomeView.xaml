@@ -71,7 +71,7 @@
                     >CS FOREST</TextBlock>
                 <Button x:Name="btnAllList"
                     Grid.Row="3" 
-                    Foreground="#333333"
+                    Foreground="#5FAF57"
                     FontWeight="Medium"
                     HorizontalContentAlignment="Left"                   
                     FontSize="16" Click="btnAllList_Click">
@@ -260,17 +260,7 @@
                                     </Grid>
                                 </Setter.Value>
                             </Setter>
-                            <Style.Triggers>
-                                <Trigger Property="IsPressed" Value="True">
-                                    <Trigger.EnterActions>
-                                        <BeginStoryboard>
-                                            <Storyboard>
-                                                <ColorAnimation Storyboard.TargetProperty="(Button.Foreground).(SolidColorBrush.Color)" To="#5FAF57"/>
-                                            </Storyboard>
-                                        </BeginStoryboard>
-                                    </Trigger.EnterActions>
-                                </Trigger>
-                            </Style.Triggers>
+                            
                         </Style>
                     </Button.Style>
                     <Button.Template>
@@ -367,10 +357,42 @@
                         </ControlTemplate>
                     </TextBox.Template>
                 </TextBox>
-                <Image Grid.Column="10"
-                       Height="25"
-                       Width="25"
-                       Source="pack://application:,,,/Res/Icons/ic_import.png"></Image>
+
+                <Button  x:Name="btnCart"
+                    Grid.Column="10"                   
+                    Foreground="#C4C4C4"
+                    FontWeight="Bold"
+                    HorizontalContentAlignment="Left"                  
+                    FontSize="16" Click="btnCart_Click" >
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                            <Setter Property="Content">
+                                <Setter.Value>
+                                    <Grid>
+                                        <Image Source="pack://application:,,,/Res/Icons/ic_import.png" Width="20" Height="20" />
+                                        
+                                    </Grid>
+                                </Setter.Value>
+                            </Setter>
+
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType ="Button">
+                            <Border    
+                        Height="40"
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="20">
+                                <ContentPresenter   
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
                 <Image Grid.Column="11"
                        HorizontalAlignment="Left"
                        Height="25"
