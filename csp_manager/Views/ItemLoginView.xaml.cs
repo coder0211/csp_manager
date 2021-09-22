@@ -18,8 +18,16 @@ namespace csp_manager.Views
     /// <summary>
     /// Interaction logic for ItemLoginView.xaml
     /// </summary>
+
+  
+
+
     public partial class ItemLoginView : UserControl
     {
+        private bool isMemorize;
+
+        public bool IsMemorize { get => isMemorize; set => isMemorize = value; }
+
         public ItemLoginView()
         {
             InitializeComponent();
@@ -35,10 +43,25 @@ namespace csp_manager.Views
 
         }
 
-        private void btnLogin(object sender, RoutedEventArgs e)
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
             Window mainWindow = Application.Current.MainWindow;
             mainWindow.Content = new VerifyEmailView();
+        }
+
+        private void btnMemorize_Click(object sender, RoutedEventArgs e)
+        {
+            IsMemorize = !IsMemorize;
+            if (isMemorize == true)
+            {
+                btnMemorize.Background = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+            }
+
+            else
+            {
+                btnMemorize.Background = new SolidColorBrush(Color.FromRgb(95, 175, 87));
+            }
+           
         }
     }
 }

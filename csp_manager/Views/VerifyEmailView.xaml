@@ -93,13 +93,13 @@
                         <RowDefinition/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <TextBlock Grid.Row="1"
+                    <TextBlock Grid.Row="2"
                                Grid.RowSpan="2"
                                HorizontalAlignment="Center"
-                               FontSize="30"
-                               Foreground="#606369"
+                               FontSize="25"
+                               Foreground="#5FAF57"
                                TextAlignment="Center"
-                               FontWeight="Thin"
+                               FontWeight="Medium"
                                Text="Xác nhận email">
                     </TextBlock>
                     <TextBox x:Name="txtVerifyEmail"
