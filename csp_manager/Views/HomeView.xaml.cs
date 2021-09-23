@@ -75,7 +75,6 @@ namespace csp_manager.Views
             this.DataContext = this;
             homeFrame.Content = new AllListingPlantView();
             IsShowDialog = Visibility.Hidden;
-            dialogFrame.Content = new AddItemView(this);
             IcPlant = "pack://application:,,,/Res/Icons/ic_plant_selected.png";
             IcStatistics = "pack://application:,,,/Res/Icons/ic_statistics.png";
             IcSetting = "pack://application:,,,/Res/Icons/ic_setting.png";
@@ -156,11 +155,13 @@ namespace csp_manager.Views
 
         private void btnCart_Click(object sender, RoutedEventArgs e)
         {
-            
+            dialogFrame.Content = new CartView(this);
+            IsShowDialog = Visibility.Visible;
         }
 
         private void btnImport_Click(object sender, RoutedEventArgs e)
         {
+            dialogFrame.Content = new AddItemView(this);
             IsShowDialog = Visibility.Visible;
         }
     }

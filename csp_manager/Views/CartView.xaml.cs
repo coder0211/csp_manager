@@ -20,8 +20,11 @@ namespace csp_manager.Views
     /// </summary>
     public partial class CartView : UserControl
     {
-        public CartView()
+
+        HomeView _homeView;
+        public CartView(HomeView homeView)
         {
+            _homeView = homeView;
             InitializeComponent();
         }
     }

@@ -37,11 +37,12 @@
                            VerticalAlignment="Center"/>
             </Border>
         </Grid>
-        <ScrollViewer Grid.ColumnSpan="2" Grid.Row="1">
+        <ScrollViewer Grid.ColumnSpan="2" Grid.Row="1" >
             <StackPanel>
                 <StackPanel>
                     <ItemsControl x:Name="ListViewProducts" ItemsSource="{Binding Product}">
                         <ItemsControl.ItemTemplate>
+                           
                             <DataTemplate>
                                 <Border Height="186"
                                     Width="350"
