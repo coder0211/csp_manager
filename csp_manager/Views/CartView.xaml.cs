@@ -31,5 +31,25 @@ namespace csp_manager.Views
         {
             _homeView.IsShowDialog = Visibility.Hidden;
         }
+
+        private void txtCustomerName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void txtPhoneNumber_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void txtCustomerLocation_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void txtCustomerNote_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
