@@ -27,5 +27,9 @@ namespace csp_manager.Views
             _homeView = homeView;
             InitializeComponent();
         }
+        private void TempBut_Click(object sender, RoutedEventArgs e)
+        {
+            _homeView.IsShowDialog = Visibility.Hidden;
+        }
     }
 }

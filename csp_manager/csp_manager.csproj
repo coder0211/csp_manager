@@ -94,6 +94,9 @@
 	<!--IMAGES-->
 	
 	<ItemGroup>
+		<Resource Include="Res\Images\image_bg_cart.png">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Resource>
 		<Resource Include="Res\Images\image_bg.png">
 			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
 		</Resource>
