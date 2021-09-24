@@ -36,7 +36,6 @@
                     <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
-                    <RowDefinition/>
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" Grid.RowSpan="3"
                            Text="Giỏ hàng"
@@ -78,6 +77,7 @@
                              BorderThickness="0"
                              Foreground="White"
                              CaretBrush="Gray"
+                             Margin="0 0 0 10"
                              >
                     <TextBox.Style>
                         <Style TargetType = "TextBox">
@@ -89,7 +89,7 @@
                         <ControlTemplate TargetType="TextBox">
                             <Border
                                             Padding="10 0 0 0"
-                                            Height="30"
+                                            Height="35"
                                             Width="238"
                                             CornerRadius="15"                                          
                                             BorderBrush="White"
@@ -123,7 +123,7 @@
                    FontWeight="Thin"
                    VerticalAlignment="Top"
                    HorizontalAlignment="Left"
-                   Margin="26 0 0 0"
+                   Margin="26 -5 0 0"
                    Foreground="White"
                    FontSize="14"/>
                 <TextBox x:Name="txtPhoneNumber"
@@ -137,7 +137,7 @@
                              BorderThickness="0"
                              Foreground="White"
                              CaretBrush="Gray"
-                             
+                             Margin="0 0 0 15"
                              >
                     <TextBox.Style>
                         <Style TargetType = "TextBox">
@@ -149,7 +149,7 @@
                         <ControlTemplate TargetType="TextBox">
                             <Border
                                             Padding="10 0 0 0"
-                                            Height="30"
+                                            Height="35"
                                             Width="238"
                                             CornerRadius="15"                                          
                                             BorderBrush="White"
@@ -183,7 +183,7 @@
                    FontWeight="Thin"
                    VerticalAlignment="Top"
                    HorizontalAlignment="Left"
-                   Margin="26 5 0 0"
+                   Margin="26 -5 0 0"
                    Foreground="White"
                    FontSize="14"/>
                 <TextBox x:Name="txtCustomerLocation"
@@ -196,7 +196,8 @@
                              TextWrapping="Wrap"
                              BorderThickness="0"
                              Foreground="White"
-                             CaretBrush="Gray"                             
+                             CaretBrush="Gray"     
+                            Margin="0 0 0 25"
                              >
                     <TextBox.Style>
                         <Style TargetType = "TextBox">
@@ -208,7 +209,7 @@
                         <ControlTemplate TargetType="TextBox">
                             <Border
                                             Padding="10 0 0 0"
-                                            Height="50"
+                                            Height="60"
                                             Width="238"
                                             CornerRadius="15"                                          
                                             BorderBrush="White"
@@ -242,7 +243,7 @@
                    FontWeight="Thin"
                    VerticalAlignment="Top"
                    HorizontalAlignment="Left"
-                   Margin="26 5 0 0"
+                   Margin="26 -15 0 0"
                    Foreground="White"
                    FontSize="14"/>
                 <TextBox x:Name="txtCustomerNote"
@@ -256,7 +257,7 @@
                              BorderThickness="0"
                              Foreground="White"
                              CaretBrush="Gray"
-                             
+                             Margin="0 0 0 45"
                              >
                     <TextBox.Style>
                         <Style TargetType = "TextBox">
@@ -268,7 +269,7 @@
                         <ControlTemplate TargetType="TextBox">
                             <Border
                                             Padding="10 0 0 0"
-                                            Height="80"
+                                            Height="85"
                                             Width="238"
                                             CornerRadius="15"                                          
                                             BorderBrush="White"
