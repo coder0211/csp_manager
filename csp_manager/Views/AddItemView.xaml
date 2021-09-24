@@ -8,7 +8,7 @@
              d:DesignHeight="568" d:DesignWidth="800">
     
     <Grid Background="WhiteSmoke">
-        <Border  Background="White" Margin="0 -40 0 0" CornerRadius="20" Height="530" Width="520">
+        <Border  Background="White" Margin="0 -40 0 0" CornerRadius="20" Height="530" Width="400">
         <Grid>
             <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
@@ -41,12 +41,12 @@
                    FontWeight="Bold"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Left"
-                   Margin="41 0 0 0"
+                   Margin="30 0 0 0"
                    Foreground="#739D6F"
                    FontSize="20"/>
         <StackPanel Grid.Row="10"
                     Grid.ColumnSpan="2"
-                    Margin="41,10,41,0">
+                    Margin="30,10,30,0">
                <Separator  VerticalAlignment="Center"
                            Height="0.5" 
                            Background="#8B8B8B" >
@@ -58,12 +58,12 @@
 
         <Grid Grid.Row="1" Grid.RowSpan="9">
              <Grid.ColumnDefinitions>
-                   <ColumnDefinition Width="210"/>
+                   <ColumnDefinition Width="150"/>
                    <ColumnDefinition/>
              </Grid.ColumnDefinitions>
 
         <Grid Grid.Column="0">
-                        <Border Margin="0 1 0 0" Width="130" Height="180"
+                        <Border Margin="0 1 0 0" Width="120" Height="180"
                                 CornerRadius="20" Background="#E5E5E5">
                             <Image Source="pack://application:,,,/Res/Icons/ic_uploadImage.png" Height="60" Width="50"/>
                         </Border>
@@ -159,7 +159,7 @@
                             FontWeight="DemiBold"
                             VerticalAlignment="Center"
                             HorizontalAlignment="Left"
-                            Margin="20 -10 0 0"
+                            Margin="10 -10 0 0"
                             Foreground="#959595"
                             FontSize="15"/>
                         </Grid>
@@ -178,7 +178,7 @@
                              BorderThickness="0"
                              Foreground="Gray"
                              CaretBrush="Gray"
-                             Margin="10,0,13,0">
+                             Margin="10,0,20,0">
                                 <TextBox.Style>
                                     <Style TargetType = "TextBox">
                                         <Setter Property="Cursor" Value="IBeam"/>
@@ -227,7 +227,7 @@
                              BorderThickness="0"
                              Foreground="Gray"
                              CaretBrush="Gray"
-                             Margin="-5,0,41,0">
+                             Margin="-15,0,41,0">
                                 <TextBox.Style>
                                     <Style TargetType = "TextBox">
                                         <Setter Property="Cursor" Value="IBeam"/>
@@ -285,7 +285,7 @@
                             FontWeight="DemiBold"
                             VerticalAlignment="Center"
                             HorizontalAlignment="Left"
-                            Margin="20 0 0 0"
+                            Margin="10 0 0 0"
                             Foreground="#959595"
                             FontSize="15"/>
                         </Grid>
@@ -304,7 +304,7 @@
                              BorderThickness="0"
                              Foreground="Gray"
                              CaretBrush="Gray"
-                             Margin="10,0,13,5">
+                             Margin="10,0,20,5">
                                 <TextBox.Style>
                                     <Style TargetType = "TextBox">
                                         <Setter Property="Cursor" Value="IBeam"/>
@@ -353,7 +353,7 @@
                              BorderThickness="0"
                              Foreground="Gray"
                              CaretBrush="Gray"
-                             Margin="0,0,41,5">
+                             Margin="-15,0,41,5">
                                 <TextBox.Style>
                                     <Style TargetType = "TextBox">
                                         <Setter Property="Cursor" Value="IBeam"/>
@@ -404,7 +404,7 @@
                    FontWeight="Thin"
                    VerticalAlignment="Top"
                    HorizontalAlignment="Left"
-                   Margin="49 10 0 0"
+                   Margin="40 5 0 0"
                    Foreground="#959595"
                    FontSize="12"/>
             
@@ -419,7 +419,7 @@
                              BorderThickness="0"
                              Foreground="Gray"
                              CaretBrush="Gray"
-                             Margin="41,0,41,15">
+                             Margin="30,0,40,15">
                     <TextBox.Style>
                         <Style TargetType = "TextBox">
                             <Setter Property="Cursor" Value="IBeam"/>
@@ -471,7 +471,7 @@
                              BorderThickness="0"
                              Foreground="Gray"
                              CaretBrush="Gray"
-                             Margin="41,0,41,8">
+                             Margin="30,0,40,8">
                     <TextBox.Style>
                         <Style TargetType = "TextBox">
                             <Setter Property="Cursor" Value="IBeam"/>
@@ -518,7 +518,7 @@
                    FontWeight="Thin"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Left"
-                   Margin="49 10 0 0"
+                   Margin="40 5 0 0"
                    Foreground="#959595"
                    FontSize="12"/>
             
@@ -533,7 +533,7 @@
                              BorderThickness="0"
                              Foreground="Gray"
                              CaretBrush="Gray"
-                             Margin="41,0,41,0">
+                             Margin="30,0,40,0">
                     <TextBox.Style>
                         <Style TargetType = "TextBox">
                             <Setter Property="Cursor" Value="IBeam"/>
@@ -575,11 +575,11 @@
             
         <Grid Grid.Row="23">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="300"/>
+                        <ColumnDefinition Width="260"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <Button   
-                        Margin="220,-15,0,0"
+                        Margin="150,-15,0,0"
                         Grid.Column="0"                       
                         Content="Hủy"
                         Foreground="White"
@@ -611,7 +611,7 @@
                         </Button.Template>
                     </Button>
                     <Button   
-                        Margin="-70,-15,0,0"
+                        Margin="-40,-15,0,0"
                         Grid.Column="1"                       
                         Content="Hoàn tất"
                         Foreground="White"
