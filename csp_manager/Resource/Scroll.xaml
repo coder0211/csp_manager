@@ -8,7 +8,7 @@
                 <ControlTemplate TargetType="{x:Type Thumb}">
                     <Border x:Name="rectangle"
                                SnapsToDevicePixels="True"
-                               Background="#D2EDCF"
+                               Background="LightGray"
                                CornerRadius="3"
                                Opacity="0.3"
                                Height="{TemplateBinding Height}"
@@ -34,7 +34,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ScrollBar}">
-                    <Grid x:Name="Bg" SnapsToDevicePixels="true" Background="#D2EDCF">
+                    <Grid x:Name="Bg" SnapsToDevicePixels="true" Background="Transparent">
                         <Border Padding="0 4">
                             <Track x:Name="PART_Track"
                             IsDirectionReversed="true"
