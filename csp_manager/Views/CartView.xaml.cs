@@ -26,6 +26,12 @@ namespace csp_manager.Views
         {
             _homeView = homeView;
             InitializeComponent();
+            lstCart.Items.Add(new { Name = "Hoa hồng", Quantity = "x50", Price = "1.750.000 vnđ" });
+            lstCart.Items.Add(new { Name = "Hoa hồng", Quantity = "x50", Price = "1.750.000 vnđ" });
+            lstCart.Items.Add(new { Name = "Hoa hồng", Quantity = "x50", Price = "1.750.000 vnđ" });
+            lstCart.Items.Add(new { Name = "Hoa hồng", Quantity = "x50", Price = "1.750.000 vnđ" });
+            lstCart.Items.Add(new { Name = "Hoa hồng", Quantity = "x50", Price = "1.750.000 vnđ" });
+            lstCart.Items.Add(new { Name = "Hoa hồng", Quantity = "x50", Price = "1.750.000 vnđ" });
         }
         private void TempBut_Click(object sender, RoutedEventArgs e)
         {
@@ -48,6 +54,24 @@ namespace csp_manager.Views
         }
 
         private void txtCustomerNote_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void btnContinuteBuy_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void btnComplete_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void lstCart_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
