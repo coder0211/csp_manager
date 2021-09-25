@@ -122,7 +122,7 @@ namespace csp_manager.Views
 
         private void btnHistory_Click(object sender, RoutedEventArgs e)
         {
-            homeFrame.NavigationService.Navigate(new SettingView());
+            homeFrame.NavigationService.Navigate(new HistoryView());
             btnAllList.Foreground = new SolidColorBrush(Color.FromRgb(20, 20, 20));
             btnStatistic.Foreground = new SolidColorBrush(Color.FromRgb(20, 20, 20));
             btnSetting.Foreground = new SolidColorBrush(Color.FromRgb(20, 20, 20));
