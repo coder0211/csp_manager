@@ -24,5 +24,25 @@ namespace csp_manager.Views
         {
             InitializeComponent();
         }
+
+        private void btnAcount_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnSecurity_Click(object sender, RoutedEventArgs e)
+        {
+            homeFrame.NavigationService.Navigate(new SecuritySettingView());
+        }
+
+        private void btnAppInfo_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnFeedBack_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
