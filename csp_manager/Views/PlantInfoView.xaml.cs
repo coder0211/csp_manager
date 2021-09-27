@@ -16,31 +16,31 @@ using System.Windows.Shapes;
 namespace csp_manager.Views
 {
     /// <summary>
-    /// Interaction logic for SettingView.xaml
+    /// Interaction logic for PlantInfoView.xaml
     /// </summary>
-    public partial class SettingView : UserControl
+    public partial class PlantInfoView : UserControl
     {
-        public SettingView()
+        public PlantInfoView()
         {
             InitializeComponent();
         }
 
-        private void btnAcount_Click(object sender, RoutedEventArgs e)
+        private void btnClose_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void btnSecurity_Click(object sender, RoutedEventArgs e)
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            homeFrame.NavigationService.Navigate(new SecuritySettingView());
+
         }
 
-        private void btnAppInfo_Click(object sender, RoutedEventArgs e)
+        private void txtQuantity_TextChanged(object sender, TextChangedEventArgs e)
         {
-           
+
         }
 
-        private void btnFeedBack_Click(object sender, RoutedEventArgs e)
+        private void txtTempPrice_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
