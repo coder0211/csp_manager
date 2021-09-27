@@ -114,16 +114,20 @@
             Margin="0,0,0,0"
             Foreground="#E04F5F"
             FontSize="18" Grid.Column="3" />
+
+        <!-- Trục X -->
         <Line
             X1="150" Y1="0"  
-            X2="150" Y2="263"  
+            X2="150" Y2="260"  
             Stroke="White"  
-            StrokeThickness="4" Grid.RowSpan="9" Grid.Row="7" />
+            StrokeThickness="4" Grid.RowSpan="8" Grid.Row="7" />
+        <!-- Trục Y -->
         <Line
             X1="150" Y1="0"  
             X2="718" Y2="0"  
             Stroke="White"  
-            StrokeThickness="5" Grid.Row="15" Grid.ColumnSpan="4" Margin="0,8,0,0" />
+            StrokeThickness="5" Grid.Row="15" Grid.ColumnSpan="4" />
+
         <TextBlock Grid.Row="6"
             Text="Doanh thu"
             FontWeight="Bold"
@@ -132,7 +136,8 @@
             Margin="0,0,0,0"
             Foreground="#3F9D36"
             FontSize="16" Grid.Column="0" />
-        <!-- Độ cao doanh thu -->
+
+        <!-- Biểu diễn trục Y: Độ cao doanh thu -->
         <TextBlock Grid.Row="15"
             Text="0"
             FontWeight="Bold"
@@ -141,7 +146,7 @@
             Margin="50,0,0,0"
             Foreground="Black"
             FontSize="18" Grid.Column="0" />
-        <!-- Biểu diễn trục X -->
+        <!-- Biểu diễn trục X: Các tháng -->
         <TextBlock Grid.Row="15"
             Text="1"
             FontWeight="Bold"
@@ -238,6 +243,23 @@
             Margin="-113,18,0,0"
             Foreground="Black"
             FontSize="18" Grid.Column="3" />
+
+        <!--<Canvas Grid.ColumnSpan="4" Margin="175,31,156,29" Grid.RowSpan="10" Grid.Row="6"/>-->
+        <ItemsControl ItemsSource="{Binding Lines}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Canvas/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Line X1="{Binding From.X}" Y1="{Binding From.Y}"
+                      X2="{Binding To.X}" Y2="{Binding To.Y}"
+                      Stroke="{Binding Stroke}" StrokeThickness="{Binding StrokeThickness}" />
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
         <Border BorderThickness="1" Grid.Row="17"
             Background="#97D590" Grid.Column="0" Grid.ColumnSpan="4" />
 
