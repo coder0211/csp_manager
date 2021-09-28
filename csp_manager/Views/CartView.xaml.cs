@@ -22,10 +22,13 @@ namespace csp_manager.Views
     {
 
         HomeView _homeView;
+
+       
         public CartView(HomeView homeView)
         {
             _homeView = homeView;
             InitializeComponent();
+            
             lstCart.Items.Add(new { Name = "Hoa hồng", Quantity = "x50", Price = "1.750.000 vnđ" });
             lstCart.Items.Add(new { Name = "Hoa hồng", Quantity = "x50", Price = "1.750.000 vnđ" });
             lstCart.Items.Add(new { Name = "Hoa hồng", Quantity = "x50", Price = "1.750.000 vnđ" });
@@ -58,22 +61,27 @@ namespace csp_manager.Views
 
         }
 
-        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        private void btnDeleteCart_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
         private void btnContinuteBuy_Click(object sender, RoutedEventArgs e)
         {
-
+            _homeView.IsShowDialog = Visibility.Hidden;
         }
         private void btnComplete_Click(object sender, RoutedEventArgs e)
-        {
-
+        {       
+           
         }
 
         private void lstCart_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void btnDeleteItem_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }
