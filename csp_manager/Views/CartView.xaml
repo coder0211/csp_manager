@@ -355,6 +355,7 @@
                         </Grid>
                             
                     </Border>
+
                     <Grid Grid.Row="1">
                         <ListView x:Name="lstCart" Background="Transparent"
                                   SelectionChanged="lstCart_SelectionChanged"
@@ -362,6 +363,7 @@
                                   ScrollViewer.CanContentScroll="False"
                                   BorderBrush="#FF45C8DC" 
                                   IsHitTestVisible="True">
+                            
                             <ListView.ItemContainerStyle>
                                 <Style TargetType="{x:Type ListViewItem}">
                                     <Setter Property="Focusable" Value="False"/>
@@ -435,19 +437,19 @@
                                                         HorizontalAlignment="Center"                  
                                                         Foreground="#E04F5F"
                                                         FontSize="16"/>
-                                                    <Button Grid.Column="10" >
+                                                    <Button Grid.Column="10" Click="btnDeleteItem_Click">
                                                         <Button.Style>
                                                             <Style TargetType="Button">
-                                                                <Setter Property="Background" Value="#E04F5F"/>
+                                                                <Setter Property="Content" Value="X"/>
                                                                 <Setter Property="Cursor" Value="Hand"/>
-                                                                <Setter Property="Content" Value ="X"/>
+                                                                <Setter Property="Background" Value="White"/>
                                                             </Style>
                                                         </Button.Style>
                                                         <Button.Template>
                                                             <ControlTemplate TargetType ="Button">
                                                                 <Border    
-                                                                    Height="16"
-                                                                    Width="16"                                          
+                                                                    Height="20"
+                                                                    Width="20"                                          
                                                                     Background="{TemplateBinding Background}">
                                                                     <ContentPresenter   
                                                                     HorizontalAlignment="Center"
@@ -524,7 +526,7 @@
                                     Content="Xóa bỏ"
                                     Foreground="White"
                                     FontWeight="Bold"                        
-                                    FontSize="16" Click="btnDelete_Click"
+                                    FontSize="16" Click="btnDeleteCart_Click"
                                     Margin="-10 -40 0 0">
                                 <Button.Style>
                                     <Style TargetType="Button">
@@ -619,7 +621,9 @@
                 </Grid>
                 
             </Border>
+            
         </Grid>
+        
         </Border>
  
 </UserControl>
