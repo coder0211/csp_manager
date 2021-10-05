@@ -18,7 +18,7 @@ namespace csp_manager.Views
     /// <summary>
     /// Interaction logic for ConfirmPasswordView.xaml
     /// </summary>
-    public partial class ConfirmPasswordView : UserControl
+    public partial class ConfirmPasswordView : Window
     {
         public ConfirmPasswordView()
         {

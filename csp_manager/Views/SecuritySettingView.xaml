@@ -76,11 +76,7 @@
                         <Style TargetType="Button">
                             <Setter Property="Background" Value="White"/>
                             <Setter Property="Cursor" Value="Hand"/>
-                            <Style.Triggers>
-                                <Trigger Property="IsMouseCaptured" Value="True">
-                                    <Setter Property="Background" Value="#BFDFBC"/>
-                                </Trigger>
-                            </Style.Triggers>
+                           
                         </Style>
                     </Button.Style>
                     <Button.Template>

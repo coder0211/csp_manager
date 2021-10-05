@@ -64,5 +64,10 @@ namespace csp_manager.Views
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        private void btnAll_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -18,7 +18,7 @@ namespace csp_manager.Views
     /// <summary>
     /// Interaction logic for CartView.xaml
     /// </summary>
-    public partial class CartView : UserControl
+    public partial class CartView : Window
     {
 
         HomeView _homeView;
@@ -36,6 +36,9 @@ namespace csp_manager.Views
             lstCart.Items.Add(new { Name = "Hoa hồng", Quantity = "x50", Price = "1.750.000 vnđ" });
             lstCart.Items.Add(new { Name = "Hoa hồng", Quantity = "x50", Price = "1.750.000 vnđ" });
         }
+
+       
+
         private void TempBut_Click(object sender, RoutedEventArgs e)
         {
             _homeView.IsShowDialog = Visibility.Hidden;
@@ -68,7 +71,7 @@ namespace csp_manager.Views
         }
         private void btnContinuteBuy_Click(object sender, RoutedEventArgs e)
         {
-            _homeView.IsShowDialog = Visibility.Hidden;
+            this.Close();
         }
         private void btnComplete_Click(object sender, RoutedEventArgs e)
         {

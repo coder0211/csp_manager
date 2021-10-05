@@ -8,6 +8,7 @@
              WindowStyle="None"
              ResizeMode="NoResize"
              Background="Transparent"
+             AllowsTransparency="True"
              WindowStartupLocation ="CenterScreen"
              Height="250" Width="350">
     <Border CornerRadius="20" Background="White">
