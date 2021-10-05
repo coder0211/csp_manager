@@ -20,6 +20,8 @@ namespace csp_manager.Views
     /// </summary>
     public partial class SecuritySettingView : UserControl
     {
+        private bool isMemorize;
+        public bool IsMemorize { get => isMemorize; set => isMemorize = value; }
         public SecuritySettingView()
         {
             InitializeComponent();
@@ -27,7 +29,16 @@ namespace csp_manager.Views
 
         private void btnMemorize_Click(object sender, RoutedEventArgs e)
         {
+            IsMemorize = !IsMemorize;
+            if (isMemorize == true)
+            {
+                btnMemorize.Background = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+            }
 
+            else
+            {
+                btnMemorize.Background = new SolidColorBrush(Color.FromRgb(20, 20, 20));
+            }
         }
     }
 }

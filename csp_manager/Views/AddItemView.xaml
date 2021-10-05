@@ -1,14 +1,19 @@
-﻿<UserControl x:Class="csp_manager.Views.AddItemView"
+﻿<Window x:Class="csp_manager.Views.AddItemView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:csp_manager.Views"
-             mc:Ignorable="d"           
-             Height="568" Width="800">
+             mc:Ignorable="d"   
+             WindowStyle="None"
+             ResizeMode="NoResize"
+             AllowsTransparency="True"
+             Background="Transparent"
+             WindowStartupLocation ="CenterScreen"
+             Height="560" Width="400">
 
-    <Grid Background="#D2EDCF">
-        <Border  Background="White" Margin="0 -40 0 0" CornerRadius="20" Height="530" Width="400">
+    <Border CornerRadius="20">
+        <Border  Background="White" Margin="0 30 0 0" CornerRadius="20" Height="530" Width="400">
         <Grid>
             <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
@@ -648,5 +653,5 @@
             </Grid>
         </Border>
     
-    </Grid>
-</UserControl>
+    </Border>
+</Window>

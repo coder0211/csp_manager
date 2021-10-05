@@ -19,7 +19,7 @@ namespace csp_manager.Views
     /// <summary>
     /// Interaction logic for AddItemView.xaml
     /// </summary>
-    public partial class AddItemView : UserControl
+    public partial class AddItemView : Window
     {
         HomeView _homeView;
         public AddItemView(HomeView homeView)
@@ -69,12 +69,12 @@ namespace csp_manager.Views
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
-            _homeView.IsShowDialog = Visibility.Hidden;
+            this.Close();
         }
 
         private void btnCompleted_Click(object sender, RoutedEventArgs e)
         {
-            _homeView.IsShowDialog = Visibility.Hidden;
+            this.Close();
         }
     }
 }
