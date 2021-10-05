@@ -19,7 +19,7 @@ namespace csp_manager.Views
     /// <summary>
     /// Interaction logic for HomeView.xaml
     /// </summary>
-    public partial class HomeView : UserControl, INotifyPropertyChanged
+    public partial class HomeView : UserControl , INotifyPropertyChanged
     {
         private Visibility isShowDialog;
         private String icPlant;
@@ -135,11 +135,8 @@ namespace csp_manager.Views
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
         {
-            
-            //btnAllList.Foreground = new SolidColorBrush(Color.FromRgb(20, 20, 20));
-            //btnStatistic.Foreground = new SolidColorBrush(Color.FromRgb(20, 20, 20));
-            //btnHistory.Foreground = new SolidColorBrush(Color.FromRgb(20, 20, 20));
-            //btnSetting.Foreground = new SolidColorBrush(Color.FromRgb(20, 20, 20));
+            Window Logout = new LogoutWarning();
+            Logout.ShowDialog();
         }
 
         private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)

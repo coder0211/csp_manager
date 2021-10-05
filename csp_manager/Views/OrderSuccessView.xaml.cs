@@ -18,8 +18,8 @@ namespace csp_manager.Views
     /// <summary>
     /// Interaction logic for OrderSuccessView.xaml
     /// </summary>
-    public partial class OrderSuccessView : UserControl
-    {
+    public partial class OrderSuccessView : Window
+    { 
         public OrderSuccessView()
         {
             InitializeComponent();
@@ -27,11 +27,11 @@ namespace csp_manager.Views
 
         private void btnContinueBuy_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
     }
 }
