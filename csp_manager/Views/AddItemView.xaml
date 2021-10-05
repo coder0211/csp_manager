@@ -4,10 +4,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:csp_manager.Views"
-             mc:Ignorable="d" 
-             d:DesignHeight="568" d:DesignWidth="800">
-    
-    <Grid Background="WhiteSmoke">
+             mc:Ignorable="d"           
+             Height="568" Width="800">
+
+    <Grid Background="#D2EDCF">
         <Border  Background="White" Margin="0 -40 0 0" CornerRadius="20" Height="530" Width="400">
         <Grid>
             <Grid.RowDefinitions>

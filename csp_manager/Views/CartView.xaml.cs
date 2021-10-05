@@ -63,15 +63,17 @@ namespace csp_manager.Views
 
         private void btnDeleteCart_Click(object sender, RoutedEventArgs e)
         {
-            
+            Window deleteCart = new DeleteCartWaring();
+            deleteCart.ShowDialog();
         }
         private void btnContinuteBuy_Click(object sender, RoutedEventArgs e)
         {
             _homeView.IsShowDialog = Visibility.Hidden;
         }
         private void btnComplete_Click(object sender, RoutedEventArgs e)
-        {       
-           
+        {
+            Window Complete = new OrderSuccessView();
+            Complete.ShowDialog();
         }
 
         private void lstCart_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -81,7 +83,8 @@ namespace csp_manager.Views
 
         private void btnDeleteItem_Click(object sender, RoutedEventArgs e)
         {
-            
+            Window deleteItem = new DeleteOneItemWarningView();
+            deleteItem.ShowDialog();
         }
     }
 }

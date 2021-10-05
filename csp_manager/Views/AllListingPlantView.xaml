@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:csp_manager.Views" 
              d:DataContext="{d:DesignInstance Type=local:AllListingPlantView}"
              mc:Ignorable="d" 
-             d:DesignHeight="568" d:DesignWidth="800">
+             Height="568" Width="800"
+             >
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>

@@ -18,20 +18,23 @@ namespace csp_manager.Views
     /// <summary>
     /// Interaction logic for LogoutWarning.xaml
     /// </summary>
-    public partial class LogoutWarning : UserControl
+    public partial class LogoutWarning : Window
     {
+        
         public LogoutWarning()
         {
+            
             InitializeComponent();
+           
         }
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
         private void btnNoLogout_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
     }
 }

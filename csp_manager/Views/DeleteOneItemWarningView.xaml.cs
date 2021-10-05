@@ -18,7 +18,7 @@ namespace csp_manager.Views
     /// <summary>
     /// Interaction logic for DeleteOneItemWarningView.xaml
     /// </summary>
-    public partial class DeleteOneItemWarningView : UserControl
+    public partial class DeleteOneItemWarningView : Window
     {
         public DeleteOneItemWarningView()
         {
@@ -27,12 +27,12 @@ namespace csp_manager.Views
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
 
         private void btnNoDelete_Click(object sender, RoutedEventArgs e)
         {
-            
+            this.Close();
         }
     }
 }
