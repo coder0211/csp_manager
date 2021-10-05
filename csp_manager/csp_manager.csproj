@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AB93C7BB-B8C4-42E6-8247-5E9272DCD7CB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>csp_manager</RootNamespace>
+    <AssemblyName>csp_manager</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="XamlAnimatedGif, Version=2.0.0.0, Culture=neutral, PublicKeyToken=20a987d8023d9690, processorArchitecture=MSIL">
+      <HintPath>..\packages\XamlAnimatedGif.2.0.1\lib\net45\XamlAnimatedGif.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="DataContext\CSPDbModel.cs" />
+    <Compile Include="DataContext\invoices.cs" />
+    <Compile Include="DataContext\invoice_details.cs" />
+    <Compile Include="DataContext\plants.cs" />
+    <Compile Include="DataContext\plant_type.cs" />
+    <Compile Include="DataContext\sysdiagrams.cs" />
+    <Compile Include="DataContext\users.cs" />
+    <Compile Include="Product.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="Views\AddItemView.xaml.cs">
+      <DependentUpon>AddItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AllListingPlantView.xaml.cs">
+      <DependentUpon>AllListingPlantView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CartView.xaml.cs">
+      <DependentUpon>CartView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConfirmPasswordView.xaml.cs">
+      <DependentUpon>ConfirmPasswordView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DeleteCartWaring.xaml.cs">
+      <DependentUpon>DeleteCartWaring.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DeleteOneItemWarningView.xaml.cs">
+      <DependentUpon>DeleteOneItemWarningView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditItemView.xaml.cs">
+      <DependentUpon>EditItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HistoryView.xaml.cs">
+      <DependentUpon>HistoryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HomeView.xaml.cs">
+      <DependentUpon>HomeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ItemLoginView.xaml.cs">
+      <DependentUpon>ItemLoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ItemRegisterView.xaml.cs">
+      <DependentUpon>ItemRegisterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LogoutWarning.xaml.cs">
+      <DependentUpon>LogoutWarning.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OrderSuccessView.xaml.cs">
+      <DependentUpon>OrderSuccessView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PlantInfoView.xaml.cs">
+      <DependentUpon>PlantInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PopUpAllView.xaml.cs">
+      <DependentUpon>PopupAllView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecuritySettingView.xaml.cs">
+      <DependentUpon>SecuritySettingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingView.xaml.cs">
+      <DependentUpon>SettingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StatisticView.xaml.cs">
+      <DependentUpon>StatisticView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VerifyEmailView.xaml.cs">
+      <DependentUpon>VerifyEmailView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Resource\Scroll.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AddItemView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AllListingPlantView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CartView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ConfirmPasswordView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DeleteCartWaring.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DeleteOneItemWarningView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\EditItemView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\HistoryView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\HomeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ItemLoginView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ItemRegisterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\LoginView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\LogoutWarning.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\OrderSuccessView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PlantInfoView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PopupAllView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SecuritySettingView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SettingView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\StatisticView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\VerifyEmailView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Resource Include="Res\Fonts\Kanit-Black.ttf" />
+    <Resource Include="Res\Fonts\Kanit-BlackItalic.ttf" />
+    <Resource Include="Res\Fonts\Kanit-Bold.ttf" />
+    <Resource Include="Res\Fonts\Kanit-BoldItalic.ttf" />
+    <Resource Include="Res\Fonts\Kanit-ExtraBold.ttf" />
+    <Resource Include="Res\Fonts\Kanit-ExtraBoldItalic.ttf" />
+    <Resource Include="Res\Fonts\Kanit-ExtraLight.ttf" />
+    <Resource Include="Res\Fonts\Kanit-ExtraLightItalic.ttf" />
+    <Resource Include="Res\Fonts\Kanit-Italic.ttf" />
+    <Resource Include="Res\Fonts\Kanit-Light.ttf" />
+    <Resource Include="Res\Fonts\Kanit-LightItalic.ttf" />
+    <Resource Include="Res\Fonts\Kanit-Medium.ttf" />
+    <Resource Include="Res\Fonts\Kanit-MediumItalic.ttf" />
+    <Resource Include="Res\Fonts\Kanit-Regular.ttf" />
+    <Resource Include="Res\Fonts\Kanit-SemiBold.ttf" />
+    <Resource Include="Res\Fonts\Kanit-SemiBoldItalic.ttf" />
+    <Resource Include="Res\Fonts\Kanit-Thin.ttf" />
+    <Resource Include="Res\Fonts\Kanit-ThinItalic.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Animation_PackMan.gif" />
+    <Resource Include="Resources\ani_Loading.gif" />
+    <Resource Include="Res\Icons\ic_back.png" />
+    <Resource Include="Res\Icons\ic_cart.png" />
+    <Resource Include="Res\Icons\ic_deleteItem.png" />
+    <Resource Include="Res\Icons\ic_exit.png" />
+    <Resource Include="Res\Icons\ic_history.png" />
+    <Resource Include="Res\Icons\ic_history_selected.png" />
+    <Resource Include="Res\Icons\ic_import.png" />
+    <Resource Include="Res\Icons\ic_logo.png" />
+    <Resource Include="Res\Icons\ic_logo_white.png" />
+    <Resource Include="Res\Icons\ic_orderSuccess.png" />
+    <Resource Include="Res\Icons\ic_plant.png" />
+    <Resource Include="Res\Icons\ic_plant_selected.png" />
+    <Resource Include="Res\Icons\ic_rubWarning.png" />
+    <Resource Include="Res\Icons\ic_search.png" />
+    <Resource Include="Res\Icons\ic_setting.png" />
+    <Resource Include="Res\Icons\ic_setting_selected.png" />
+    <Resource Include="Res\Icons\ic_statistics.png" />
+    <Resource Include="Res\Icons\ic_statistics_selected.png" />
+    <Resource Include="Res\Icons\ic_uploadImage.png" />
+    <Resource Include="Res\Icons\ic_Warning.png" />
+    <Resource Include="Res\Images\image_bg.png" />
+    <Resource Include="Res\Images\image_bg_cart.png" />
+    <Resource Include="Res\Images\image_bg_home.png" />
+    <Resource Include="Res\Images\image_demo.jpg" />
+    <Resource Include="Res\Images\img_bg_plant.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
