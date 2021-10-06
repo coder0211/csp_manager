@@ -1,0 +1,10 @@
+﻿IMGUR.COM:
+https://api.imgur.com/oauth2/authorize?client_id=e3ceb3492ab989f&response_type=token
+
+#Client ID: 1bf895ef58c998f
+#Client secret: 039cc2500104373c1b1640a3c7be800662dda226
+
+Client ID: e3ceb3492ab989f
+Client secret: 7bd00c04f8a051c9f1e4754017367f4a201181de
+
+access_token=3c373ccca908274966051fcfa0ad8fe0ba9c3feb&expires_in=315360000&token_type=bearer&refresh_token=9e8f569d3e7bbcab053c60a71fbab33cca6c6aef&account_username=phatvphat&account_id=22862549
