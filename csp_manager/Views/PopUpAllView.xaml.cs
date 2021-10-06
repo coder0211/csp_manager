@@ -63,5 +63,10 @@ namespace csp_manager.Views
             btnFruitTrees.Foreground = new SolidColorBrush(Color.FromRgb(20, 20, 20));
             btnStocking.Foreground = new SolidColorBrush(Color.FromRgb(20, 20, 20));
         }
+
+        private void btnDeletePopUp_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
