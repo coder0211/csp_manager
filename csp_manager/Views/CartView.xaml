@@ -368,7 +368,7 @@
                                   ScrollViewer.CanContentScroll="False"
                                   BorderBrush="#FF45C8DC" 
                                   IsHitTestVisible="True">
-                            
+
                             <ListView.ItemContainerStyle>
                                 <Style TargetType="{x:Type ListViewItem}">
                                     <Setter Property="Focusable" Value="False"/>
@@ -467,13 +467,12 @@
                                                 </Grid>
                                             </Border>
                                         </Grid>
-                                        
+
                                     </DockPanel>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
-                          
-                           
+
                     </Grid>
                     <Border Grid.Row="2">
                         <Grid>

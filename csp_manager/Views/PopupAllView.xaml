@@ -9,8 +9,9 @@
         ResizeMode="NoResize"
         AllowsTransparency="True"
         Background="Transparent"
-        WindowStartupLocation ="CenterScreen"
-        Height="250" Width="350">
+        WindowStartupLocation ="Manual"
+        Left="1265" Top="240"
+        Height="250" Width="270">
     <Border CornerRadius="20" Background="#FFFFFF" >
         <Grid>
             <Grid.RowDefinitions>
@@ -60,7 +61,7 @@
                         <Border>
                             <ContentPresenter   
                                     HorizontalAlignment="Left"
-                                    Margin="46 0 0 0"
+                                    Margin="30 0 0 0"
                                     VerticalAlignment="Center"/>
                         </Border>
                     </ControlTemplate>
@@ -96,7 +97,7 @@
                         <Border>
                             <ContentPresenter   
                                     HorizontalAlignment="Left"
-                                    Margin="46 0 0 0"
+                                    Margin="30 0 0 0"
                                     VerticalAlignment="Center"/>
                         </Border>
                     </ControlTemplate>
@@ -132,7 +133,7 @@
                         <Border>
                             <ContentPresenter   
                                     HorizontalAlignment="Left"
-                                    Margin="46 0 0 0"
+                                    Margin="30 0 0 0"
                                     VerticalAlignment="Center"/>
                         </Border>
                     </ControlTemplate>
@@ -168,7 +169,7 @@
                         <Border>
                             <ContentPresenter   
                                     HorizontalAlignment="Left"
-                                    Margin="46 0 0 0"
+                                    Margin="30 0 0 0"
                                     VerticalAlignment="Center"/>
                         </Border>
                     </ControlTemplate>
@@ -204,7 +205,7 @@
                         <Border>
                             <ContentPresenter   
                                     HorizontalAlignment="Left"
-                                    Margin="46 0 0 0"
+                                    Margin="30 0 0 0"
                                     VerticalAlignment="Center"/>
                         </Border>
                     </ControlTemplate>
@@ -213,7 +214,7 @@
             <Button Grid.RowSpan="3" Width="40" Height="30" 
                     x:Name="btnDeletePopUp"
                     Click="btnDeletePopUp_Click"
-                    HorizontalAlignment="Center" Margin="250 0 0 0">
+                    HorizontalAlignment="Center" Margin="220 0 0 0">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Background" Value="Transparent"/>

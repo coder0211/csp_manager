@@ -20,55 +20,33 @@ namespace csp_manager.Views
     /// <summary>
     /// Interaction logic for AllListingPlantView.xaml
     /// </summary>
-    public partial class AllListingPlantView : UserControl, INotifyPropertyChanged
+    public partial class AllListingPlantView : UserControl
     {
-
-        private Visibility isShowLoading;
-
+       
         public AllListingPlantView()
         {
             InitializeComponent();
-            this.DataContext = this;
-            isShowLoading = Visibility.Hidden;
-            var products = GetProducts();
-            if (products.Count > 0)
-            {
-                ListViewProducts.ItemsSource = products;
-            }
+            lstAllPlant.Items.Add(new { PlantName = "Hoa lan", NumberRemaining = 150000, NumberSell = 2000, Supplier = "Vườn hoa nhà Hòa", Price = 150000 });
+            lstAllPlant.Items.Add(new { PlantName = "Hoa hồng", NumberRemaining = 80000, NumberSell = 2000, Supplier = "Vườn hoa nhà Hòa", Price = 80000 });
+            lstAllPlant.Items.Add(new { PlantName = "Hoa lan", NumberRemaining = 150000, NumberSell = 2000, Supplier = "Vườn hoa nhà Hòa", Price = 150000 });
+            lstAllPlant.Items.Add(new { PlantName = "Hoa cúc", NumberRemaining = 150000, NumberSell = 2000, Supplier = "Vườn hoa nhà Hòa", Price = 150000 });
+            lstAllPlant.Items.Add(new { PlantName = "Hoa bưởi", NumberRemaining = 150000, NumberSell = 2000, Supplier = "Vườn hoa nhà Hòa", Price = 150000 });
+            lstAllPlant.Items.Add(new { PlantName = "Hoa hướng dương", NumberRemaining = 150000, NumberSell = 2000, Supplier = "Vườn hoa nhà Hòa", Price = 150000 });
         }
-
-        private List<Product> GetProducts()
-        {
-            return new List<Product>()
-            {
-                new Product("pack://application:,,,/Res/Images/image_demo.jpg","Hoa Hồng",1000,10000,1000),
-                new Product("pack://application:,,,/Res/Images/image_demo.jpg","Hoa Hồng 1",2000,11000,2000),
-                new Product("pack://application:,,,/Res/Images/image_demo.jpg","Hoa Hồng 2",3000,12000,3000),
-                new Product("pack://application:,,,/Res/Images/image_demo.jpg","Hoa Hồng 3",4000,13000,4000),
-                new Product("pack://application:,,,/Res/Images/image_demo.jpg","Hoa Hồng 4",5000,14000,5000),
-                new Product("pack://application:,,,/Res/Images/image_demo.jpg","Hoa Hồng 5",6000,15000,6000)
-            };
-        }
-
-        public Visibility IsShowLoading
-        {
-            get => isShowLoading; set
-            {
-                isShowLoading = value;
-                OnPropertyChanged("isShowLoading");
-            }
-        }
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void OnPropertyChanged(string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
         private void btnAll_Click(object sender, RoutedEventArgs e)
         {
             Window All = new PopUpAllView();
             All.ShowDialog();
+        }
+
+        private void btnAddToCart_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void lstAllPlant_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
