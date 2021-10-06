@@ -49,6 +49,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -73,7 +74,9 @@
     <Compile Include="DataContext\plant_type.cs" />
     <Compile Include="DataContext\sysdiagrams.cs" />
     <Compile Include="DataContext\users.cs" />
+    <Compile Include="DataQuery\QueryData.cs" />
     <Compile Include="Product.cs" />
+    <Compile Include="UploadImage\Imgur.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Views\AddItemView.xaml.cs">
       <DependentUpon>AddItemView.xaml</DependentUpon>
@@ -303,6 +306,9 @@
     <Resource Include="Res\Images\image_bg_home.png" />
     <Resource Include="Res\Images\image_demo.jpg" />
     <Resource Include="Res\Images\img_bg_plant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="gigido.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
