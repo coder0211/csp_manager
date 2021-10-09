@@ -154,8 +154,8 @@ namespace csp_manager.Views
         {
             //dialogFrame.Content = new CartView(this);
             //IsShowDialog = Visibility.Visible;
-            Window Cart = new CartView(this);
-            Cart.ShowDialog();
+            Window CartNoItem = new CartNoItemView(this);
+            CartNoItem.ShowDialog();
         }
 
         private void btnImport_Click(object sender, RoutedEventArgs e)

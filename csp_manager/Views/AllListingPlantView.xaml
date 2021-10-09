@@ -342,6 +342,30 @@
                                         Foreground="#000000"
                                         Margin="-40 0 0 0"
                                         FontSize="18"/>
+                                        <Button x:Name="btnEditInfo"
+                                        Grid.Column="9" Grid.ColumnSpan="2"
+                                        Grid.Row="1" Grid.RowSpan="4"
+                                        Height="30" Width="30"
+                                        Click="btnEditInfo_Click"
+                                        Background="White"
+                                        >
+                                            <Button.Style>
+                                                <Style TargetType="Button">
+                                                    <Setter Property="Background" Value="White"/>
+                                                    <Setter Property="Cursor" Value="Hand"/>
+                                                </Style>
+                                            </Button.Style>
+                                            <Button.Template>
+                                                <ControlTemplate TargetType ="Button">
+                                                    <Border    
+                                                        Height="30"
+                                                        Width="30"                                            
+                                                        Background="{TemplateBinding Background}">
+                                                        <Image Source="pack://application:,,,/Res/Icons/ic_edit.png"/>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </Button.Template>
+                                        </Button>
                                 <Button x:Name="btnAddToCart"
                                     Grid.Column="7" Grid.ColumnSpan="3"
                                     Grid.Row="8" Grid.RowSpan="3"

@@ -41,12 +41,19 @@ namespace csp_manager.Views
 
         private void btnAddToCart_Click(object sender, RoutedEventArgs e)
         {
-
+            Window infoItemAdd = new PlantInfoView();
+            infoItemAdd.ShowDialog();
         }
 
         private void lstAllPlant_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void btnEditInfo_Click(object sender, RoutedEventArgs e)
+        {
+            Window edit = new EditInfoView();
+            edit.ShowDialog();
         }
     }
 }
