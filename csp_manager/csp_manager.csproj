@@ -84,6 +84,9 @@
     <Compile Include="Views\AllListingPlantView.xaml.cs">
       <DependentUpon>AllListingPlantView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\CartNoItemView.xaml.cs">
+      <DependentUpon>CartNoItemView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CartView.xaml.cs">
       <DependentUpon>CartView.xaml</DependentUpon>
     </Compile>
@@ -161,6 +164,10 @@
     <Page Include="Views\AllListingPlantView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CartNoItemView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CartView.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -309,6 +316,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="gigido.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\Icons\ic_CartNoItem.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
