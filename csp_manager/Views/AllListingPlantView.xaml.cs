@@ -48,5 +48,11 @@ namespace csp_manager.Views
         {
 
         }
+
+        private void btnEditInfo_Click(object sender, RoutedEventArgs e)
+        {
+            Window edit = new EditInfoView();
+            edit.ShowDialog();
+        }
     }
 }

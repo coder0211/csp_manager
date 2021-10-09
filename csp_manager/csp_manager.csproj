@@ -99,8 +99,14 @@
     <Compile Include="Views\DeleteOneItemWarningView.xaml.cs">
       <DependentUpon>DeleteOneItemWarningView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\EditInfoView.xaml.cs">
+      <DependentUpon>EditInfoView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\EditItemView.xaml.cs">
       <DependentUpon>EditItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditSuccessView.xaml.cs">
+      <DependentUpon>EditSuccessView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\HistoryView.xaml.cs">
       <DependentUpon>HistoryView.xaml</DependentUpon>
@@ -185,9 +191,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\EditInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\EditItemView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\EditSuccessView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\HistoryView.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -319,6 +333,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Res\Icons\ic_CartNoItem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\Icons\ic_edit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

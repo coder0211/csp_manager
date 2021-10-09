@@ -19,7 +19,8 @@ namespace csp_manager.Views
     /// </summary>
     public partial class CartNoItemView : Window
     {
-        public CartNoItemView()
+        HomeView _homeView;
+        public CartNoItemView(HomeView homeView)
         {
             InitializeComponent();
         }
