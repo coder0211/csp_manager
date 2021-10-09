@@ -38,7 +38,7 @@ namespace csp_manager.UploadImage
                 byte[] responseArray = w.UploadValues("https://api.imgur.com/3/image", Keys);
                 dynamic result = Encoding.ASCII.GetString(responseArray);
 
-                System.Text.RegularExpressions.Regex reg = new System.Text.RegularExpressions.Regex("link\":\"(.*?)\"");
+                Regex reg = new Regex("link\":\"(.*?)\"");
                 Match match = reg.Match(result);
                 string url = match.ToString().Replace("link\":\"", "").Replace("\"", "").Replace("\\/", "/");
                 return url;
