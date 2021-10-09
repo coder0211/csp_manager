@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace csp_manager.DataQuery
 {
-    class PlantTypeDTO
+    public class PlantTypeDTO
     {
         public int pt_id { get; set; }
         public string pt_name { get; set; }
