@@ -498,15 +498,38 @@
                                     Height="40" Width="180"
                                     CornerRadius="20" Background="LightGray"
                                     Margin="-40 -10 0 0">
-                                <TextBlock      
-                                Grid.ColumnSpan="3"
-                                Text="7.000.000 vnđ"
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                
+                                <TextBlock     
+                                    Grid.Column="0"
+                                    Grid.ColumnSpan="5"
+                                Text="7.000.000"
                                 FontWeight="Bold"
                                 VerticalAlignment="Center"
                                 HorizontalAlignment="Center"
                                 Margin="0 0 0 0"
                                 Foreground="#E04F5F"
+                                FontSize="22"/>
+                                <TextBlock    
+                                Grid.Column="5"
+                                Grid.ColumnSpan="3"
+                                Text=" vnđ"
+                                FontWeight="Bold"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Left"
+                                Margin="0 0 0 0"
+                                Foreground="#E04F5F"
                                 FontSize="20"/>
+                                </Grid>
                             </Border>
                         </Grid>
                     </Border>

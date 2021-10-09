@@ -9,7 +9,6 @@
              Height="568" Width="800"
              >
     <Grid>
-        
         <Grid.RowDefinitions>
             <RowDefinition Height="75"/>
             <RowDefinition/>
@@ -301,7 +300,7 @@
                                          FontSize="18"/>
                                 <TextBlock Grid.Column="7" Grid.ColumnSpan="2"
                                         Grid.Row="4" Grid.RowSpan="3"
-                                        Text ="{Binding Price}"
+                                        Text ="{Binding Supplier}"
                                         FontWeight="Regular"
                                         VerticalAlignment="Center"
                                         HorizontalAlignment="Left" 
