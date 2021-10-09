@@ -18,7 +18,7 @@ namespace csp_manager.Views
     /// <summary>
     /// Interaction logic for PlantInfoView.xaml
     /// </summary>
-    public partial class PlantInfoView : UserControl
+    public partial class PlantInfoView : Window
     {
         public PlantInfoView()
         {
@@ -27,12 +27,12 @@ namespace csp_manager.Views
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
 
         private void txtQuantity_TextChanged(object sender, TextChangedEventArgs e)
