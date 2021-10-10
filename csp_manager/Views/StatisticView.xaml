@@ -47,18 +47,32 @@
             Stroke="#5FAF57"  
             StrokeThickness="3" Grid.RowSpan="1" Grid.Row="1" />
 
-        <Polygon Points="10, 0 20, 20, 0, 20" Fill="#97D590" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.RowSpan="1" Margin="0,0,0,0" />
+        <Button Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.RowSpan="1" Margin="0,0,0,0"
+            Click="btnYearUp_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Polygon Points="10, 0 20, 20, 0, 20" Fill="#97D590" />
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
         <Border BorderThickness="1" Grid.Row="3"
             CornerRadius="20,20,20,20" Background="white" Grid.Column="0" Grid.RowSpan="2" Margin="60,10,60,10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
         <TextBlock Grid.Row="3"
-            Text="2002"
+            Name="txtYear"
             FontWeight="Bold"
             VerticalAlignment="Center"
             HorizontalAlignment="Center"
             Margin="0,0,0,0"
             Foreground="Black"
-            FontSize="18" Grid.Column="0" Grid.RowSpan="2" />
-        <Polygon Points="0, 0 10, 20, 20, 0" Fill="#97D590" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.RowSpan="1" Margin="0,0,0,0" />
+            FontSize="18" Grid.Column="0" Grid.RowSpan="2">2002</TextBlock>
+        <Button Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.RowSpan="1" Margin="0,0,0,0"
+            Click="btnYearDown_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Polygon Points="0, 0 10, 20, 20, 0" Fill="#97D590" />
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
 
         <Border BorderThickness="1" Grid.Row="2"
             CornerRadius="30,30,30,30" Background="white" Grid.Column="1" Grid.RowSpan="4" Margin="10,0,10,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
@@ -245,7 +259,7 @@
             FontSize="18" Grid.Column="3" />
 
         <!--<Canvas Grid.ColumnSpan="4" Margin="175,31,156,29" Grid.RowSpan="10" Grid.Row="6"/>-->
-        <ItemsControl ItemsSource="{Binding Lines}">
+        <ItemsControl ItemsSource="{Binding Lines, Mode=TwoWay}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <Canvas/>

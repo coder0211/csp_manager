@@ -222,7 +222,7 @@
                                             <ScrollViewer x:Name="PART_ContentHost"/>
                                             <TextBlock 
                                             IsHitTestVisible="False" 
-                                            Text="Tên Hoa"
+                                            Text="Tên mặt hàng"
                                             VerticalAlignment="Center"
                                             HorizontalAlignment="Left"
                                             Margin="0,0,0,0">
@@ -450,8 +450,7 @@
                                         Width="70"
                                         Height="35">
                                 <ComboBox Style="{StaticResource ComboboxStyle}" Height="35" Background="LightGray"
-                                        ItemsSource="{Binding PlantType}"
-                                    >
+                                        ItemsSource="{Binding PlantType}" SelectedItem="{Binding PlantTypeDefault}">
                                     <ComboBox.ItemTemplate>
                                         <DataTemplate>
                                             <StackPanel Orientation="Horizontal">

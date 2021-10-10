@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using csp_manager.DataContext;
 using csp_manager.DataQuery;
 
 namespace csp_manager.Views
@@ -26,11 +27,14 @@ namespace csp_manager.Views
     {
         HomeView _homeView;
 
-        public ObservableCollection<PlantTypeDTO> PlantType { get; private set; }
+        public ObservableCollection<plant_type> PlantType { get; private set; }
+        public plant_type PlantTypeDefault { get; private set; }
+
         public AddItemView(HomeView homeView)
         {
             QueryData a = new QueryData();
-            PlantType = new ObservableCollection<PlantTypeDTO>(a.GetPlantType());
+            PlantType = new ObservableCollection<plant_type>(a.GetPlantType());
+            PlantTypeDefault = PlantType.FirstOrDefault();
             //PlantType.ItemsSource = a.GetPlantType();
             //PlantType.DisplayMemberPath = "pt_name";
 

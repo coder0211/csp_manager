@@ -1,5 +1,6 @@
 ﻿using csp_manager.DataContext;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,16 +15,11 @@ namespace csp_manager.DataQuery
     }
     class QueryData
     {
-        public List<PlantTypeDTO> GetPlantType()
+        public List<plant_type> GetPlantType()
         {
             using (var dbContext = new CSPDbModel())
             {
-                return (from pt in dbContext.plant_type
-                        select new PlantTypeDTO()
-                        {
-                            pt_id = pt.pt_id,
-                            pt_name = pt.pt_name
-                        }).ToList();
+                return dbContext.plant_type.ToList();
             }
         }
     }
