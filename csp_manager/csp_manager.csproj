@@ -79,6 +79,7 @@
     <Compile Include="DataContext\sysdiagrams.cs" />
     <Compile Include="DataContext\users.cs" />
     <Compile Include="DataQuery\QueryData.cs" />
+    <Compile Include="Func.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="UploadImage\Imgur.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />

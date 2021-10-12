@@ -106,6 +106,15 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style TargetType="{x:Type Button}" x:Key="ImageButtonStyle">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <ContentPresenter/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
 
     <Border CornerRadius="20">
@@ -164,10 +173,12 @@
                     </Grid.ColumnDefinitions>
 
                     <Grid Grid.Column="0">
-                        <Border Margin="0 1 0 0" Width="120" Height="180"
+                        <Button Style="{StaticResource ImageButtonStyle}" Click="btnImage_Click">
+                            <Border Margin="0 1 0 0" Width="120" Height="180"
                                 CornerRadius="20" Background="#E5E5E5">
-                            <Image Source="pack://application:,,,/Res/Icons/ic_uploadImage.png" Height="60" Width="50"/>
-                        </Border>
+                                <Image Source="pack://application:,,,/Res/Icons/ic_uploadImage.png" Height="60" Width="50" Name="imgUpload" />
+                            </Border>
+                        </Button>
                     </Grid>
 
                     <Grid Grid.Column="1">
@@ -449,15 +460,15 @@
                                         VerticalAlignment="Top"
                                         Width="70"
                                         Height="35">
-                                <ComboBox Style="{StaticResource ComboboxStyle}" Height="35" Background="LightGray"
-                                        ItemsSource="{Binding PlantType}" SelectedItem="{Binding PlantTypeDefault}">
-                                    <ComboBox.ItemTemplate>
+                                <ComboBox Style="{StaticResource ComboboxStyle}" Height="35" Background="LightGray" Name="cbxType"
+                                        DisplayMemberPath="pt_name" SelectedValuePath="pt_id" SelectedIndex="0">
+                                    <!--<ComboBox.ItemTemplate>
                                         <DataTemplate>
                                             <StackPanel Orientation="Horizontal">
                                                 <TextBlock Text="{Binding Path=pt_name}"/>
                                             </StackPanel>
                                         </DataTemplate>
-                                    </ComboBox.ItemTemplate>
+                                    </ComboBox.ItemTemplate>-->
                                     <!--<ComboBoxItem IsSelected="True">Hoa</ComboBoxItem>
                                     <ComboBoxItem>Cây ăn quả</ComboBoxItem>
                                     <ComboBoxItem>Cây nông nghiệp</ComboBoxItem>-->
@@ -466,7 +477,6 @@
 
                         </Grid>
                     </Grid>
-
 
                 </Grid>
 
