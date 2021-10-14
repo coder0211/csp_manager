@@ -316,7 +316,7 @@
                         <RowDefinition Height="80"/>
                     </Grid.RowDefinitions>
                     <Button Grid.Row="8"
-                            Content="Mua hàng"
+                            Content="Tiếp tục mua hàng"
                             Foreground="White"
                             FontWeight="Bold"                        
                             FontSize="16" Click="btnContinue_Click"
@@ -350,7 +350,7 @@
                         <Image Source="pack://application:,,,/Res/Icons/ic_CartNoItem.png"/>
                     </Border>
                     <TextBlock Grid.Row="5"
-                               Text="Vui lòng chọn sản phẩm trước"
+                               Text="Bạn chưa có gì trong giỏ hàng cả!"
                                FontWeight="Thin"
                                VerticalAlignment="Top"
                                HorizontalAlignment="Center"

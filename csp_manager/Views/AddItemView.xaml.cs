@@ -134,17 +134,18 @@ namespace csp_manager.Views
             plant.plant_price = result ? plant_price : 0;
 
             plant.plant_note = txtNote.Text;
+            plant.plant_supplier_name = txtSupplier.Text;
+            plant.plant_supplier_address = txtLocation.Text;
             plant.plant_created_at = DateTime.Now;
 
             //MessageBox.Show("Tên cây:" + plant.plant_name + "\nSố lượng:" + plant.plant_amount + "\nĐơn vị:" + plant.plant_unit + "\nGiá:" + f.NumberToStr((int)plant.plant_price) + "\nLoại cây: " + pt_id + "_" + cbxType.Text);
             bool test = QD.PostPlant(plant, out string err);
             if (test)
             {
-                MessageBox.Show("Thêm thành công!");
-                this.Close();
+                MessageBox.Show("Thêm mặt hàng thành công!");
+                Close();
             }
-            else { MessageBox.Show("Thêm thất bại!"); }
-            //this.Close();
+            else { MessageBox.Show("Có lỗi xảy ra!"); }
         }
     }
 }

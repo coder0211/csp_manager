@@ -20,34 +20,6 @@ namespace csp_manager.Views
     /// <summary>
     /// Interaction logic for StatisticView.xaml
     /// </summary>
-    //public class ViewModel : INotifyPropertyChanged
-    //{
-    //    private ObservableCollection<Line> lines;
-    //    public ObservableCollection<Line> Lines
-    //    {
-    //        get
-    //        {
-    //            return this.lines;
-    //        }
-    //        set
-    //        {
-    //            if (this.lines != value)
-    //            {
-    //                this.lines = value;
-    //                OnPropertyChanged("Lines");
-    //            }
-    //        }
-    //    }
-    //    public event PropertyChangedEventHandler PropertyChanged;
-    //    private void OnPropertyChanged(string propertyName)
-    //    {
-    //        PropertyChangedEventHandler handler = this.PropertyChanged;
-    //        if (handler != null)
-    //        {
-    //            handler(this, new PropertyChangedEventArgs(propertyName));
-    //        }
-    //    }
-    //}
     public partial class StatisticView : UserControl, INotifyPropertyChanged
     {
         public class Line
@@ -60,15 +32,12 @@ namespace csp_manager.Views
         private ObservableCollection<Line> lines;
         public ObservableCollection<Line> Lines
         {
-            get
-            {
-                return this.lines;
-            }
+            get => lines;
             set
             {
-                if (this.lines != value)
+                if (lines != value)
                 {
-                    this.lines = value;
+                    lines = value;
                     OnPropertyChanged("Lines");
                 }
             }
@@ -107,9 +76,14 @@ namespace csp_manager.Views
             };
             //InitializeComponent();
             DataContext = this;
-
             setYear();
         }
+
+        private void OnDoWork(object sender, DoWorkEventArgs e)
+        {
+            Task.Delay(5000).Wait();
+        }
+
         private void setYear(int y = 0)
         {
             txtYear.Text = y == 0 ? DateTime.Now.Year.ToString() : (int.Parse(txtYear.Text) + y).ToString();

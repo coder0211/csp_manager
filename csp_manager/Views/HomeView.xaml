@@ -8,8 +8,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="650" d:DesignWidth="1000">
 
-    
-    
     <Grid>
         <Grid.Background >
             <ImageBrush ImageSource="pack://application:,,,/Res/Images/image_bg_home.png"/>
@@ -32,15 +30,12 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Border Grid.RowSpan="8"
-                Grid.Row="0"
-                CornerRadius="0,35,35,0"
-                Background="White"
-                Margin="0,10,0,0"
-               >
+            Grid.Row="0"
+            CornerRadius="0,35,35,0"
+            Background="White"
+            Margin="0,10,0,0">
             <Border.Effect>
-                <DropShadowEffect BlurRadius="20"
-                                      Opacity="0.2"
-                                      Color="#8B8B8B"/>
+                <DropShadowEffect BlurRadius="20" Opacity="0.2" Color="#8B8B8B"/>
             </Border.Effect>
             <Grid>
                 <Grid.RowDefinitions>
@@ -112,7 +107,7 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
-                
+
                 <Button  x:Name="btnStatistic"
                     Grid.Row="4"                    
                     Foreground="#333333"
@@ -204,7 +199,7 @@
                     FontWeight="Medium"
                     HorizontalContentAlignment="Left"                      
                     FontSize="16" Click="btnSetting_Click" >
-                   
+
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="Background" Value="Transparent"/>
@@ -240,8 +235,8 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
-               
-               
+
+
                 <Button  x:Name="btnLogout"
                     Grid.Row="10"                   
                     Foreground="#C4C4C4"
@@ -260,7 +255,7 @@
                                     </Grid>
                                 </Setter.Value>
                             </Setter>
-                            
+
                         </Style>
                     </Button.Style>
                     <Button.Template>
@@ -278,7 +273,7 @@
                 </Button>
             </Grid>
         </Border>
-        
+
         <Border Grid.Column="1"
                 Grid.ColumnSpan="5"
                 CornerRadius="20"
@@ -327,8 +322,8 @@
                     <TextBox.Template>
                         <ControlTemplate TargetType="TextBox">
                             <Border
-                                    Height="40" 
-                                    Background="{TemplateBinding Background}"
+                                Height="40" 
+                                Background="{TemplateBinding Background}"
                                    >
                                 <Grid>
                                     <ScrollViewer x:Name="PART_ContentHost"/>
@@ -372,7 +367,7 @@
                                 <Setter.Value>
                                     <Grid>
                                         <Image Source="pack://application:,,,/Res/Icons/ic_import.png" Width="20" Height="20" />
-                                        
+
                                     </Grid>
                                 </Setter.Value>
                             </Setter>
@@ -407,47 +402,37 @@
                                 <Setter.Value>
                                     <Grid>
                                         <Image Source="pack://application:,,,/Res/Icons/ic_cart.png" Width="20" Height="20" />
-
                                     </Grid>
                                 </Setter.Value>
                             </Setter>
-
                         </Style>
                     </Button.Style>
                     <Button.Template>
                         <ControlTemplate TargetType ="Button">
-                            <Border    
-                        Height="40"
-                        Background="{TemplateBinding Background}"
-                        CornerRadius="20">
-                                <ContentPresenter   
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"/>
+                            <Border Height="40"
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="20">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Border>
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
-                
             </Grid>
         </Border>
         <Frame x:Name="homeFrame"
-               Grid.Column="1"
-               Grid.ColumnSpan="4"
-               Grid.Row="1"
-               Grid.RowSpan="7"
-               NavigationUIVisibility = "Hidden" />
+            Grid.Column="1"
+            Grid.ColumnSpan="4"
+            Grid.Row="1"
+            Grid.RowSpan="7"
+            NavigationUIVisibility = "Hidden" />
         <StackPanel Visibility="{Binding IsShowDialog}"
-                    Grid.Column="1"
-                    Grid.ColumnSpan="4"
-                    Grid.RowSpan="8"
-                    Grid.Row="1">
-            <Grid Height="568"
-                  >
-                <Frame x:Name="dialogFrame"
-                    NavigationUIVisibility = "Hidden"></Frame>
+            Grid.Column="1"
+            Grid.ColumnSpan="4"
+            Grid.RowSpan="8"
+            Grid.Row="1">
+            <Grid Height="568">
+                <Frame x:Name="dialogFrame" NavigationUIVisibility = "Hidden"></Frame>
             </Grid>
-            
         </StackPanel>
-        
     </Grid>
 </UserControl>

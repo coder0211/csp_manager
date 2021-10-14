@@ -117,36 +117,35 @@
         </Style>
     </Window.Resources>
 
-    <Border CornerRadius="20">
-        <Border  Background="White" Margin="0 30 0 0" CornerRadius="20" Height="530" Width="400">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition Height="40"/>
-                </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0"                 
+    <Border Background="White" Margin="0 30 0 0" CornerRadius="20" Height="530" Width="400">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0"                 
                    Text="Nhập mặt hàng mới"
                    FontWeight="Bold"
                    VerticalAlignment="Center"
@@ -154,46 +153,46 @@
                    Margin="30 0 0 0"
                    Foreground="#739D6F"
                    FontSize="20"/>
-                <StackPanel Grid.Row="10"
+            <StackPanel Grid.Row="10"
                     Grid.ColumnSpan="2"
                     Margin="30,10,30,0">
-                    <Separator  VerticalAlignment="Center"
+                <Separator  VerticalAlignment="Center"
                            Height="0.5" 
                            Background="#8B8B8B" >
-                        <Separator.LayoutTransform>
-                            <RotateTransform Angle="0" />
-                        </Separator.LayoutTransform>
-                    </Separator>
-                </StackPanel>
+                    <Separator.LayoutTransform>
+                        <RotateTransform Angle="0" />
+                    </Separator.LayoutTransform>
+                </Separator>
+            </StackPanel>
 
-                <Grid Grid.Row="1" Grid.RowSpan="9">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="150"/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
+            <Grid Grid.Row="1" Grid.RowSpan="9">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
 
-                    <Grid Grid.Column="0">
-                        <Button Style="{StaticResource ImageButtonStyle}" Click="btnImage_Click">
-                            <Border Margin="0 1 0 0" Width="120" Height="180"
+                <Grid Grid.Column="0">
+                    <Button Style="{StaticResource ImageButtonStyle}" Click="btnImage_Click">
+                        <Border Margin="0 1 0 0" Width="120" Height="180"
                                 CornerRadius="20" Background="#E5E5E5">
-                                <Image Source="pack://application:,,,/Res/Icons/ic_uploadImage.png" Height="60" Width="50" Name="imgUpload" />
-                            </Border>
-                        </Button>
-                    </Grid>
+                            <Image Source="pack://application:,,,/Res/Icons/ic_uploadImage.png" Height="60" Width="50" Name="imgUpload" />
+                        </Border>
+                    </Button>
+                </Grid>
 
-                    <Grid Grid.Column="1">
-                        <Grid.RowDefinitions>
-                            <RowDefinition />
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition />
-                            <RowDefinition/>
-                            <RowDefinition />
-                            <RowDefinition/>
-                            <RowDefinition/>
-                        </Grid.RowDefinitions>
-                        <TextBlock Grid.Row="0"                 
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition />
+                        <RowDefinition/>
+                        <RowDefinition />
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0"                 
                         Text="Tên"
                         FontWeight="DemiBold"
                         VerticalAlignment="Center"
@@ -201,7 +200,7 @@
                         Margin="10 0 0 0"
                         Foreground="#959595"
                         FontSize="15"/>
-                        <TextBox x:Name="txtName"
+                    <TextBox x:Name="txtName"
                              TextChanged="txtName_TextChanged"
                              Grid.Row="1"       
                              Grid.RowSpan="2"
@@ -214,6 +213,83 @@
                              Foreground="Gray"
                              CaretBrush="Gray"
                              Margin="10,0,41,0">
+                        <TextBox.Style>
+                            <Style TargetType = "TextBox">
+                                <Setter Property="Cursor" Value="IBeam"/>
+                                <Setter Property="FontWeight" Value="Light"/>
+                            </Style>
+                        </TextBox.Style>
+                        <TextBox.Template>
+                            <ControlTemplate TargetType="TextBox">
+                                <Border
+                                        Padding="10 0 0 0"
+                                        Height="35"
+                                        CornerRadius="10"                                   
+                                        Background="{TemplateBinding Background}"
+                                        BorderBrush="Gray"
+                                        BorderThickness="1">
+                                    <Grid>
+                                        <ScrollViewer x:Name="PART_ContentHost"/>
+                                        <TextBlock 
+                                            IsHitTestVisible="False" 
+                                            Text="Tên mặt hàng"
+                                            VerticalAlignment="Center"
+                                            HorizontalAlignment="Left"
+                                            Margin="0,0,0,0">
+                                            <TextBlock.Style>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Text, ElementName=txtName}" Value="">
+                                                            <Setter Property="Visibility" Value="Visible"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </TextBlock.Style>
+                                        </TextBlock>
+                                    </Grid>
+                                </Border>
+                            </ControlTemplate>
+                        </TextBox.Template>
+                    </TextBox>
+                    <Grid Grid.Row="3" Grid.RowSpan="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="130"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0"                 
+                            Text="Số lượng"
+                            FontWeight="DemiBold"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Left"
+                            Margin="10 -10 0 0"
+                            Foreground="#959595"
+                            FontSize="15"/>
+                        <TextBlock Grid.Column="1"                 
+                            Text="Đơn vị"
+                            FontWeight="DemiBold"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Left"
+                            Margin="10 -10 0 0"
+                            Foreground="#959595"
+                            FontSize="15"/>
+                    </Grid>
+                    <Grid Grid.Row="4" Grid.RowSpan="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox x:Name="txtQuantity"
+                             TextChanged="txtQuantity_TextChanged"
+                             Grid.Column="0"                          
+                             VerticalAlignment="Bottom"
+                             VerticalContentAlignment="Center"
+                             HorizontalContentAlignment="Left"
+                             TextWrapping="Wrap"
+                             BorderThickness="0"
+                             Foreground="Gray"
+                             CaretBrush="Gray"
+                             Margin="10,0,20,0">
                             <TextBox.Style>
                                 <Style TargetType = "TextBox">
                                     <Setter Property="Cursor" Value="IBeam"/>
@@ -223,25 +299,24 @@
                             <TextBox.Template>
                                 <ControlTemplate TargetType="TextBox">
                                     <Border
-                                        Padding="10 0 0 0"
-                                        Height="35"
-                                        CornerRadius="10"                                   
-                                        Background="{TemplateBinding Background}"
-                                        BorderBrush="Gray"
-                                        BorderThickness="1">
+                                            Padding="10 0 0 0"
+                                            Height="35"
+                                            CornerRadius="10"
+                                            Background="{TemplateBinding Background}"
+                                            BorderBrush="Gray"
+                                            BorderThickness="1">
                                         <Grid>
                                             <ScrollViewer x:Name="PART_ContentHost"/>
                                             <TextBlock 
-                                            IsHitTestVisible="False" 
-                                            Text="Tên mặt hàng"
+                                            IsHitTestVisible="False"                                             
                                             VerticalAlignment="Center"
                                             HorizontalAlignment="Left"
-                                            Margin="0,0,0,0">
+                                            Margin="10,0,0,0">
                                                 <TextBlock.Style>
                                                     <Style TargetType="TextBlock">
                                                         <Setter Property="Visibility" Value="Collapsed"/>
                                                         <Style.Triggers>
-                                                            <DataTrigger Binding="{Binding Text, ElementName=txtName}" Value="">
+                                                            <DataTrigger Binding="{Binding Text, ElementName=txtQuantity}" Value="">
                                                                 <Setter Property="Visibility" Value="Visible"/>
                                                             </DataTrigger>
                                                         </Style.Triggers>
@@ -253,83 +328,7 @@
                                 </ControlTemplate>
                             </TextBox.Template>
                         </TextBox>
-                        <Grid Grid.Row="3" Grid.RowSpan="2">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="130"/>
-                                <ColumnDefinition/>
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0"                 
-                            Text="Số lượng"
-                            FontWeight="DemiBold"
-                            VerticalAlignment="Center"
-                            HorizontalAlignment="Left"
-                            Margin="10 -10 0 0"
-                            Foreground="#959595"
-                            FontSize="15"/>
-                            <TextBlock Grid.Column="1"                 
-                            Text="Đơn vị"
-                            FontWeight="DemiBold"
-                            VerticalAlignment="Center"
-                            HorizontalAlignment="Left"
-                            Margin="10 -10 0 0"
-                            Foreground="#959595"
-                            FontSize="15"/>
-                        </Grid>
-                        <Grid Grid.Row="4" Grid.RowSpan="2">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="150"/>
-                                <ColumnDefinition/>
-                            </Grid.ColumnDefinitions>
-                            <TextBox x:Name="txtQuantity"
-                             TextChanged="txtQuantity_TextChanged"
-                             Grid.Column="0"                          
-                             VerticalAlignment="Bottom"
-                             VerticalContentAlignment="Center"
-                             HorizontalContentAlignment="Left"
-                             TextWrapping="Wrap"
-                             BorderThickness="0"
-                             Foreground="Gray"
-                             CaretBrush="Gray"
-                             Margin="10,0,20,0">
-                                <TextBox.Style>
-                                    <Style TargetType = "TextBox">
-                                        <Setter Property="Cursor" Value="IBeam"/>
-                                        <Setter Property="FontWeight" Value="Light"/>
-                                    </Style>
-                                </TextBox.Style>
-                                <TextBox.Template>
-                                    <ControlTemplate TargetType="TextBox">
-                                        <Border
-                                            Padding="10 0 0 0"
-                                            Height="35"
-                                            CornerRadius="10"
-                                            Background="{TemplateBinding Background}"
-                                            BorderBrush="Gray"
-                                            BorderThickness="1">
-                                            <Grid>
-                                                <ScrollViewer x:Name="PART_ContentHost"/>
-                                                <TextBlock 
-                                            IsHitTestVisible="False"                                             
-                                            VerticalAlignment="Center"
-                                            HorizontalAlignment="Left"
-                                            Margin="10,0,0,0">
-                                                    <TextBlock.Style>
-                                                        <Style TargetType="TextBlock">
-                                                            <Setter Property="Visibility" Value="Collapsed"/>
-                                                            <Style.Triggers>
-                                                                <DataTrigger Binding="{Binding Text, ElementName=txtQuantity}" Value="">
-                                                                    <Setter Property="Visibility" Value="Visible"/>
-                                                                </DataTrigger>
-                                                            </Style.Triggers>
-                                                        </Style>
-                                                    </TextBlock.Style>
-                                                </TextBlock>
-                                            </Grid>
-                                        </Border>
-                                    </ControlTemplate>
-                                </TextBox.Template>
-                            </TextBox>
-                            <TextBox x:Name="txtUnit"
+                        <TextBox x:Name="txtUnit"
                              TextChanged="txtUnit_TextChanged"
                              Grid.Column="1"                          
                              VerticalAlignment="Bottom"
@@ -340,51 +339,51 @@
                              Foreground="Gray"
                              CaretBrush="Gray"
                              Margin="-15,0,41,0">
-                                <TextBox.Style>
-                                    <Style TargetType = "TextBox">
-                                        <Setter Property="Cursor" Value="IBeam"/>
-                                        <Setter Property="FontWeight" Value="Light"/>
-                                    </Style>
-                                </TextBox.Style>
-                                <TextBox.Template>
-                                    <ControlTemplate TargetType="TextBox">
-                                        <Border
+                            <TextBox.Style>
+                                <Style TargetType = "TextBox">
+                                    <Setter Property="Cursor" Value="IBeam"/>
+                                    <Setter Property="FontWeight" Value="Light"/>
+                                </Style>
+                            </TextBox.Style>
+                            <TextBox.Template>
+                                <ControlTemplate TargetType="TextBox">
+                                    <Border
                                             Padding="10 0 0 0"
                                             Height="35"
                                             CornerRadius="10"
                                             Background="{TemplateBinding Background}"
                                             BorderBrush="Gray"
                                             BorderThickness="1">
-                                            <Grid>
-                                                <ScrollViewer x:Name="PART_ContentHost"/>
-                                                <TextBlock 
+                                        <Grid>
+                                            <ScrollViewer x:Name="PART_ContentHost"/>
+                                            <TextBlock 
                                             IsHitTestVisible="False"                                             
                                             VerticalAlignment="Center"
                                             HorizontalAlignment="Left"
                                             Margin="10,0,0,0">
-                                                    <TextBlock.Style>
-                                                        <Style TargetType="TextBlock">
-                                                            <Setter Property="Visibility" Value="Collapsed"/>
-                                                            <Style.Triggers>
-                                                                <DataTrigger Binding="{Binding Text, ElementName=txtUnit}" Value="">
-                                                                    <Setter Property="Visibility" Value="Visible"/>
-                                                                </DataTrigger>
-                                                            </Style.Triggers>
-                                                        </Style>
-                                                    </TextBlock.Style>
-                                                </TextBlock>
-                                            </Grid>
-                                        </Border>
-                                    </ControlTemplate>
-                                </TextBox.Template>
-                            </TextBox>
-                        </Grid>
-                        <Grid Grid.Row="6">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="130"/>
-                                <ColumnDefinition/>
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0"                 
+                                                <TextBlock.Style>
+                                                    <Style TargetType="TextBlock">
+                                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding Text, ElementName=txtUnit}" Value="">
+                                                                <Setter Property="Visibility" Value="Visible"/>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </TextBlock.Style>
+                                            </TextBlock>
+                                        </Grid>
+                                    </Border>
+                                </ControlTemplate>
+                            </TextBox.Template>
+                        </TextBox>
+                    </Grid>
+                    <Grid Grid.Row="6">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="130"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0"                 
                             Text="Giá"
                             FontWeight="DemiBold"
                             VerticalAlignment="Center"
@@ -392,7 +391,7 @@
                             Margin="10 0 0 0"
                             Foreground="#959595"
                             FontSize="15"/>
-                            <TextBlock Grid.Column="1"                 
+                        <TextBlock Grid.Column="1"                 
                             Text="Loại"
                             FontWeight="DemiBold"
                             VerticalAlignment="Center"
@@ -400,13 +399,13 @@
                             Margin="10 0 0 0"
                             Foreground="#959595"
                             FontSize="15"/>
-                        </Grid>
-                        <Grid Grid.Row="7" Grid.RowSpan="2">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="150"/>
-                                <ColumnDefinition/>
-                            </Grid.ColumnDefinitions>
-                            <TextBox x:Name="txtPrice"
+                    </Grid>
+                    <Grid Grid.Row="7" Grid.RowSpan="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox x:Name="txtPrice"
                              TextChanged="txtPrice_TextChanged"
                              Grid.Column="0"                          
                              VerticalAlignment="Bottom"
@@ -417,70 +416,70 @@
                              Foreground="Gray"
                              CaretBrush="Gray"
                              Margin="10,0,20,5">
-                                <TextBox.Style>
-                                    <Style TargetType = "TextBox">
-                                        <Setter Property="Cursor" Value="IBeam"/>
-                                        <Setter Property="FontWeight" Value="Light"/>
-                                    </Style>
-                                </TextBox.Style>
-                                <TextBox.Template>
-                                    <ControlTemplate TargetType="TextBox">
-                                        <Border
+                            <TextBox.Style>
+                                <Style TargetType = "TextBox">
+                                    <Setter Property="Cursor" Value="IBeam"/>
+                                    <Setter Property="FontWeight" Value="Light"/>
+                                </Style>
+                            </TextBox.Style>
+                            <TextBox.Template>
+                                <ControlTemplate TargetType="TextBox">
+                                    <Border
                                             Padding="10 0 0 0"
                                             Height="35"
                                             CornerRadius="10"
                                             Background="{TemplateBinding Background}"
                                             BorderBrush="Gray"
                                             BorderThickness="1">
-                                            <Grid>
-                                                <ScrollViewer x:Name="PART_ContentHost"/>
-                                                <TextBlock 
+                                        <Grid>
+                                            <ScrollViewer x:Name="PART_ContentHost"/>
+                                            <TextBlock 
                                             IsHitTestVisible="False"                                             
                                             VerticalAlignment="Center"
                                             HorizontalAlignment="Left"
                                             Margin="0,0,0,0">
-                                                    <TextBlock.Style>
-                                                        <Style TargetType="TextBlock">
-                                                            <Setter Property="Visibility" Value="Collapsed"/>
-                                                            <Style.Triggers>
-                                                                <DataTrigger Binding="{Binding Text, ElementName=txtPrice}" Value="">
-                                                                    <Setter Property="Visibility" Value="Visible"/>
-                                                                </DataTrigger>
-                                                            </Style.Triggers>
-                                                        </Style>
-                                                    </TextBlock.Style>
-                                                </TextBlock>
-                                            </Grid>
-                                        </Border>
-                                    </ControlTemplate>
-                                </TextBox.Template>
-                            </TextBox>
-                            <StackPanel Grid.Column="1" Margin="-55 0 0 0"
+                                                <TextBlock.Style>
+                                                    <Style TargetType="TextBlock">
+                                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding Text, ElementName=txtPrice}" Value="">
+                                                                <Setter Property="Visibility" Value="Visible"/>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </TextBlock.Style>
+                                            </TextBlock>
+                                        </Grid>
+                                    </Border>
+                                </ControlTemplate>
+                            </TextBox.Template>
+                        </TextBox>
+                        <StackPanel Grid.Column="1" Margin="-55 0 0 0"
                                         HorizontalAlignment="Center"
                                         VerticalAlignment="Top"
                                         Width="70"
                                         Height="35">
-                                <ComboBox Style="{StaticResource ComboboxStyle}" Height="35" Background="LightGray" Name="cbxType"
+                            <ComboBox Style="{StaticResource ComboboxStyle}" Height="35" Background="LightGray" Name="cbxType"
                                         DisplayMemberPath="pt_name" SelectedValuePath="pt_id" SelectedIndex="0">
-                                    <!--<ComboBox.ItemTemplate>
+                                <!--<ComboBox.ItemTemplate>
                                         <DataTemplate>
                                             <StackPanel Orientation="Horizontal">
                                                 <TextBlock Text="{Binding Path=pt_name}"/>
                                             </StackPanel>
                                         </DataTemplate>
                                     </ComboBox.ItemTemplate>-->
-                                    <!--<ComboBoxItem IsSelected="True">Hoa</ComboBoxItem>
+                                <!--<ComboBoxItem IsSelected="True">Hoa</ComboBoxItem>
                                     <ComboBoxItem>Cây ăn quả</ComboBoxItem>
                                     <ComboBoxItem>Cây nông nghiệp</ComboBoxItem>-->
-                                </ComboBox>
-                            </StackPanel>
+                            </ComboBox>
+                        </StackPanel>
 
-                        </Grid>
                     </Grid>
-
                 </Grid>
 
-                <TextBlock Grid.Row="11"      
+            </Grid>
+
+            <TextBlock Grid.Row="11"      
                    Grid.RowSpan="2"
                    Text="Thông tin nhà cung cấp"
                    FontWeight="Thin"
@@ -490,7 +489,7 @@
                    Foreground="#959595"
                    FontSize="12"/>
 
-                <TextBox x:Name="txtSupplier"
+            <TextBox x:Name="txtSupplier"
                              TextChanged="txtSupplier_TextChanged"
                              Grid.Row="12"    
                             Grid.RowSpan="3"
@@ -502,47 +501,47 @@
                              Foreground="Gray"
                              CaretBrush="Gray"
                              Margin="30,0,40,15">
-                    <TextBox.Style>
-                        <Style TargetType = "TextBox">
-                            <Setter Property="Cursor" Value="IBeam"/>
-                            <Setter Property="FontWeight" Value="Light"/>
-                        </Style>
-                    </TextBox.Style>
-                    <TextBox.Template>
-                        <ControlTemplate TargetType="TextBox">
-                            <Border
+                <TextBox.Style>
+                    <Style TargetType = "TextBox">
+                        <Setter Property="Cursor" Value="IBeam"/>
+                        <Setter Property="FontWeight" Value="Light"/>
+                    </Style>
+                </TextBox.Style>
+                <TextBox.Template>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border
                                     Height="40"
                                     Padding="15 0 0 0"
                                     CornerRadius="10"
                                     Background="{TemplateBinding Background}"
                                     BorderBrush="Gray"
                                     BorderThickness="1">
-                                <Grid>
-                                    <ScrollViewer x:Name="PART_ContentHost"/>
-                                    <TextBlock 
+                            <Grid>
+                                <ScrollViewer x:Name="PART_ContentHost"/>
+                                <TextBlock 
                                             IsHitTestVisible="False" 
                                             Text="Tên nhà cung cấp"
                                             VerticalAlignment="Center"
                                             HorizontalAlignment="Left"
                                            >
-                                        <TextBlock.Style>
-                                            <Style TargetType="TextBlock">
-                                                <Setter Property="Visibility" Value="Collapsed"/>
-                                                <Style.Triggers>
-                                                    <DataTrigger Binding="{Binding Text, ElementName=txtSupplier}" Value="">
-                                                        <Setter Property="Visibility" Value="Visible"/>
-                                                    </DataTrigger>
-                                                </Style.Triggers>
-                                            </Style>
-                                        </TextBlock.Style>
-                                    </TextBlock>
-                                </Grid>
-                            </Border>
-                        </ControlTemplate>
-                    </TextBox.Template>
-                </TextBox>
+                                    <TextBlock.Style>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Text, ElementName=txtSupplier}" Value="">
+                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </TextBox.Template>
+            </TextBox>
 
-                <TextBox x:Name="txtLocation"
+            <TextBox x:Name="txtLocation"
                              TextChanged="txtLocation_TextChanged"
                              Grid.Row="14" 
                              Grid.RowSpan="3"
@@ -554,47 +553,47 @@
                              Foreground="Gray"
                              CaretBrush="Gray"
                              Margin="30,0,40,8">
-                    <TextBox.Style>
-                        <Style TargetType = "TextBox">
-                            <Setter Property="Cursor" Value="IBeam"/>
-                            <Setter Property="FontWeight" Value="Light"/>
-                        </Style>
-                    </TextBox.Style>
-                    <TextBox.Template>
-                        <ControlTemplate TargetType="TextBox">
-                            <Border
+                <TextBox.Style>
+                    <Style TargetType = "TextBox">
+                        <Setter Property="Cursor" Value="IBeam"/>
+                        <Setter Property="FontWeight" Value="Light"/>
+                    </Style>
+                </TextBox.Style>
+                <TextBox.Template>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border
                                     Height="40"
                                     Padding="15 0 0 0"
                                     CornerRadius="10"
                                     Background="{TemplateBinding Background}"
                                     BorderBrush="Gray"
                                     BorderThickness="1">
-                                <Grid>
-                                    <ScrollViewer x:Name="PART_ContentHost"/>
-                                    <TextBlock 
+                            <Grid>
+                                <ScrollViewer x:Name="PART_ContentHost"/>
+                                <TextBlock 
                                             IsHitTestVisible="False" 
                                             Text="Địa chỉ nhà cung cấp"
                                             VerticalAlignment="Center"
                                             HorizontalAlignment="Left"
                                             >
-                                        <TextBlock.Style>
-                                            <Style TargetType="TextBlock">
-                                                <Setter Property="Visibility" Value="Collapsed"/>
-                                                <Style.Triggers>
-                                                    <DataTrigger Binding="{Binding Text, ElementName=txtLocation}" Value="">
-                                                        <Setter Property="Visibility" Value="Visible"/>
-                                                    </DataTrigger>
-                                                </Style.Triggers>
-                                            </Style>
-                                        </TextBlock.Style>
-                                    </TextBlock>
-                                </Grid>
-                            </Border>
-                        </ControlTemplate>
-                    </TextBox.Template>
-                </TextBox>
+                                    <TextBlock.Style>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Text, ElementName=txtLocation}" Value="">
+                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </TextBox.Template>
+            </TextBox>
 
-                <TextBlock Grid.Row="16"
+            <TextBlock Grid.Row="16"
                    Grid.RowSpan="2"
                    Text="Ghi chú / Tình trạng"
                    FontWeight="Thin"
@@ -604,7 +603,7 @@
                    Foreground="#959595"
                    FontSize="12"/>
 
-                <TextBox x:Name="txtNote"
+            <TextBox x:Name="txtNote"
                              TextChanged="txtNote_TextChanged"
                              Grid.Row="17" 
                              Grid.RowSpan="5"
@@ -616,119 +615,115 @@
                              Foreground="Gray"
                              CaretBrush="Gray"
                              Margin="30,0,40,0">
-                    <TextBox.Style>
-                        <Style TargetType = "TextBox">
-                            <Setter Property="Cursor" Value="IBeam"/>
-                            <Setter Property="FontWeight" Value="Light"/>
-                        </Style>
-                    </TextBox.Style>
-                    <TextBox.Template>
-                        <ControlTemplate TargetType="TextBox">
-                            <Border Padding="10 0 0 0"
+                <TextBox.Style>
+                    <Style TargetType = "TextBox">
+                        <Setter Property="Cursor" Value="IBeam"/>
+                        <Setter Property="FontWeight" Value="Light"/>
+                    </Style>
+                </TextBox.Style>
+                <TextBox.Template>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border Padding="10 0 0 0"
                                     Height="90"
                                     CornerRadius="10"
                                     Background="{TemplateBinding Background}"
                                     BorderBrush="Gray"
                                     BorderThickness="1">
-                                <Grid>
-                                    <ScrollViewer x:Name="PART_ContentHost"/>
-                                    <TextBlock 
+                            <Grid>
+                                <ScrollViewer x:Name="PART_ContentHost"/>
+                                <TextBlock 
                                         
                                             IsHitTestVisible="False"                                           
                                             VerticalAlignment="Bottom"
                                             HorizontalAlignment="Left"
                                             Margin="10,0,0,0">
-                                        <TextBlock.Style>
-                                            <Style TargetType="TextBlock">
-                                                <Setter Property="Visibility" Value="Collapsed"/>
-                                                <Style.Triggers>
-                                                    <DataTrigger Binding="{Binding Text, ElementName=txtNote}" Value="">
-                                                        <Setter Property="Visibility" Value="Visible"/>
-                                                    </DataTrigger>
-                                                </Style.Triggers>
-                                            </Style>
-                                        </TextBlock.Style>
-                                    </TextBlock>
-                                </Grid>
-                            </Border>
-                        </ControlTemplate>
-                    </TextBox.Template>
-                </TextBox>
+                                    <TextBlock.Style>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Text, ElementName=txtNote}" Value="">
+                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </TextBox.Template>
+            </TextBox>
 
-                <Grid Grid.Row="23">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="260"/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    <Button   
+            <Grid Grid.Row="23">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="260"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button   
                         Margin="150,-15,0,0"
                         Grid.Column="0"                       
                         Content="Hủy"
                         Foreground="White"
                         FontWeight="Bold"                        
                         FontSize="16" Click="btnDelete_Click">
-                        <Button.Style>
-                            <Style TargetType="Button">
-                                <Setter Property="Background" Value="#E04F5F"/>
-                                <Setter Property="Cursor" Value="Hand"/>
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseCaptured" Value="True">
-                                        <Setter Property="Background" Value="#BFDFBC"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
-                        <Button.Template>
-                            <ControlTemplate TargetType ="Button">
-                                <Border    
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#E04F5F"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseCaptured" Value="True">
+                                    <Setter Property="Background" Value="#BFDFBC"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType ="Button">
+                            <Border    
                                 Height="40"
                                 Width="80"
                         CornerRadius="20"
                         Background="{TemplateBinding Background}">
-                                    <ContentPresenter   
+                                <ContentPresenter   
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-                    <Button   
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button   
                         Margin="-40,-15,0,0"
                         Grid.Column="1"                       
                         Content="Hoàn tất"
                         Foreground="White"
                         FontWeight="Bold"                        
                         FontSize="16" Click="btnCompleted_Click">
-                        <Button.Style>
-                            <Style TargetType="Button">
-                                <Setter Property="Background" Value="#5FAF57"/>
-                                <Setter Property="Cursor" Value="Hand"/>
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseCaptured" Value="True">
-                                        <Setter Property="Background" Value="#BFDFBC"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
-                        <Button.Template>
-                            <ControlTemplate TargetType ="Button">
-                                <Border    
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#5FAF57"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseCaptured" Value="True">
+                                    <Setter Property="Background" Value="#BFDFBC"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType ="Button">
+                            <Border    
                                 Height="40"
                                 Width="120"
                         CornerRadius="20"
                         Background="{TemplateBinding Background}">
-                                    <ContentPresenter   
+                                <ContentPresenter   
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-                </Grid>
-
-
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
             </Grid>
-        </Border>
-
+        </Grid>
     </Border>
 </Window>

@@ -9,6 +9,6 @@
         ResizeMode="CanMinimize"
         Title="CSP Manager" Height="650" Width="1000">
     <DockPanel>
-        <Frame x:Name="mainFrame"  NavigationUIVisibility = "Hidden" />
+        <Frame x:Name="mainFrame" NavigationUIVisibility = "Hidden" />
     </DockPanel>
 </Window>

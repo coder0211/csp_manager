@@ -33,6 +33,12 @@ namespace csp_manager.DataContext
 
         public int plant_type_id { get; set; }
 
+        [StringLength(30)]
+        public string plant_supplier_name { get; set; }
+
+        [StringLength(50)]
+        public string plant_supplier_address { get; set; }
+
         public DateTime plant_created_at { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -19,7 +19,7 @@ namespace csp_manager.Views
     /// <summary>
     /// Interaction logic for HomeView.xaml
     /// </summary>
-    public partial class HomeView : UserControl , INotifyPropertyChanged
+    public partial class HomeView : UserControl, INotifyPropertyChanged
     {
         private Visibility isShowDialog;
         private String icPlant;
@@ -67,7 +67,7 @@ namespace csp_manager.Views
                 icHistory = value;
                 OnPropertyChanged(nameof(IcHistory));
             }
-        }       
+        }
 
         public HomeView()
         {
@@ -86,7 +86,7 @@ namespace csp_manager.Views
             homeFrame.NavigationService.Navigate(new AllListingPlantView());
             btnStatistic.Foreground = new SolidColorBrush(Color.FromRgb(20, 20, 20));
             btnSetting.Foreground = new SolidColorBrush(Color.FromRgb(20, 20, 20));
-            btnHistory.Foreground = new SolidColorBrush(Color.FromRgb(20, 20, 20));           
+            btnHistory.Foreground = new SolidColorBrush(Color.FromRgb(20, 20, 20));
             btnLogout.Foreground = new SolidColorBrush(Color.FromRgb(211, 211, 211));
             IcPlant = "pack://application:,,,/Res/Icons/ic_plant_selected.png";
             IcStatistics = "pack://application:,,,/Res/Icons/ic_statistics.png";
@@ -162,8 +162,26 @@ namespace csp_manager.Views
         {
             //dialogFrame.Content = new AddItemView(this);
             //IsShowDialog = Visibility.Visible;
-            Window Import = new AddItemView(this);
-            Import.ShowDialog();
+            //Window Import = new AddItemView(this);
+            //Import.ShowDialog();
+
+            SplashScreenWindow splashScreen = new SplashScreenWindow();
+            //splashScreen.Load(new AddItemView(this), "ShowDialog");
+            splashScreen.Show();
+            Task.Factory.StartNew(() =>
+            {
+                for (int i = 1; i <= 100; i++)
+                {
+                    System.Threading.Thread.Sleep(5);
+                    splashScreen.Dispatcher.Invoke(() => splashScreen.Progress = i);
+                }
+                Dispatcher.Invoke(() =>
+                {
+                    var mainWindow = new AddItemView(this);
+                    splashScreen.Close();
+                    mainWindow.ShowDialog();
+                });
+            });
         }
     }
 }
