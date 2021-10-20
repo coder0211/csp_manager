@@ -21,6 +21,9 @@ namespace csp_manager.DataContext
         [StringLength(50)]
         public string plant_name { get; set; }
 
+        [StringLength(50)]
+        public string plant_img { get; set; }
+
         public int? plant_amount { get; set; }
 
         [StringLength(50)]

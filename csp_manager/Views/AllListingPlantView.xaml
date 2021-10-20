@@ -169,7 +169,7 @@
             </StackPanel>
         </ScrollViewer>-->
         <Grid Grid.Row="1">
-        <ListView  x:Name="lstAllPlant" Background="Transparent"                
+            <ListView  x:Name="lstAllPlant" Background="Transparent"                
                    SelectionChanged="lstAllPlant_SelectionChanged"
                    BorderThickness="0,0.5,0.5,0" 
                    Height="450"
@@ -177,78 +177,78 @@
                    ScrollViewer.CanContentScroll="False"
                    BorderBrush="#FF45C8DC" 
                    IsHitTestVisible="True">
-            <ListView.ItemContainerStyle>
-                <Style TargetType="{x:Type ListViewItem}">
-                    <Setter Property="Focusable" Value="False"/>
-                    <Setter Property="Background" Value="Transparent"/>
-                    <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
-                    <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
-                    <Setter Property="Padding" Value="2,0,0,0"/>
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="ListViewItem">
-                                <Border Name="Border" Padding="2" SnapsToDevicePixels="true">
-                                    <ContentPresenter />
-                                </Border>
-                                <ControlTemplate.Triggers>
-                                    <Trigger Property="IsSelected" Value="true">
-                                        <Setter TargetName="Border" Property="Background"
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListViewItem}">
+                        <Setter Property="Focusable" Value="False"/>
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+                        <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+                        <Setter Property="Padding" Value="2,0,0,0"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="ListViewItem">
+                                    <Border Name="Border" Padding="2" SnapsToDevicePixels="true">
+                                        <ContentPresenter />
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsSelected" Value="true">
+                                            <Setter TargetName="Border" Property="Background"
                                                                 Value="lightgray"/>
-                                    </Trigger>
-                                </ControlTemplate.Triggers>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                </Style>
-            </ListView.ItemContainerStyle>
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <DockPanel>
-                        <Grid>
-                        <Border Height="110" 
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <DockPanel>
+                            <Grid>
+                                <Border Height="110" 
                                 Width="750"
                                 Background="White"   
                                 Grid.Row="1"
                                 BorderThickness="1"
                                 CornerRadius="20">
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                </Grid.RowDefinitions>
-                                <Border Grid.Column="0"
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Border Grid.Column="0"
                                         Grid.ColumnSpan="2"
                                         Grid.RowSpan="12"
                                         Width="100" 
                                         CornerRadius="12"
                                         Height="100">
-                                    <Image Source="pack://application:,,,/Res/Icons/ic_logo.png"/>
-                                </Border>
+                                            <Image Source="{Binding PlantImage}"/>
+                                        </Border>
 
 
-                                <TextBlock Grid.Column="2" Grid.ColumnSpan="3"
+                                        <TextBlock Grid.Column="2" Grid.ColumnSpan="3"
                                             Grid.RowSpan="5"
                                             Text="{Binding PlantName}"
                                             FontWeight="Bold"
@@ -256,7 +256,7 @@
                                             HorizontalAlignment="Left"                  
                                             Foreground="#5FAF57"
                                             FontSize="20"/>
-                                <TextBlock Grid.Column="2" Grid.ColumnSpan="3"
+                                        <TextBlock Grid.Column="2" Grid.ColumnSpan="3"
                                             Grid.Row="4" Grid.RowSpan="3"
                                             Text="Số lượng còn: "
                                             FontWeight="Regular"
@@ -264,7 +264,7 @@
                                             HorizontalAlignment="Left"                  
                                             Foreground="#000000"
                                             FontSize="18"/>
-                                <TextBlock Grid.Column="3" Grid.ColumnSpan="3"
+                                        <TextBlock Grid.Column="3" Grid.ColumnSpan="3"
                                             Grid.Row="4" Grid.RowSpan="3"
                                             Text="{Binding NumberRemaining}"
                                             FontWeight="DemiBold"
@@ -273,7 +273,7 @@
                                             Foreground="#000000"
                                             Margin="40 0 0 0"
                                             FontSize="18"/>
-                                <TextBlock Grid.Column="2" Grid.ColumnSpan="3"
+                                        <TextBlock Grid.Column="2" Grid.ColumnSpan="3"
                                             Grid.Row="8" Grid.RowSpan="2"
                                             Text="Số đã bán: "
                                             FontWeight="Normal"
@@ -281,74 +281,74 @@
                                             HorizontalAlignment="Left"                  
                                             Foreground="#000000"
                                             FontSize="18"/>
-                                <TextBlock Grid.Column="3" Grid.ColumnSpan="3"
-                                        Grid.Row="8" Grid.RowSpan="2"
-                                        Text="{Binding NumberSell}"
-                                        FontWeight="DemiBold"
-                                        VerticalAlignment="Center"
-                                        HorizontalAlignment="Left"                  
-                                        Foreground="#000000"
-                                        Margin="10 0 0 0"
-                                        FontSize="18"/>
-                                <TextBlock Grid.Column="5" Grid.ColumnSpan="2"
-                                        Grid.Row="4" Grid.RowSpan="3"
-                                        Text="Nhà cung cấp: "
-                                        FontWeight="Normal"
-                                        VerticalAlignment="Center"
-                                         HorizontalAlignment="Left"                  
-                                         Foreground="#000000"
-                                         FontSize="18"/>
-                                <TextBlock Grid.Column="7" Grid.ColumnSpan="2"
-                                        Grid.Row="4" Grid.RowSpan="3"
-                                        Text ="{Binding Supplier}"
-                                        FontWeight="Regular"
-                                        VerticalAlignment="Center"
-                                        HorizontalAlignment="Left" 
-                                        Margin="-30 0 0 0"
-                                        Foreground="#000000"
-                                        FontSize="18"/>
-                                <TextBlock Grid.Column="5" Grid.ColumnSpan="2"
-                                        Grid.Row="8" Grid.RowSpan="2"
-                                        Text="Giá: "
-                                        FontWeight="Normal"
-                                        VerticalAlignment="Center"
-                                        HorizontalAlignment="Left"                  
-                                        Foreground="#000000" 
-                                        FontSize="18"/>
-                                <TextBlock Grid.Column="5" Grid.ColumnSpan="3"
-                                        Grid.Row="8" Grid.RowSpan="2"
-                                        Text="Cây"
-                                        FontWeight="Normal"
-                                        VerticalAlignment="Center"
-                                        HorizontalAlignment="Center"                  
-                                        Foreground="#5FAF57"
-                                        Margin="30 0 0 0"
-                                        FontSize="18"/>
-                                <TextBlock Grid.Column="5" Grid.ColumnSpan="3"
-                                        Grid.Row="8" Grid.RowSpan="2"
-                                        Text="/"
-                                        FontWeight="Normal"
-                                        VerticalAlignment="Center"
-                                        HorizontalAlignment="Center"                  
-                                        Foreground="#000000"
-                                        Margin="-10 0 0 0"
-                                        FontSize="18"/>
-                                <TextBlock Grid.Column="6" Grid.ColumnSpan="3"
-                                        Grid.Row="8" Grid.RowSpan="2"
-                                        Text="{Binding Price}"
-                                        FontWeight="DemiBold"
-                                        VerticalAlignment="Center"
-                                        HorizontalAlignment="Left"                  
-                                        Foreground="#000000"
-                                        Margin="-40 0 0 0"
-                                        FontSize="18"/>
+                                        <TextBlock Grid.Column="3" Grid.ColumnSpan="3"
+                                            Grid.Row="8" Grid.RowSpan="2"
+                                            Text="{Binding NumberSell}"
+                                            FontWeight="DemiBold"
+                                            VerticalAlignment="Center"
+                                            HorizontalAlignment="Left"                  
+                                            Foreground="#000000"
+                                            Margin="10 0 0 0"
+                                            FontSize="18"/>
+                                        <TextBlock Grid.Column="5" Grid.ColumnSpan="2"
+                                            Grid.Row="4" Grid.RowSpan="3"
+                                            Text="Nhà cung cấp: "
+                                            FontWeight="Normal"
+                                            VerticalAlignment="Center"
+                                            HorizontalAlignment="Left"                  
+                                            Foreground="#000000"
+                                            FontSize="18"/>
+                                        <TextBlock Grid.Column="7" Grid.ColumnSpan="2"
+                                            Grid.Row="4" Grid.RowSpan="3"
+                                            Text ="{Binding Supplier}"
+                                            FontWeight="Regular"
+                                            VerticalAlignment="Center"
+                                            HorizontalAlignment="Left" 
+                                            Margin="-30 0 0 0"
+                                            Foreground="#000000"
+                                            FontSize="18"/>
+                                        <TextBlock Grid.Column="5" Grid.ColumnSpan="2"
+                                            Grid.Row="8" Grid.RowSpan="2"
+                                            Text="Giá: "
+                                            FontWeight="Normal"
+                                            VerticalAlignment="Center"
+                                            HorizontalAlignment="Left"                  
+                                            Foreground="#000000" 
+                                            FontSize="18"/>
+                                        <TextBlock Grid.Column="5" Grid.ColumnSpan="3"
+                                            Grid.Row="8" Grid.RowSpan="2"
+                                            Text="Cây"
+                                            FontWeight="Normal"
+                                            VerticalAlignment="Center"
+                                            HorizontalAlignment="Center"                  
+                                            Foreground="#5FAF57"
+                                            Margin="30 0 0 0"
+                                            FontSize="18"/>
+                                        <TextBlock Grid.Column="5" Grid.ColumnSpan="3"
+                                            Grid.Row="8" Grid.RowSpan="2"
+                                            Text="/"
+                                            FontWeight="Normal"
+                                            VerticalAlignment="Center"
+                                            HorizontalAlignment="Center"                  
+                                            Foreground="#000000"
+                                            Margin="-10 0 0 0"
+                                            FontSize="18"/>
+                                        <TextBlock Grid.Column="6" Grid.ColumnSpan="3"
+                                            Grid.Row="8" Grid.RowSpan="2"
+                                            Text="{Binding Price}"
+                                            FontWeight="DemiBold"
+                                            VerticalAlignment="Center"
+                                            HorizontalAlignment="Left"                  
+                                            Foreground="#000000"
+                                            Margin="-40 0 0 0"
+                                            FontSize="18"/>
                                         <Button x:Name="btnEditInfo"
-                                        Grid.Column="9" Grid.ColumnSpan="2"
-                                        Grid.Row="1" Grid.RowSpan="4"
-                                        Height="30" Width="30"
-                                        Click="btnEditInfo_Click"
-                                        Background="White"
-                                        >
+                                            Grid.Column="9" Grid.ColumnSpan="2"
+                                            Grid.Row="1" Grid.RowSpan="4"
+                                            Height="30" Width="30"
+                                            Click="btnEditInfo_Click"
+                                            Background="White"
+                                            Tag="{Binding PlantID}">
                                             <Button.Style>
                                                 <Style TargetType="Button">
                                                     <Setter Property="Background" Value="White"/>
@@ -366,39 +366,39 @@
                                                 </ControlTemplate>
                                             </Button.Template>
                                         </Button>
-                                <Button x:Name="btnAddToCart"
-                                    Grid.Column="7" Grid.ColumnSpan="3"
-                                    Grid.Row="8" Grid.RowSpan="3"
-                                    Foreground="#5FAF57"
-                                    FontWeight="Bold"
-                                    FontSize="20"
-                                    Click="btnAddToCart_Click">
-                                    <Button.Style>
-                                        <Style TargetType="Button">
-                                            <Setter Property="Content" Value="Thêm vào giỏ hàng"/>
-                                            <Setter Property="Cursor" Value="Hand"/>
-                                            <Setter Property="Background" Value="White"/>
-                                        </Style>
-                                    </Button.Style>
-                                    <Button.Template>
-                                        <ControlTemplate TargetType ="Button">
-                                            <Border >
-                                                <ContentPresenter   
-                                  HorizontalAlignment="Center"
-                                  VerticalAlignment="Center"/>
-                                            </Border>
-                                        </ControlTemplate>
-                                    </Button.Template>
-                                </Button>
-                                <Grid/>
+                                        <Button x:Name="btnAddToCart"
+                                            Grid.Column="7" Grid.ColumnSpan="3"
+                                            Grid.Row="8" Grid.RowSpan="3"
+                                            Foreground="#5FAF57"
+                                            FontWeight="Bold"
+                                            FontSize="20"
+                                            Click="btnAddToCart_Click">
+                                            <Button.Style>
+                                                <Style TargetType="Button">
+                                                    <Setter Property="Content" Value="Thêm vào giỏ hàng"/>
+                                                    <Setter Property="Cursor" Value="Hand"/>
+                                                    <Setter Property="Background" Value="White"/>
+                                                </Style>
+                                            </Button.Style>
+                                            <Button.Template>
+                                                <ControlTemplate TargetType ="Button">
+                                                    <Border >
+                                                        <ContentPresenter   
+                                                            HorizontalAlignment="Center"
+                                                            VerticalAlignment="Center"/>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </Button.Template>
+                                        </Button>
+                                        <Grid/>
+                                    </Grid>
+                                </Border>
                             </Grid>
-                        </Border>
-                        </Grid>
-                    </DockPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
+                        </DockPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
 
-        </ListView>
+            </ListView>
 
         </Grid>
 
@@ -413,6 +413,6 @@
 
 
         <!--This item test for list-->
-        
+
     </Grid>
 </UserControl>

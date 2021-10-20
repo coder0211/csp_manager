@@ -1,4 +1,6 @@
-﻿using System;
+﻿using csp_manager.DataContext;
+using csp_manager.DataQuery;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,14 @@ namespace csp_manager.Views
     /// </summary>
     public partial class EditInfoView : Window
     {
-        public EditInfoView()
+        QueryData QD = new QueryData();
+
+        public EditInfoView(int plant_id = 0)
         {
             InitializeComponent();
+
+            plants plant = QD.GetPlant(plant_id, out string err);
+            txtNamePlant.Text = plant.plant_name;
         }
 
         private void txtNamePlant_TextChanged(object sender, TextChangedEventArgs e)
@@ -66,7 +73,7 @@ namespace csp_manager.Views
 
         private void btnEditComplete(object sender, RoutedEventArgs e)
         {
-            
+
             this.Close();
             Window editComplete = new EditSuccessView();
             editComplete.ShowDialog();

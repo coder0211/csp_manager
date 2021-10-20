@@ -1,4 +1,5 @@
 ﻿using CSChat.ViewModels;
+using csp_manager.DataQuery;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,17 +23,32 @@ namespace csp_manager.Views
     /// </summary>
     public partial class AllListingPlantView : UserControl
     {
-       
+        QueryData QD = new QueryData();
+
         public AllListingPlantView()
         {
             InitializeComponent();
-            lstAllPlant.Items.Add(new { PlantName = "Hoa lan", NumberRemaining = 150000, NumberSell = 2000, Supplier = "Vườn hoa nhà Hòa", Price = 150000 });
-            lstAllPlant.Items.Add(new { PlantName = "Hoa hồng", NumberRemaining = 80000, NumberSell = 2000, Supplier = "Vườn hoa nhà Hòa", Price = 80000 });
-            lstAllPlant.Items.Add(new { PlantName = "Hoa lan", NumberRemaining = 150000, NumberSell = 2000, Supplier = "Vườn hoa nhà Hòa", Price = 150000 });
-            lstAllPlant.Items.Add(new { PlantName = "Hoa cúc", NumberRemaining = 150000, NumberSell = 2000, Supplier = "Vườn hoa nhà Hòa", Price = 150000 });
-            lstAllPlant.Items.Add(new { PlantName = "Hoa bưởi", NumberRemaining = 150000, NumberSell = 2000, Supplier = "Vườn hoa nhà Hòa", Price = 150000 });
-            lstAllPlant.Items.Add(new { PlantName = "Hoa hướng dương", NumberRemaining = 150000, NumberSell = 2000, Supplier = "Vườn hoa nhà Hòa", Price = 150000 });
+
+            //lstAllPlant.Items.Add(new { PlantName = "Hoa lan", NumberRemaining = 150000, NumberSell = 2000, Supplier = "Vườn hoa nhà Hòa", Price = 150000 });
+            //lstAllPlant.Items.Add(new { PlantName = "Hoa hồng", NumberRemaining = 80000, NumberSell = 2000, Supplier = "Vườn hoa nhà Hòa", Price = 80000 });
+            //lstAllPlant.Items.Add(new { PlantName = "Hoa lan", NumberRemaining = 150000, NumberSell = 2000, Supplier = "Vườn hoa nhà Hòa", Price = 150000 });
+            //lstAllPlant.Items.Add(new { PlantName = "Hoa cúc", NumberRemaining = 150000, NumberSell = 2000, Supplier = "Vườn hoa nhà Hòa", Price = 150000 });
+            //lstAllPlant.Items.Add(new { PlantName = "Hoa bưởi", NumberRemaining = 150000, NumberSell = 2000, Supplier = "Vườn hoa nhà Hòa", Price = 150000 });
+            //lstAllPlant.Items.Add(new { PlantName = "Hoa hướng dương", NumberRemaining = 150000, NumberSell = 2000, Supplier = "Vườn hoa nhà Hòa", Price = 150000 });
+            ListAllPlants();
         }
+
+        public void ListAllPlants()
+        {
+            foreach (var el in QD.GetPlants())
+            {
+                string fPath = Environment.CurrentDirectory + @"\Upload\" + el.plant_img;
+                if (!System.IO.File.Exists(fPath)) fPath = "pack://application:,,,/Res/Icons/ic_logo.png";
+                else fPath = new Uri(fPath).AbsoluteUri;
+                lstAllPlant.Items.Add(new { PlantID = el.plant_id, PlantImage = fPath, PlantName = el.plant_name, NumberRemaining = 0, NumberSell = 0, Supplier = el.plant_supplier_name, Price = el.plant_price });
+            }
+        }
+
         private void btnAll_Click(object sender, RoutedEventArgs e)
         {
             Window All = new PopUpAllView();
@@ -52,7 +68,10 @@ namespace csp_manager.Views
 
         private void btnEditInfo_Click(object sender, RoutedEventArgs e)
         {
-            Window edit = new EditInfoView();
+            var plant_id = (int)((Button)sender).Tag;
+            MessageBox.Show("Plant ID: " + plant_id);
+
+            Window edit = new EditInfoView(plant_id);
             edit.ShowDialog();
         }
     }

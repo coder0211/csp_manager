@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -66,6 +67,12 @@ namespace csp_manager.Views
                 //Imgur a = new Imgur();
                 //string b = a.Upload(op.FileName);
                 //MessageBox.Show("Test upload:\n" + b, "My App");
+
+                //Directory.CreateDirectory(Environment.CurrentDirectory + @"\Upload");
+                //string fileName = System.IO.Path.GetFileName(op.FileName);
+                //string destFile = System.IO.Path.Combine(Environment.CurrentDirectory, @"Upload\", fileName);
+                //MessageBox.Show(op.FileName + "\n" + destFile);
+                //File.Copy(op.FileName, destFile, true);
             }
         }
 
@@ -116,11 +123,17 @@ namespace csp_manager.Views
 
         private void btnCompleted_Click(object sender, RoutedEventArgs e)
         {
+            if (txtName.Text == "")
+            {
+                MessageBox.Show("Tên sản phẩm không được trống!");
+                return;
+            }
+
             Func f = new Func();
+            UpImgLocal upImg = new UpImgLocal();
             plants plant = new plants();
 
-            int pt_id;
-            bool result = int.TryParse(cbxType.SelectedValue.ToString(), out pt_id);
+            bool result = int.TryParse(cbxType.SelectedValue.ToString(), out int pt_id);
             plant.plant_type_id = pt_id;
 
             plant.plant_name = txtName.Text;
@@ -139,13 +152,29 @@ namespace csp_manager.Views
             plant.plant_created_at = DateTime.Now;
 
             //MessageBox.Show("Tên cây:" + plant.plant_name + "\nSố lượng:" + plant.plant_amount + "\nĐơn vị:" + plant.plant_unit + "\nGiá:" + f.NumberToStr((int)plant.plant_price) + "\nLoại cây: " + pt_id + "_" + cbxType.Text);
-            bool test = QD.PostPlant(plant, out string err);
-            if (test)
+            //MessageBox.Show("Img: " + imgUpload.Source.ToString());
+
+            int testInsert = QD.PostPlant(plant, out string err);
+            if (testInsert > 0)
             {
-                MessageBox.Show("Thêm mặt hàng thành công!");
+                string testUpImg = upImg.Upload(imgUpload.Source.ToString(), "plant_" + testInsert);
+                plant.plant_img = testUpImg;
+                QD.UpdatePlant(plant, out _);
+                //MessageBox.Show("testUpImg: " + testUpImg);
+                if (testUpImg != "")
+                {
+                    MessageBox.Show("Thêm sản phẩm thành công!");
+                }
+                else
+                {
+                    MessageBox.Show("Thêm sản phẩm thành công nhưng không thể cập nhật ảnh! Vui lòng cập nhật sau.");
+                }
                 Close();
             }
-            else { MessageBox.Show("Có lỗi xảy ra!"); }
+            else
+            {
+                MessageBox.Show("Có lỗi xảy ra!");
+            }
         }
     }
 }
