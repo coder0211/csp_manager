@@ -43,13 +43,13 @@
                 <Button.Template>
                     <ControlTemplate TargetType ="Button">
                         <Border    
-                                            Height="40"
-                                             Width="130"
-                                            CornerRadius="20"
-                                            Background="{TemplateBinding Background}">
+                            Height="40"
+                                Width="130"
+                            CornerRadius="20"
+                            Background="{TemplateBinding Background}">
                             <ContentPresenter   
-                                            HorizontalAlignment="Center"
-                                            VerticalAlignment="Center"/>
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"/>
                         </Border>
                     </ControlTemplate>
                 </Button.Template>

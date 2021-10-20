@@ -130,7 +130,8 @@ namespace csp_manager.Views
             }
 
             Func f = new Func();
-            UpImgLocal upImg = new UpImgLocal();
+            //UpImgLocal upImg = new UpImgLocal();
+            Imgur upImg = new Imgur();
             plants plant = new plants();
 
             bool result = int.TryParse(cbxType.SelectedValue.ToString(), out int pt_id);
@@ -157,7 +158,8 @@ namespace csp_manager.Views
             int testInsert = QD.PostPlant(plant, out string err);
             if (testInsert > 0)
             {
-                string testUpImg = upImg.Upload(imgUpload.Source.ToString(), "plant_" + testInsert);
+                //string testUpImg = upImg.Upload(imgUpload.Source.ToString(), "plant_" + testInsert);
+                string testUpImg = upImg.Upload(imgUpload.Source.ToString());
                 plant.plant_img = testUpImg;
                 QD.UpdatePlant(plant, out _);
                 //MessageBox.Show("testUpImg: " + testUpImg);

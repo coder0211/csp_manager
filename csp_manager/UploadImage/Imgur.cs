@@ -29,6 +29,7 @@ namespace csp_manager.UploadImage
             System.Collections.Specialized.NameValueCollection Keys = new System.Collections.Specialized.NameValueCollection();
             try
             {
+                if (image.Contains("file:///")) image = new Uri(image).LocalPath;
                 // Mã hoá ảnh thành chuỗi base64
                 Keys.Add("image", Convert.ToBase64String(File.ReadAllBytes(image)));
                 // Chuỗi base64 mẫu / ảnh gif nền đen
