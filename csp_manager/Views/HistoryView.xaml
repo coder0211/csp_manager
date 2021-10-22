@@ -136,9 +136,11 @@
                 CornerRadius="20" Background="#FFFFFF">
                 <ListView x:Name="lstHistory" Margin="10 10 5 0" Background="#FFFFFF"
                   SelectionChanged="lstHistory_SelectionChanged"
+                  ScrollViewer.HorizontalScrollBarVisibility="Hidden"            
+                  ScrollViewer.VerticalScrollBarVisibility="Hidden"
                   BorderThickness="0,0.5,0.5,0" 
                   ScrollViewer.CanContentScroll="False"                        
-                  BorderBrush="#FF45C8DC" 
+                  BorderBrush="Transparent" 
                   IsHitTestVisible="True"
                   >
                     <ListView.ItemContainerStyle>

@@ -36,7 +36,7 @@
                 Height="40"
                        Width="40"
                        Source="pack://application:,,,/Res/Icons/ic_logo_white.png"></Image>
-        <TextBlock Text="CS FOREST" 
+        <TextBlock Text="CS PLANT" 
                    Grid.Column="0"
                    Grid.ColumnSpan="2"
                    Grid.Row="0"
@@ -58,7 +58,7 @@
                    VerticalAlignment="Center"
                    Margin="61,0,0,0"
                    />
-        <TextBlock Text="Đây là cửa hàng cây giống CS Forest nơi cung cấp dịch vụ quản lí nông trại hàng đầu dành cho bạn."  
+        <TextBlock Text="Đây là cửa hàng cây giống CS Plant nơi cung cấp dịch vụ quản lí nông trại hàng đầu dành cho bạn."  
                    Grid.Column="0"
                    Grid.ColumnSpan="4"
                    Margin="61,0,30,0"
