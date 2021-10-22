@@ -8,6 +8,111 @@
              mc:Ignorable="d" 
              Height="568" Width="800"
              >
+
+    <UserControl.Resources>
+        <Style x:Key="ComboboxButtonStyle" TargetType="{x:Type ToggleButton}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                        <Border   
+                             Background="White"   
+                             x:Name="border"   
+                             CornerRadius="0,10,10,0"   
+                             BorderThickness="0,1,1,1"  
+                             BorderBrush="Black">
+                            <ContentPresenter />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ComboboxTextBoxStyle" TargetType="{x:Type TextBox}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Grid>
+                            <Border CornerRadius="10,0,0,10"     
+                                BorderThickness="1,1,0,1"    
+                                Background="{TemplateBinding Background}"  
+                                BorderBrush="Black">
+                                <ScrollViewer x:Name="PART_ContentHost"/>
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="IsReadOnly" Value="True"/>
+        </Style>
+        <Style x:Key="ComboboxStyle" TargetType="{x:Type ComboBox}">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ComboBox}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition MaxWidth="18"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBox Name="PART_EditableTextBox"  
+                                Style="{StaticResource ComboboxTextBoxStyle}"
+                                Padding="5,0,0,0"  
+                                Height="{TemplateBinding Height}"/>
+                            <ToggleButton Grid.Column="1" Margin="0"  
+                                Height="{TemplateBinding Height}"  
+                                Style="{StaticResource ComboboxButtonStyle}" 
+                                Focusable="False"  
+                                IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"  
+                                ClickMode="Press">
+                                <Path Grid.Column="1"  
+                                    HorizontalAlignment="Center"  
+                                    VerticalAlignment="Center"  
+                                    Data="M 0 0 L 4 4 L 8 0 Z"  
+                                    Fill="Black" />
+                            </ToggleButton>
+                            <ContentPresenter Name="ContentSite"  
+               Content="{TemplateBinding SelectionBoxItem}"  
+               ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"  
+               ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"  
+               VerticalAlignment="Center"  
+               HorizontalAlignment="Center"  
+               Margin="5,0,0,0"/>
+                            <Popup Name="Popup"  
+               Placement="Bottom"  
+               IsOpen="{TemplateBinding IsDropDownOpen}"  
+               AllowsTransparency="True"   
+               Focusable="False"  
+               PopupAnimation="Slide">
+                                <Grid Name="DropDown"  
+                 SnapsToDevicePixels="True"          
+                 MinWidth="{TemplateBinding ActualWidth}"  
+                 MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                    <Border   
+                   x:Name="DropDownBorder"  
+                   BorderThickness="1"  
+                   CornerRadius="5"  
+                   BorderBrush="Black"/>
+                                    <ScrollViewer Margin="4,6,4,6" SnapsToDevicePixels="True">
+                                        <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
+                                    </ScrollViewer>
+                                </Grid>
+                            </Popup>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type Button}" x:Key="ImageButtonStyle">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <ContentPresenter/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="75"/>
@@ -21,40 +126,20 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button 
+            <ComboBox 
                     Grid.Column="3"
                     Grid.ColumnSpan="2" 
-                    Content="Tất cả"
-                    FontSize="16"
+                    Style="{StaticResource ComboboxStyle}"
+                    FontSize="20" 
                     Width="150"
                     Margin="15 15 -50 15"
-                    Click="btnAll_Click">
-                <Button.Style>
-                    <Style TargetType="Button">
-                        <Setter Property="Background" Value="White"/>
-                        <Setter Property="Cursor" Value="Hand"/>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseCaptured" Value="True">
-                                <Setter Property="Background" Value="#BFDFBC"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
-                <Button.Template>
-                    <ControlTemplate TargetType ="Button">
-                        <Border    
-                            Height="40"
-                                Width="130"
-                            CornerRadius="20"
-                            Background="{TemplateBinding Background}">
-                            <ContentPresenter   
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
+                    Background="LightGray" Name="cbxPopUp"
+                    >
+                <ComboBoxItem IsSelected="True" >TẤT CẢ</ComboBoxItem>
+                <ComboBoxItem>Cây ăn quả</ComboBoxItem>
+                <ComboBoxItem>Hoa</ComboBoxItem>
 
-            </Button>
+            </ComboBox>
         </Grid>
         <!--<ScrollViewer Grid.ColumnSpan="2" Grid.Row="1" >
             <StackPanel>

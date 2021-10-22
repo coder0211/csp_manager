@@ -56,11 +56,7 @@ namespace csp_manager.Views
             }
         }
 
-        private void btnAll_Click(object sender, RoutedEventArgs e)
-        {
-            Window All = new PopUpAllView();
-            All.ShowDialog();
-        }
+        
 
         private void btnAddToCart_Click(object sender, RoutedEventArgs e)
         {
