@@ -154,8 +154,18 @@ namespace csp_manager.Views
         {
             //dialogFrame.Content = new CartView(this);
             //IsShowDialog = Visibility.Visible;
-            Window CartNoItem = new CartNoItemView(this);
-            CartNoItem.ShowDialog();
+
+            List<int> p_arr = AllListingPlantView.p_arr;
+            if (p_arr.Count > 0)
+            {
+                Window Cart = new CartView(this);
+                Cart.ShowDialog();
+            }
+            else
+            {
+                Window CartNoItem = new CartNoItemView(this);
+                CartNoItem.ShowDialog();
+            }
         }
 
         private void btnImport_Click(object sender, RoutedEventArgs e)

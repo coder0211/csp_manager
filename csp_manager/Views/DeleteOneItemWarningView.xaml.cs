@@ -20,6 +20,8 @@ namespace csp_manager.Views
     /// </summary>
     public partial class DeleteOneItemWarningView : Window
     {
+        public bool ReturnValue { get; set; }
+
         public DeleteOneItemWarningView()
         {
             InitializeComponent();
@@ -27,11 +29,15 @@ namespace csp_manager.Views
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
+            ReturnValue = true;
+            DialogResult = true;
             this.Close();
         }
 
         private void btnNoDelete_Click(object sender, RoutedEventArgs e)
         {
+            ReturnValue = false;
+            DialogResult = false;
             this.Close();
         }
     }

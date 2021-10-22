@@ -50,8 +50,7 @@
                            Margin="26 0 0 0"
                            Foreground="White"
                            FontSize="28"/>
-                <StackPanel Grid.Row="2"                                            
-                    >
+                <StackPanel Grid.Row="2">
                     <Separator  VerticalAlignment="Stretch"
                                 HorizontalAlignment="Left"
                                 Margin="26 0 0 0"                                
@@ -153,13 +152,12 @@
                     <TextBox.Template>
                         <ControlTemplate TargetType="TextBox">
                             <Border
-                                            Padding="10 0 0 0"
-                                            Height="35"
-                                            Width="238"
-                                            CornerRadius="15"                                          
-                                            BorderBrush="White"
-                                            BorderThickness="1"
-                                            >
+                                Padding="10 0 0 0"
+                                Height="35"
+                                Width="238"
+                                CornerRadius="15"                                          
+                                BorderBrush="White"
+                                BorderThickness="1">
                                 <Grid>
                                     <ScrollViewer x:Name="PART_ContentHost"/>
                                     <TextBlock 
@@ -184,26 +182,25 @@
                     </TextBox.Template>
                 </TextBox>
                 <TextBlock Grid.Row="7"                 
-                   Text="Địa chỉ"
-                   FontWeight="Thin"
-                   VerticalAlignment="Top"
-                   HorizontalAlignment="Left"
-                   Margin="26 -5 0 0"
-                   Foreground="White"
-                   FontSize="14"/>
+                    Text="Địa chỉ"
+                    FontWeight="Thin"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Left"
+                    Margin="26 -5 0 0"
+                    Foreground="White"
+                    FontSize="14"/>
                 <TextBox x:Name="txtCustomerLocation"
-                             TextChanged="txtCustomerLocation_TextChanged"
-                             Grid.Row="7"   
-                             Grid.RowSpan="3"
-                             VerticalAlignment="Bottom"
-                             VerticalContentAlignment="Top"
-                             HorizontalContentAlignment="Left"
-                             TextWrapping="Wrap"
-                             BorderThickness="0"
-                             Foreground="White"
-                             CaretBrush="Gray"     
-                            Margin="0 0 0 25"
-                             >
+                    TextChanged="txtCustomerLocation_TextChanged"
+                    Grid.Row="7"   
+                    Grid.RowSpan="3"
+                    VerticalAlignment="Bottom"
+                    VerticalContentAlignment="Top"
+                    HorizontalContentAlignment="Left"
+                    TextWrapping="Wrap"
+                    BorderThickness="0"
+                    Foreground="White"
+                    CaretBrush="Gray"     
+                    Margin="0 0 0 25">
                     <TextBox.Style>
                         <Style TargetType = "TextBox">
                             <Setter Property="Cursor" Value="IBeam"/>
@@ -213,20 +210,18 @@
                     <TextBox.Template>
                         <ControlTemplate TargetType="TextBox">
                             <Border
-                                            Padding="10 0 0 0"
-                                            Height="60"
-                                            Width="238"
-                                            CornerRadius="15"                                          
-                                            BorderBrush="White"
-                                            BorderThickness="1"                                          
-                                            >
+                                Padding="10 0 0 0"
+                                Height="60"
+                                Width="238"
+                                CornerRadius="15"
+                                BorderBrush="White"
+                                BorderThickness="1">
                                 <Grid>
                                     <ScrollViewer x:Name="PART_ContentHost"/>
                                     <TextBlock 
-                                            IsHitTestVisible="False"                                             
-                                            VerticalAlignment="Center"
-                                            HorizontalAlignment="Left"
-                                            >
+                                        IsHitTestVisible="False"                                             
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Left">
                                         <TextBlock.Style>
                                             <Style TargetType="TextBlock">
                                                 <Setter Property="Visibility" Value="Collapsed"/>
@@ -307,7 +302,7 @@
 
 
             </Grid>
-            
+
             <Border Grid.Column="1 " Background="White" CornerRadius="0 20 20 0">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -358,7 +353,7 @@
                                 Foreground="#3A8233"
                                 FontSize="16"/>
                         </Grid>
-                            
+
                     </Border>
 
                     <Grid Grid.Row="1">
@@ -368,7 +363,6 @@
                                   ScrollViewer.CanContentScroll="False"
                                   BorderBrush="#FF45C8DC" 
                                   IsHitTestVisible="True">
-
                             <ListView.ItemContainerStyle>
                                 <Style TargetType="{x:Type ListViewItem}">
                                     <Setter Property="Focusable" Value="False"/>
@@ -419,8 +413,9 @@
                                                         CornerRadius="12"
                                                         Margin="0 0 0 0"
                                                         Height="71"
-                                                        Background="LightGray"/>
-
+                                                        Background="LightGray">
+                                                        <Image Source="{Binding PlantImage}" />
+                                                    </Border>
                                                     <TextBlock Grid.Column="2" Grid.ColumnSpan="2"
                                                         Text="{Binding Name}"
                                                         FontWeight="Normal"
@@ -442,7 +437,7 @@
                                                         HorizontalAlignment="Center"                  
                                                         Foreground="#E04F5F"
                                                         FontSize="16"/>
-                                                    <Button Grid.Column="10" Click="btnDeleteItem_Click">
+                                                    <Button Grid.Column="10" Click="btnDeleteItem_Click" Tag="{Binding PlantID}">
                                                         <Button.Style>
                                                             <Style TargetType="Button">
                                                                 <Setter Property="Content" Value="X"/>
@@ -467,12 +462,10 @@
                                                 </Grid>
                                             </Border>
                                         </Grid>
-
                                     </DockPanel>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
-
                     </Grid>
                     <Border Grid.Row="2">
                         <Grid>
@@ -508,8 +501,8 @@
                                         <ColumnDefinition/>
                                         <ColumnDefinition/>
                                     </Grid.ColumnDefinitions>
-                                
-                                <TextBlock     
+
+                                    <TextBlock     
                                     Grid.Column="0"
                                     Grid.ColumnSpan="5"
                                 Text="7.000.000"
@@ -519,7 +512,7 @@
                                 Margin="0 0 0 0"
                                 Foreground="#E04F5F"
                                 FontSize="22"/>
-                                <TextBlock    
+                                    <TextBlock    
                                 Grid.Column="5"
                                 Grid.ColumnSpan="3"
                                 Text=" vnđ"
@@ -646,11 +639,11 @@
                         </Grid>
                     </Border>
                 </Grid>
-                
+
             </Border>
-            
+
         </Grid>
-        
-        </Border>
- 
+
+    </Border>
+
 </Window>

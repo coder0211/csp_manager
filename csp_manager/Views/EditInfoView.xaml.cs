@@ -152,6 +152,8 @@ namespace csp_manager.Views
 
             if (plant.plant_img != imgUpload.Source.ToString())
             {
+                bool qwe = upImg.Delete(plant.plant_img);
+                //MessageBox.Show(qwe.ToString());
                 plant.plant_img = upImg.Upload(imgUpload.Source.ToString());
             }
             bool tesUpdate = QD.UpdatePlant(plant, out _);

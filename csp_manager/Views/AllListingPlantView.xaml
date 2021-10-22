@@ -244,7 +244,7 @@
                                         Width="100" 
                                         CornerRadius="12"
                                         Height="100">
-                                            <Image Source="{Binding PlantImage}"/>
+                                            <Image Source="{Binding PlantImage}" />
                                         </Border>
 
 
@@ -372,7 +372,8 @@
                                             Foreground="#5FAF57"
                                             FontWeight="Bold"
                                             FontSize="20"
-                                            Click="btnAddToCart_Click">
+                                            Click="btnAddToCart_Click"
+                                            Tag="{Binding PlantID}">
                                             <Button.Style>
                                                 <Style TargetType="Button">
                                                     <Setter Property="Content" Value="Thêm vào giỏ hàng"/>

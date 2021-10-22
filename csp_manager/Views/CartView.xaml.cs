@@ -1,4 +1,6 @@
-﻿using System;
+﻿using csp_manager.DataContext;
+using csp_manager.DataQuery;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,21 +25,39 @@ namespace csp_manager.Views
 
         HomeView _homeView;
 
-       
+        private QueryData QD = new QueryData();
+        private List<int> p_arr = AllListingPlantView.p_arr;
+        private Func f = new Func();
+
         public CartView(HomeView homeView)
         {
             _homeView = homeView;
             InitializeComponent();
-            
-            lstCart.Items.Add(new { Name = "Hoa hồng", Quantity = "x50", Price = "1.750.000 vnđ" });
-            lstCart.Items.Add(new { Name = "Hoa hồng", Quantity = "x50", Price = "1.750.000 vnđ" });
-            lstCart.Items.Add(new { Name = "Hoa hồng", Quantity = "x50", Price = "1.750.000 vnđ" });
-            lstCart.Items.Add(new { Name = "Hoa hồng", Quantity = "x50", Price = "1.750.000 vnđ" });
-            lstCart.Items.Add(new { Name = "Hoa hồng", Quantity = "x50", Price = "1.750.000 vnđ" });
-            lstCart.Items.Add(new { Name = "Hoa hồng", Quantity = "x50", Price = "1.750.000 vnđ" });
+
+            //lstCart.Items.Add(new { Name = "Hoa hồng", Quantity = "x50", Price = "1.750.000 vnđ" });
+            //lstCart.Items.Add(new { Name = "Hoa hồng", Quantity = "x50", Price = "1.750.000 vnđ" });
+            //lstCart.Items.Add(new { Name = "Hoa hồng", Quantity = "x50", Price = "1.750.000 vnđ" });
+            //lstCart.Items.Add(new { Name = "Hoa hồng", Quantity = "x50", Price = "1.750.000 vnđ" });
+            //lstCart.Items.Add(new { Name = "Hoa hồng", Quantity = "x50", Price = "1.750.000 vnđ" });
+            //lstCart.Items.Add(new { Name = "Hoa hồng", Quantity = "x50", Price = "1.750.000 vnđ" });
+
+            LoadCart();
         }
 
-       
+        private void LoadCart()
+        {
+            lstCart.Items.Clear();
+            string s = "";
+            foreach (int v in p_arr)
+            {
+                plants plant = QD.GetPlant(v, out string err);
+                s += v + ",";
+                string fPath = plant.plant_img;
+                //if (string.IsNullOrEmpty(fPath)) fPath = "pack://application:,,,/Res/Icons/ic_logo.png";
+                lstCart.Items.Add(new { PlantID = plant.plant_id, PlantImage = fPath, Name = plant.plant_name, Quantity = "x1", Price = f.NumberToStr((int)plant.plant_price) + " đ" });
+            }
+            //MessageBox.Show(s);
+        }
 
         private void TempBut_Click(object sender, RoutedEventArgs e)
         {
@@ -68,6 +88,8 @@ namespace csp_manager.Views
         {
             Window deleteCart = new DeleteCartWaring();
             deleteCart.ShowDialog();
+            if (deleteCart.DialogResult == true)
+                lstCart.Items.Clear();
         }
         private void btnContinuteBuy_Click(object sender, RoutedEventArgs e)
         {
@@ -87,7 +109,15 @@ namespace csp_manager.Views
         private void btnDeleteItem_Click(object sender, RoutedEventArgs e)
         {
             Window deleteItem = new DeleteOneItemWarningView();
-            deleteItem.ShowDialog();
+            bool? dialogResult = deleteItem.ShowDialog();
+            //MessageBox.Show(dialogResult.ToString());
+            if (deleteItem.DialogResult == true)
+            {
+                Button btn = (Button)sender;
+                p_arr.Remove((int)btn.Tag);
+                //lstCart.Items.Remove(btn.Tag);
+                LoadCart();
+            }
         }
     }
 }

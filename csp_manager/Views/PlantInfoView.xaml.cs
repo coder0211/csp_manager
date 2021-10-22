@@ -27,11 +27,13 @@ namespace csp_manager.Views
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
+            DialogResult = false;
             this.Close();
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
+            DialogResult = true;
             this.Close();
         }
 

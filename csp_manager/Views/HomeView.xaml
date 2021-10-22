@@ -358,7 +358,7 @@
                     Foreground="#C4C4C4"
                     FontWeight="Bold"
                     HorizontalContentAlignment="Left"                  
-                    FontSize="16" Click="btnImport_Click" >
+                    FontSize="16" Click="btnImport_Click">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="Background" Value="Transparent"/>
@@ -367,7 +367,6 @@
                                 <Setter.Value>
                                     <Grid>
                                         <Image Source="pack://application:,,,/Res/Icons/ic_import.png" Width="20" Height="20" />
-
                                     </Grid>
                                 </Setter.Value>
                             </Setter>
@@ -393,7 +392,7 @@
                     Foreground="#C4C4C4"
                     FontWeight="Bold"
                     HorizontalContentAlignment="Left"                  
-                    FontSize="16" Click="btnCart_Click" >
+                    FontSize="16" Click="btnCart_Click">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="Background" Value="Transparent"/>

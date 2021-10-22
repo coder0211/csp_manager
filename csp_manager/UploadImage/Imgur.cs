@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -26,7 +27,7 @@ namespace csp_manager.UploadImage
             WebClient w = new WebClient();
             w.Headers.Add("Authorization", "Bearer " + access_token);
             //w.Headers.Add("Authorization", "Client-ID " + Client_ID);
-            System.Collections.Specialized.NameValueCollection Keys = new System.Collections.Specialized.NameValueCollection();
+            NameValueCollection Keys = new NameValueCollection();
             try
             {
                 if (image.Contains("file:///")) image = new Uri(image).LocalPath;
@@ -48,6 +49,29 @@ namespace csp_manager.UploadImage
             {
                 return "";
             }
+        }
+        public bool Delete(string image)
+        {
+            if (image.Contains("file:///")) image = new Uri(image).LocalPath;
+            if (!image.Contains("imgur.com")) return false;
+            image = image.Replace("https://i.imgur.com/", "").Split('.')[0];
+            WebClient w = new WebClient();
+            w.Headers.Add("Authorization", "Bearer " + access_token);
+            try
+            {
+                byte[] responseArray = w.UploadValues("https://api.imgur.com/3/image/" + image, "DELETE", new NameValueCollection());
+                dynamic result = Encoding.ASCII.GetString(responseArray);
+
+                Regex reg = new Regex("success\":(true|false),");
+                Match match = reg.Match(result);
+                string url = match.ToString().Replace("success\":", "").Replace(",", "");
+                return url == "true" ? true : false;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+
         }
     }
 }

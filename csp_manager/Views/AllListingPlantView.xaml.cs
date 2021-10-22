@@ -1,4 +1,5 @@
 ﻿using CSChat.ViewModels;
+using csp_manager.DataContext;
 using csp_manager.DataQuery;
 using System;
 using System.Collections.Generic;
@@ -24,8 +25,8 @@ namespace csp_manager.Views
     public partial class AllListingPlantView : UserControl
     {
         QueryData QD = new QueryData();
-
         public delegate void LoadAllPlants();
+        public static List<int> p_arr = new List<int>();
 
         public AllListingPlantView()
         {
@@ -65,6 +66,14 @@ namespace csp_manager.Views
         {
             Window infoItemAdd = new PlantInfoView();
             infoItemAdd.ShowDialog();
+            if (infoItemAdd.DialogResult == true)
+            {
+                var plant_id = (int)((Button)sender).Tag;
+                int x = p_arr.Find(y => y == plant_id);
+                //MessageBox.Show(x.ToString());
+                if (x == 0)
+                    p_arr.Add(plant_id);
+            }
         }
 
         private void lstAllPlant_SelectionChanged(object sender, SelectionChangedEventArgs e)
