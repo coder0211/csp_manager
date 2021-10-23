@@ -89,7 +89,11 @@ namespace csp_manager.Views
             Window deleteCart = new DeleteCartWaring();
             deleteCart.ShowDialog();
             if (deleteCart.DialogResult == true)
+            {
                 lstCart.Items.Clear();
+                p_arr.Clear();
+            }
+
         }
         private void btnContinuteBuy_Click(object sender, RoutedEventArgs e)
         {

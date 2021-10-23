@@ -31,7 +31,7 @@
         </Grid.RowDefinitions>
         <Border Grid.RowSpan="8"
             Grid.Row="0"
-            CornerRadius="0,35,35,0"
+            CornerRadius="0,35,0,0"
             Background="White"
             Margin="0,10,0,0">
             <Border.Effect>
@@ -235,8 +235,6 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
-
-
                 <Button  x:Name="btnLogout"
                     Grid.Row="10"                   
                     Foreground="#C4C4C4"
@@ -251,11 +249,10 @@
                                 <Setter.Value>
                                     <Grid>
                                         <Image Source="pack://application:,,,/Res\Icons\ic_exit.png" Width="20" Height="20" Margin="-130 0 0 0"/>
-                                        <TextBlock Text="Đăng Xuất" FontSize="18"/>
+                                        <TextBlock Text="Đăng xuất" FontSize="18"/>
                                     </Grid>
                                 </Setter.Value>
                             </Setter>
-
                         </Style>
                     </Button.Style>
                     <Button.Template>
@@ -353,8 +350,8 @@
                     </TextBox.Template>
                 </TextBox>
 
-                <Button  x:Name="btnImport"
-                    Grid.Column="10"                   
+                <Button x:Name="btnImport"
+                    Grid.Column="10"
                     Foreground="#C4C4C4"
                     FontWeight="Bold"
                     HorizontalContentAlignment="Left"                  
@@ -370,7 +367,6 @@
                                     </Grid>
                                 </Setter.Value>
                             </Setter>
-
                         </Style>
                     </Button.Style>
                     <Button.Template>

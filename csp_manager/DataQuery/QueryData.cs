@@ -82,6 +82,7 @@ namespace csp_manager.DataQuery
                     if (plantUpdate.plant_unit != plant.plant_unit) plantUpdate.plant_unit = plant.plant_unit;
                     if (plantUpdate.plant_price != plant.plant_price) plantUpdate.plant_price = plant.plant_price;
                     if (plantUpdate.plant_note != plant.plant_note) plantUpdate.plant_note = plant.plant_note;
+                    if (plantUpdate.plant_type_id != plant.plant_type_id) plantUpdate.plant_type_id = plant.plant_type_id;
                     if (plantUpdate.plant_supplier_name != plant.plant_supplier_name) plantUpdate.plant_supplier_name = plant.plant_supplier_name;
                     if (plantUpdate.plant_supplier_address != plant.plant_supplier_address) plantUpdate.plant_supplier_address = plant.plant_supplier_address;
                     dbContext.SaveChanges();

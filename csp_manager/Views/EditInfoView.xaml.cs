@@ -26,6 +26,7 @@ namespace csp_manager.Views
     /// </summary>
     public partial class EditInfoView : Window
     {
+
         QueryData QD = new QueryData();
         private plants plant;
 
@@ -61,7 +62,6 @@ namespace csp_manager.Views
                 imgUpload.Width = double.NaN;
                 imgUpload.Height = double.NaN;
             }
-
             loadAllPlants = loadAll;
         }
 
@@ -159,7 +159,12 @@ namespace csp_manager.Views
             bool tesUpdate = QD.UpdatePlant(plant, out _);
             if (tesUpdate)
             {
-                this.Close();
+                plant = null;
+                f = null;
+                upImg = null;
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+                Close();
                 Window editComplete = new EditSuccessView();
                 editComplete.ShowDialog();
                 loadAllPlants();

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using csp_manager.DataContext;
+using csp_manager.DataQuery;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +22,21 @@ namespace csp_manager.Views
     /// </summary>
     public partial class PlantInfoView : Window
     {
-        public PlantInfoView()
+        QueryData QD = new QueryData();
+
+        public PlantInfoView(int plant_id)
         {
             InitializeComponent();
+
+            plants plant = QD.GetPlant(plant_id, out string err);
+            plant_name.Text = plant.plant_name;
+            plant_amount.Text = plant.plant_amount.ToString();
+            plant_price.Text = plant.plant_price.ToString();
+            plant_supplier_name.Text = "ĐVQL CSPLANT";
+            plant_note.Text = plant.plant_note;
+            imgUpload.Source = new BitmapImage(new Uri(string.IsNullOrEmpty(plant.plant_img) ? "pack://application:,,,/Res/Icons/ic_logo.png" : plant.plant_img));
+            imgUpload.Width = double.NaN;
+            imgUpload.Height = double.NaN;
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)

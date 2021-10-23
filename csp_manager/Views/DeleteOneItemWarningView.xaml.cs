@@ -29,14 +29,12 @@ namespace csp_manager.Views
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
-            ReturnValue = true;
             DialogResult = true;
             this.Close();
         }
 
         private void btnNoDelete_Click(object sender, RoutedEventArgs e)
         {
-            ReturnValue = false;
             DialogResult = false;
             this.Close();
         }

@@ -20,34 +20,32 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="1"
-                               Grid.RowSpan="2"
-                               HorizontalAlignment="Center"
-                               FontSize="25"
-                               Foreground="#5FAF57"
-                               TextAlignment="Center"
-                               FontWeight="Medium"
-                               Text="Đăng nhập"/>
+            Grid.RowSpan="2"
+            HorizontalAlignment="Center"
+            FontSize="25"
+            Foreground="#5FAF57"
+            TextAlignment="Center"
+            FontWeight="Medium"
+            Text="Đăng nhập"/>
         <TextBlock Grid.Row="2"
-                        HorizontalAlignment="Left"
-                        VerticalAlignment="Bottom"
-                        FontSize="14"
-                        Foreground="#5FAF57"
-                        FontWeight="Medium"
-                        Margin="40,0,0,0"
-                        Text="Email"/>
-
+            HorizontalAlignment="Left"
+            FontSize="14"
+            Foreground="#5FAF57"
+            FontWeight="Medium"
+            Margin="40,0,0,0"
+            Text="Email" VerticalAlignment="Center"/>
         <TextBox x:Name="txtEmail"
-                             TextChanged="txtEmail_TextChanged"
-                             Grid.Row="3"
-                             Grid.RowSpan="2"
-                             VerticalAlignment="Top"
-                             VerticalContentAlignment="Center"
-                             HorizontalContentAlignment="Left"
+                TextChanged="txtEmail_TextChanged"
+                Grid.Row="3"
+                Grid.RowSpan="2"
+                VerticalAlignment="Top"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Left"
                            
-                             BorderThickness="0"
-                             Foreground="#828282"
-                             Background="#F3F3F3"
-                             Margin="30,0,30,0">
+                BorderThickness="0"
+                Foreground="#828282"
+                Background="#F3F3F3"
+                Margin="30,0,30,0">
             <TextBox.Style>
                 <Style TargetType = "TextBox">
                     <Setter Property="Cursor" Value="IBeam"/>
@@ -58,18 +56,16 @@
                 <ControlTemplate TargetType="TextBox">
                     <Border
                         Padding="15,0,15,0"
-                            Height="40"
-                            CornerRadius="20"
-                            Background="{TemplateBinding Background}"
-                            >
+                        Height="40"
+                        CornerRadius="20"
+                        Background="{TemplateBinding Background}">
                         <Grid>
                             <ScrollViewer x:Name="PART_ContentHost"/>
                             <TextBlock 
-                                        IsHitTestVisible="False"
-                                        Text="Email"
-                                        VerticalAlignment="Center"
-                                        HorizontalAlignment="Left"
-                                       >
+                                IsHitTestVisible="False"
+                                Text="Email"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Left">
                                 <TextBlock.Style>
                                     <Style TargetType="TextBlock">
                                         <Setter Property="Visibility" Value="Collapsed"/>
@@ -88,26 +84,25 @@
         </TextBox>
 
         <TextBlock Grid.Row="4"
-                    Grid.RowSpan="2"
-                        HorizontalAlignment="Left"
-                        VerticalAlignment="Top"
-                        FontSize="14"
-                        Foreground="#5FAF57"
-                        FontWeight="Medium"
-                        Margin="40,18,0,15"
-                        Text="Mật khẩu"/>
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            FontSize="14"
+            Foreground="#5FAF57"
+            FontWeight="Medium"
+            Margin="40,18,0,15"
+            Text="Mật khẩu"/>
         <TextBox x:Name="txtPassword"
-                             TextChanged="txtPassword_TextChanged"
-                             Grid.Row="4"
-                             Grid.RowSpan="2"
-                             VerticalAlignment="Center"
-                             VerticalContentAlignment="Center"
-                             HorizontalContentAlignment="Left"
+                TextChanged="txtPassword_TextChanged"
+                Grid.Row="4"
+                Grid.RowSpan="2"
+                VerticalAlignment="Center"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Left"
                            
-                             BorderThickness="0"
-                             Foreground="#828282"
-                             Background="#F3F3F3"
-                             Margin="30,30,30,0">
+                BorderThickness="0"
+                Foreground="#828282"
+                Background="#F3F3F3"
+                Margin="30,30,30,0">
             <TextBox.Style>
                 <Style TargetType = "TextBox">
                     <Setter Property="Cursor" Value="IBeam"/>
@@ -118,18 +113,16 @@
                 <ControlTemplate TargetType="TextBox">
                     <Border 
                         Padding="15,0,15,0"
-                                    Height="40"
-                                    CornerRadius="20"
-                                    Background="{TemplateBinding Background}"
-                                   >
+                        Height="40"
+                        CornerRadius="20"
+                        Background="{TemplateBinding Background}">
                         <Grid>
                             <ScrollViewer x:Name="PART_ContentHost"/>
                             <TextBlock 
-                                            IsHitTestVisible="False"
-                                            Text="*********"
-                                            VerticalAlignment="Center"
-                                            HorizontalAlignment="Left"
-                                           >
+                                IsHitTestVisible="False"
+                                Text="*********"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Left">
                                 <TextBlock.Style>
                                     <Style TargetType="TextBlock">
                                         <Setter Property="Visibility" Value="Collapsed"/>
@@ -161,24 +154,24 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <TextBlock Text="Ghi nhớ mật khẩu"
-                       Foreground ="#5FAF57"
-                       VerticalAlignment="Center"
-                       Grid.Column="5"
-                       Grid.ColumnSpan="4"
-                       HorizontalAlignment="Right"
-                       FontSize="13"
-                       FontWeight="Light"
-                       Margin="0,0,5,0"
-                       />
+                Foreground ="#5FAF57"
+                VerticalAlignment="Center"
+                Grid.Column="5"
+                Grid.ColumnSpan="4"
+                HorizontalAlignment="Right"
+                FontSize="13"
+                FontWeight="Light"
+                Margin="0,0,5,0"  />
 
-            <Button    Height="20"
-                       HorizontalAlignment="Left"
-                        Width="20"
-                        Grid.Row="7"
-                       x:Name="btnMemorize"
-                        Click="btnMemorize_Click"
-                         Grid.Column="9"
-                        Grid.ColumnSpan="2">
+            <Button
+                Height="20"
+                HorizontalAlignment="Left"
+                Width="20"
+                Grid.Row="7"
+                x:Name="btnMemorize"
+                Click="btnMemorize_Click"
+                Grid.Column="9"
+                Grid.ColumnSpan="2">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Background" Value="#5FAF57"/>
@@ -206,15 +199,15 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-          
+
         </Grid>
         <Button   
-                        Margin="30,0,30,0"
-                        Grid.Row="7"
-                        Content="Tiếp tục"
-                        Foreground="White"
-                        FontWeight="Bold"
-                        FontSize="16" Click="btnLogin_Click">
+            Margin="30,0,30,0"
+            Grid.Row="7"
+            Content="Tiếp tục"
+            Foreground="White"
+            FontWeight="Bold"
+            FontSize="16" Click="btnLogin_Click">
             <Button.Style>
                 <Style TargetType="Button">
                     <Setter Property="Background" Value="#5FAF57"/>
@@ -239,12 +232,13 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button     Width="100"
-                        Grid.Row="8"
-                        Content="Quên mật khẩu?"
-                        Foreground="#5FAF57"
-                        FontWeight="Thin"
-                        FontSize="13">
+        <Button
+            Width="100"
+            Grid.Row="8"
+            Content="Quên mật khẩu?"
+            Foreground="#5FAF57"
+            FontWeight="Thin"
+            FontSize="13">
             <Button.Style>
                 <Style TargetType="Button">
                     <Setter Property="Background" Value="Transparent"/>
@@ -258,8 +252,7 @@
             </Button.Style>
             <Button.Template>
                 <ControlTemplate TargetType ="Button">
-                    <Border    
-                       
+                    <Border
                         CornerRadius="20"
                         Background="{TemplateBinding Background}">
                         <ContentPresenter   

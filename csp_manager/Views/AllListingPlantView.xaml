@@ -6,8 +6,7 @@
              xmlns:local="clr-namespace:csp_manager.Views" 
              d:DataContext="{d:DesignInstance Type=local:AllListingPlantView}"
              mc:Ignorable="d" 
-             Height="568" Width="800"
-             >
+             Height="568" Width="800">
 
     <UserControl.Resources>
         <Style x:Key="ComboboxButtonStyle" TargetType="{x:Type ToggleButton}">
@@ -71,27 +70,27 @@
                                     Fill="Black" />
                             </ToggleButton>
                             <ContentPresenter Name="ContentSite"  
-               Content="{TemplateBinding SelectionBoxItem}"  
-               ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"  
-               ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"  
-               VerticalAlignment="Center"  
-               HorizontalAlignment="Center"  
-               Margin="5,0,0,0"/>
+                                Content="{TemplateBinding SelectionBoxItem}"  
+                                ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"  
+                                ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"  
+                                VerticalAlignment="Center"  
+                                HorizontalAlignment="Center"  
+                                Margin="5,0,0,0"/>
                             <Popup Name="Popup"  
-               Placement="Bottom"  
-               IsOpen="{TemplateBinding IsDropDownOpen}"  
-               AllowsTransparency="True"   
-               Focusable="False"  
-               PopupAnimation="Slide">
+                                    Placement="Bottom"  
+                                    IsOpen="{TemplateBinding IsDropDownOpen}"  
+                                    AllowsTransparency="True"   
+                                    Focusable="False"  
+                                    PopupAnimation="Slide">
                                 <Grid Name="DropDown"  
-                 SnapsToDevicePixels="True"          
-                 MinWidth="{TemplateBinding ActualWidth}"  
-                 MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                        SnapsToDevicePixels="True"          
+                                        MinWidth="{TemplateBinding ActualWidth}"  
+                                        MaxHeight="{TemplateBinding MaxDropDownHeight}">
                                     <Border   
-                   x:Name="DropDownBorder"  
-                   BorderThickness="1"  
-                   CornerRadius="5"  
-                   BorderBrush="Black"/>
+                                            x:Name="DropDownBorder"  
+                                            BorderThickness="1"  
+                                            CornerRadius="5"  
+                                            BorderBrush="Black" />
                                     <ScrollViewer Margin="4,6,4,6" SnapsToDevicePixels="True">
                                         <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
                                     </ScrollViewer>
@@ -255,15 +254,15 @@
         </ScrollViewer>-->
         <Grid Grid.Row="1">
             <ListView  x:Name="lstAllPlant" Background="Transparent"                
-                   SelectionChanged="lstAllPlant_SelectionChanged"
-                   BorderThickness="0,0.5,0.5,0" 
-                   ScrollViewer.HorizontalScrollBarVisibility="Hidden"            
-                   ScrollViewer.VerticalScrollBarVisibility="Hidden"
-                   Height="450"
-                   Margin="0 -50 0 0"
-                   ScrollViewer.CanContentScroll="False"
-                   BorderBrush="Transparent" 
-                   IsHitTestVisible="True">
+                SelectionChanged="lstAllPlant_SelectionChanged"
+                BorderThickness="0,0.5,0.5,0" 
+                ScrollViewer.HorizontalScrollBarVisibility="Hidden"            
+                ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                Height="450"
+                Margin="0 -50 0 0"
+                ScrollViewer.CanContentScroll="False"
+                BorderBrush="Transparent" 
+                IsHitTestVisible="True">
                 <ListView.ItemContainerStyle>
                     <Style TargetType="{x:Type ListViewItem}">
                         <Setter Property="Focusable" Value="False"/>
@@ -326,18 +325,23 @@
                                             <RowDefinition/>
                                         </Grid.RowDefinitions>
                                         <Border Grid.Column="0"
-                                        Grid.ColumnSpan="2"
-                                        Grid.RowSpan="12"
-                                        Width="100" 
-                                        CornerRadius="12"
-                                        Height="100">
-                                            <Image Source="{Binding PlantImage}" />
+                                            Grid.ColumnSpan="2"
+                                            Grid.RowSpan="12"
+                                            Width="80"
+                                            CornerRadius="12"
+                                            Height="80">
+                                            <!--<Image Source="{Binding Path=p.plant_img}" />-->
+                                            <Grid>
+                                                <Rectangle RadiusX="12" RadiusY="12">
+                                                    <Rectangle.Fill>
+                                                        <ImageBrush x:Name="myImage" ImageSource="{Binding Path=p.plant_img}" Stretch="UniformToFill" />
+                                                    </Rectangle.Fill>
+                                                </Rectangle>
+                                            </Grid>
                                         </Border>
-
-
                                         <TextBlock Grid.Column="2" Grid.ColumnSpan="3"
                                             Grid.RowSpan="5"
-                                            Text="{Binding PlantName}"
+                                            Text="{Binding Path=p.plant_name}"
                                             FontWeight="Bold"
                                             VerticalAlignment="Center"
                                             HorizontalAlignment="Left"                  
@@ -348,52 +352,50 @@
                                             Text="Số lượng còn: "
                                             FontWeight="Regular"
                                             VerticalAlignment="Center"
-                                            HorizontalAlignment="Left"                  
+                                            HorizontalAlignment="Left"
                                             Foreground="#000000"
-                                            FontSize="18"/>
-                                        <TextBlock Grid.Column="3" Grid.ColumnSpan="3"
-                                            Grid.Row="4" Grid.RowSpan="3"
-                                            Text="{Binding NumberRemaining}"
-                                            FontWeight="DemiBold"
-                                            VerticalAlignment="Center"
-                                            HorizontalAlignment="Left"                  
-                                            Foreground="#000000"
-                                            Margin="40 0 0 0"
-                                            FontSize="18"/>
+                                            FontSize="16">
+                                            <TextBlock
+                                                Text="{Binding Path=p.plant_amount}"
+                                                FontWeight="DemiBold"
+                                                VerticalAlignment="Center"
+                                                HorizontalAlignment="Left"
+                                                Foreground="#000000"
+                                                FontSize="16"/>
+                                       </TextBlock>
                                         <TextBlock Grid.Column="2" Grid.ColumnSpan="3"
                                             Grid.Row="8" Grid.RowSpan="2"
                                             Text="Số đã bán: "
                                             FontWeight="Normal"
                                             VerticalAlignment="Center"
-                                            HorizontalAlignment="Left"                  
+                                            HorizontalAlignment="Left"
                                             Foreground="#000000"
-                                            FontSize="18"/>
-                                        <TextBlock Grid.Column="3" Grid.ColumnSpan="3"
-                                            Grid.Row="8" Grid.RowSpan="2"
-                                            Text="{Binding NumberSell}"
-                                            FontWeight="DemiBold"
-                                            VerticalAlignment="Center"
-                                            HorizontalAlignment="Left"                  
-                                            Foreground="#000000"
-                                            Margin="10 0 0 0"
-                                            FontSize="18"/>
-                                        <TextBlock Grid.Column="5" Grid.ColumnSpan="2"
+                                            FontSize="16">
+                                            <TextBlock
+                                                Text="{Binding Path=NumberSell}"
+                                                FontWeight="DemiBold"
+                                                VerticalAlignment="Center"
+                                                HorizontalAlignment="Left"
+                                                Foreground="#000000"
+                                                Margin="0 4 0 0"
+                                                FontSize="16"/>
+                                        </TextBlock>
+                                        <TextBlock Grid.Column="5" Grid.ColumnSpan="5"
                                             Grid.Row="4" Grid.RowSpan="3"
                                             Text="Nhà cung cấp: "
                                             FontWeight="Normal"
                                             VerticalAlignment="Center"
-                                            HorizontalAlignment="Left"                  
+                                            HorizontalAlignment="Left"
                                             Foreground="#000000"
-                                            FontSize="18"/>
-                                        <TextBlock Grid.Column="7" Grid.ColumnSpan="2"
-                                            Grid.Row="4" Grid.RowSpan="3"
-                                            Text ="{Binding Supplier}"
-                                            FontWeight="Regular"
-                                            VerticalAlignment="Center"
-                                            HorizontalAlignment="Left" 
-                                            Margin="-30 0 0 0"
-                                            Foreground="#000000"
-                                            FontSize="18"/>
+                                            FontSize="16">
+                                            <TextBlock
+                                                Text ="{Binding Path=p.plant_supplier_name}"
+                                                FontWeight="DemiBold"
+                                                VerticalAlignment="Center"
+                                                HorizontalAlignment="Left"
+                                                Foreground="#000000"
+                                                FontSize="16"/>
+                                        </TextBlock>
                                         <TextBlock Grid.Column="5" Grid.ColumnSpan="2"
                                             Grid.Row="8" Grid.RowSpan="2"
                                             Text="Giá: "
@@ -401,16 +403,16 @@
                                             VerticalAlignment="Center"
                                             HorizontalAlignment="Left"                  
                                             Foreground="#000000" 
-                                            FontSize="18"/>
-                                        <TextBlock Grid.Column="5" Grid.ColumnSpan="3"
-                                            Grid.Row="8" Grid.RowSpan="3"
-                                            Text="Cây"
-                                            FontWeight="Normal"
-                                            VerticalAlignment="Center"
-                                            HorizontalAlignment="Center"                  
-                                            Foreground="#5FAF57"
-                                            Margin="30 -8 0 0"
-                                            FontSize="18"/>
+                                            FontSize="16">
+                                            <TextBlock
+                                                Text="{Binding Path=p.plant_price, StringFormat=N0}"
+                                                FontWeight="DemiBold"
+                                                VerticalAlignment="Center"
+                                                HorizontalAlignment="Left"                  
+                                                Foreground="#000000"
+                                                Margin="0 4 0 0"
+                                                FontSize="16"/>
+                                        </TextBlock>
                                         <TextBlock Grid.Column="5" Grid.ColumnSpan="3"
                                             Grid.Row="8" Grid.RowSpan="2"
                                             Text="/"
@@ -419,23 +421,23 @@
                                             HorizontalAlignment="Center"                  
                                             Foreground="#000000"
                                             Margin="-10 0 0 0"
-                                            FontSize="18"/>
-                                        <TextBlock Grid.Column="6" Grid.ColumnSpan="3"
-                                            Grid.Row="8" Grid.RowSpan="2"
-                                            Text="{Binding Price}"
-                                            FontWeight="DemiBold"
+                                            FontSize="16"/>
+                                        <TextBlock Grid.Column="5" Grid.ColumnSpan="3"
+                                            Grid.Row="8" Grid.RowSpan="3"
+                                            Text="Cây"
+                                            FontWeight="Normal"
                                             VerticalAlignment="Center"
-                                            HorizontalAlignment="Left"                  
-                                            Foreground="#000000"
-                                            Margin="-40 0 0 0"
-                                            FontSize="18"/>
+                                            HorizontalAlignment="Center"                  
+                                            Foreground="#5FAF57"
+                                            Margin="30 -10 0 0"
+                                            FontSize="16"/>
                                         <Button x:Name="btnEditInfo"
                                             Grid.Column="9" Grid.ColumnSpan="2"
                                             Grid.Row="1" Grid.RowSpan="4"
                                             Height="30" Width="30"
                                             Click="btnEditInfo_Click"
                                             Background="White"
-                                            Tag="{Binding PlantID}">
+                                            Tag="{Binding Path=p.plant_id}">
                                             <Button.Style>
                                                 <Style TargetType="Button">
                                                     <Setter Property="Background" Value="White"/>
@@ -445,8 +447,8 @@
                                             <Button.Template>
                                                 <ControlTemplate TargetType ="Button">
                                                     <Border    
-                                                        Height="30"
-                                                        Width="30"                                            
+                                                        Height="20"
+                                                        Width="20"                                            
                                                         Background="{TemplateBinding Background}">
                                                         <Image Source="pack://application:,,,/Res/Icons/ic_edit.png"/>
                                                     </Border>
@@ -455,12 +457,12 @@
                                         </Button>
                                         <Button x:Name="btnAddToCart"
                                             Grid.Column="7" Grid.ColumnSpan="3"
-                                            Grid.Row="8" Grid.RowSpan="3"
+                                            Grid.Row="7" Grid.RowSpan="4"
                                             Foreground="#5FAF57"
                                             FontWeight="Bold"
-                                            FontSize="20"
+                                            FontSize="18"
                                             Click="btnAddToCart_Click"
-                                            Tag="{Binding PlantID}">
+                                            Tag="{Binding Path=p.plant_id}">
                                             <Button.Style>
                                                 <Style TargetType="Button">
                                                     <Setter Property="Content" Value="Thêm vào giỏ hàng"/>
@@ -485,22 +487,8 @@
                         </DockPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-
             </ListView>
-
         </Grid>
-
-
-
-
-
-
-
-
-
-
-
         <!--This item test for list-->
-
     </Grid>
 </UserControl>

@@ -28,6 +28,12 @@ namespace csp_manager.Views
         public delegate void LoadAllPlants();
         public static List<int> p_arr = new List<int>();
 
+        public class Plant_
+        {
+            public plants p { get; set; }
+            public string NumberSell { get; set; }
+        }
+
         public AllListingPlantView()
         {
             InitializeComponent();
@@ -52,19 +58,24 @@ namespace csp_manager.Views
                 //if (!System.IO.File.Exists(fPath)) fPath = "pack://application:,,,/Res/Icons/ic_logo.png";
                 if (string.IsNullOrEmpty(fPath)) fPath = "pack://application:,,,/Res/Icons/ic_logo.png";
                 //else fPath = new Uri(fPath).AbsoluteUri;
-                lstAllPlant.Items.Add(new { PlantID = el.plant_id, PlantImage = fPath, PlantName = el.plant_name, NumberRemaining = 0, NumberSell = 0, Supplier = el.plant_supplier_name, Price = el.plant_price });
+                //el.plant_img = fPath;
+                //lstAllPlant.Items.Add(new { PlantID = el.plant_id, PlantImage = fPath, PlantName = el.plant_name, NumberRemaining = 0, NumberSell = 0, Supplier = el.plant_supplier_name, Price = el.plant_price });
+                if (string.IsNullOrEmpty(el.plant_supplier_name)) el.plant_supplier_name = "ĐVQL CSPLANT";
+                lstAllPlant.Items.Add(new Plant_ { p = el, NumberSell = "1230" });
+                //MessageBox.Show(el.ToString());
             }
         }
 
-        
+
 
         private void btnAddToCart_Click(object sender, RoutedEventArgs e)
         {
-            Window infoItemAdd = new PlantInfoView();
+            var plant_id = (int)((Button)sender).Tag;
+
+            Window infoItemAdd = new PlantInfoView(plant_id);
             infoItemAdd.ShowDialog();
             if (infoItemAdd.DialogResult == true)
             {
-                var plant_id = (int)((Button)sender).Tag;
                 int x = p_arr.Find(y => y == plant_id);
                 //MessageBox.Show(x.ToString());
                 if (x == 0)

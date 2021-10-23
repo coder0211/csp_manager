@@ -71,18 +71,17 @@
                    Foreground="White"
                    FontSize="14"/>
                 <TextBox x:Name="txtCustomerName"
-                             TextChanged="txtCustomerName_TextChanged"
-                             Grid.Row="3"   
-                             Grid.RowSpan="2"
-                             VerticalAlignment="Bottom"
-                             VerticalContentAlignment="Center"
-                             HorizontalContentAlignment="Left"
-                             TextWrapping="Wrap"
-                             BorderThickness="0"
-                             Foreground="White"
-                             CaretBrush="Gray"
-                             Margin="0 0 0 10"
-                             >
+                    TextChanged="txtCustomerName_TextChanged"
+                    Grid.Row="3"   
+                    Grid.RowSpan="2"
+                    VerticalAlignment="Bottom"
+                    VerticalContentAlignment="Center"
+                    HorizontalContentAlignment="Left"
+                    TextWrapping="Wrap"
+                    BorderThickness="0"
+                    Foreground="White"
+                    CaretBrush="Gray"
+                    Margin="0 0 0 10">
                     <TextBox.Style>
                         <Style TargetType = "TextBox">
                             <Setter Property="Cursor" Value="IBeam"/>
@@ -92,20 +91,19 @@
                     <TextBox.Template>
                         <ControlTemplate TargetType="TextBox">
                             <Border
-                                            Padding="10 0 0 0"
-                                            Height="35"
-                                            Width="238"
-                                            CornerRadius="15"                                          
-                                            BorderBrush="White"
-                                            BorderThickness="1"
-                                            >
+                                Padding="10 0 0 0"
+                                Height="35"
+                                Width="238"
+                                CornerRadius="15"                                          
+                                BorderBrush="White"
+                                BorderThickness="1">
                                 <Grid>
                                     <ScrollViewer x:Name="PART_ContentHost"/>
                                     <TextBlock 
-                                            IsHitTestVisible="False"                                             
-                                            VerticalAlignment="Center"
-                                            HorizontalAlignment="Left"
-                                            Margin="10,0,0,0">
+                                        IsHitTestVisible="False"                                             
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Left"
+                                        Margin="10,0,0,0">
                                         <TextBlock.Style>
                                             <Style TargetType="TextBlock">
                                                 <Setter Property="Visibility" Value="Collapsed"/>
@@ -123,26 +121,25 @@
                     </TextBox.Template>
                 </TextBox>
                 <TextBlock Grid.Row="5"                 
-                   Text="Số điện thoại"
-                   FontWeight="Thin"
-                   VerticalAlignment="Top"
-                   HorizontalAlignment="Left"
-                   Margin="26 -5 0 0"
-                   Foreground="White"
-                   FontSize="14"/>
+                    Text="Số điện thoại"
+                    FontWeight="Thin"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Left"
+                    Margin="26 -5 0 0"
+                    Foreground="White"
+                    FontSize="14"/>
                 <TextBox x:Name="txtPhoneNumber"
-                             TextChanged="txtPhoneNumber_TextChanged"
-                             Grid.Row="5"   
-                             Grid.RowSpan="2"
-                             VerticalAlignment="Bottom"
-                             VerticalContentAlignment="Center"
-                             HorizontalContentAlignment="Left"
-                             TextWrapping="Wrap"
-                             BorderThickness="0"
-                             Foreground="White"
-                             CaretBrush="Gray"
-                             Margin="0 0 0 15"
-                             >
+                    TextChanged="txtPhoneNumber_TextChanged"
+                    Grid.Row="5"   
+                    Grid.RowSpan="2"
+                    VerticalAlignment="Bottom"
+                    VerticalContentAlignment="Center"
+                    HorizontalContentAlignment="Left"
+                    TextWrapping="Wrap"
+                    BorderThickness="0"
+                    Foreground="White"
+                    CaretBrush="Gray"
+                    Margin="0 0 0 15">
                     <TextBox.Style>
                         <Style TargetType = "TextBox">
                             <Setter Property="Cursor" Value="IBeam"/>
@@ -407,14 +404,22 @@
                                                         <ColumnDefinition/>
                                                         <ColumnDefinition/>
                                                     </Grid.ColumnDefinitions>
-                                                    <Border Grid.Column="0"
+                                                    <Border
+                                                        Grid.Column="0"
                                                         Grid.ColumnSpan="2"
                                                         Width="71"
                                                         CornerRadius="12"
                                                         Margin="0 0 0 0"
                                                         Height="71"
                                                         Background="LightGray">
-                                                        <Image Source="{Binding PlantImage}" />
+                                                        <!--<Image Source="{Binding PlantImage}" Stretch="UniformToFill" />-->
+                                                        <Grid>
+                                                            <Rectangle RadiusX="12" RadiusY="12">
+                                                                <Rectangle.Fill>
+                                                                    <ImageBrush x:Name="myImage" ImageSource="{Binding PlantImage}" Stretch="UniformToFill" />
+                                                                </Rectangle.Fill>
+                                                            </Rectangle>
+                                                        </Grid>
                                                     </Border>
                                                     <TextBlock Grid.Column="2" Grid.ColumnSpan="2"
                                                         Text="{Binding Name}"
@@ -440,7 +445,7 @@
                                                     <Button Grid.Column="10" Click="btnDeleteItem_Click" Tag="{Binding PlantID}">
                                                         <Button.Style>
                                                             <Style TargetType="Button">
-                                                                <Setter Property="Content" Value="X"/>
+                                                                <!--<Setter Property="Content" Value="X"/>-->
                                                                 <Setter Property="Cursor" Value="Hand"/>
                                                                 <Setter Property="Background" Value="White"/>
                                                             </Style>
@@ -451,9 +456,10 @@
                                                                     Height="20"
                                                                     Width="20"                                          
                                                                     Background="{TemplateBinding Background}">
-                                                                    <ContentPresenter   
+                                                                    <Image Width="15" Height="15" Opacity="0.25" Source="pack://application:,,,/Res/Icons/ic_deleteItem.png"/>
+                                                                    <!--<ContentPresenter   
                                                                     HorizontalAlignment="Center"
-                                                                    VerticalAlignment="Center"/>
+                                                                    VerticalAlignment="Center"/>-->
                                                                 </Border>
                                                             </ControlTemplate>
                                                         </Button.Template>
