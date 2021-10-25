@@ -358,7 +358,7 @@
                                   SelectionChanged="lstCart_SelectionChanged"
                                   BorderThickness="0,0.5,0.5,0" 
                                   ScrollViewer.CanContentScroll="False"
-                                  BorderBrush="#FF45C8DC" 
+                                  BorderBrush="Transparent" 
                                   IsHitTestVisible="True">
                             <ListView.ItemContainerStyle>
                                 <Style TargetType="{x:Type ListViewItem}">
@@ -515,7 +515,7 @@
                                 FontWeight="Bold"
                                 VerticalAlignment="Center"
                                 HorizontalAlignment="Center"
-                                Margin="0 0 0 0"
+                                Margin="10 0 0 0"
                                 Foreground="#E04F5F"
                                 FontSize="22"/>
                                     <TextBlock    

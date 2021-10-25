@@ -12,8 +12,13 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0" Margin="10 0 10 10">
-            <Border Background="#5FAF57" CornerRadius="25">
+            
+            <Border CornerRadius="25">
+                <Border.Background>
+                    <ImageBrush ImageSource="pack://application:,,,/Res/Images/image_bg_setting.png"/>
+                </Border.Background>
                 <Grid>
+                    
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                         <RowDefinition/>
@@ -52,7 +57,7 @@
                             Grid.RowSpan="2"
                             Foreground="White"
                             FontWeight="Medium"
-                            Width="150"
+                            Width="280"
                             HorizontalContentAlignment="Left"                           
                             Click="btnAcount_Click">
                         <Button.Style>
@@ -63,7 +68,7 @@
                                 <Setter Property="Content">
                                     <Setter.Value>
                                         <Grid>
-                                            <TextBlock Text="Tài khoản" FontSize="22" Margin="-60 0 0 0"/>
+                                            <TextBlock Text="Đổi mật khẩu" FontSize="22" />
                                         </Grid>
                                     </Setter.Value>
                                 </Setter>
@@ -86,7 +91,7 @@
                             Grid.RowSpan="2"
                             Foreground="White"
                             FontWeight="Medium"
-                            Width="150"
+                            Width="280"
                             HorizontalContentAlignment="Left"                           
                             Click="btnSecurity_Click">
                         <Button.Style>
@@ -97,7 +102,7 @@
                                 <Setter Property="Content">
                                     <Setter.Value>
                                         <Grid>
-                                            <TextBlock Text="Bảo mật" FontSize="22" Margin="-60 0 0 0"/>
+                                            <TextBlock Text="Bảo mật" FontSize="22" />
                                         </Grid>
                                     </Setter.Value>
                                 </Setter>
@@ -115,74 +120,7 @@
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
-                    <Button x:Name="btnAppInfo"
-                            Grid.Row="5" 
-                            Grid.RowSpan="2"
-                            Foreground="White"
-                            FontWeight="Medium"
-                            Width="150"
-                            HorizontalContentAlignment="Left"                           
-                            Click="btnAppInfo_Click">
-                        <Button.Style>
-                            <Style TargetType="Button">
-                                <Setter Property="FontSize" Value="22"/>
-                                <Setter Property="Background" Value="#BFDFBC"/>
-                                <Setter Property="Cursor" Value="Hand"/>
-                                <Setter Property="Content">
-                                    <Setter.Value>
-                                        <Grid>
-                                            <TextBlock Text="Thông tin ứng dụng" FontSize="22" Margin="-60 0 0 0"/>
-                                        </Grid>
-                                    </Setter.Value>
-                                </Setter>
-
-                            </Style>
-                        </Button.Style>
-
-                        <Button.Template>
-                            <ControlTemplate TargetType ="Button">
-                                <Border>
-                                    <ContentPresenter   
-                                    HorizontalAlignment="Left"
-                                    VerticalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-                    <Button x:Name="btnFeedBack"
-                            Grid.Row="6" 
-                            Grid.RowSpan="2"
-                            Foreground="White"
-                            FontWeight="Medium"
-                            Width="150"
-                            HorizontalContentAlignment="Left"                           
-                            Click="btnFeedBack_Click">
-                        <Button.Style>
-                            <Style TargetType="Button">
-                                <Setter Property="FontSize" Value="22"/>
-                                <Setter Property="Background" Value="#BFDFBC"/>
-                                <Setter Property="Cursor" Value="Hand"/>
-                                <Setter Property="Content">
-                                    <Setter.Value>
-                                        <Grid>
-                                            <TextBlock Text="Phản hồi" FontSize="22" Margin="-60 0 0 0"/>
-                                        </Grid>
-                                    </Setter.Value>
-                                </Setter>
-
-                            </Style>
-                        </Button.Style>
-
-                        <Button.Template>
-                            <ControlTemplate TargetType ="Button">
-                                <Border>
-                                    <ContentPresenter   
-                                    HorizontalAlignment="Left"
-                                    VerticalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
+                    
                    
                 </Grid>
             </Border>

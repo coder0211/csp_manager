@@ -10,31 +10,23 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace csp_manager.Views
 {
     /// <summary>
-    /// Interaction logic for SettingView.xaml
+    /// Interaction logic for ChangePassSuccessView.xaml
     /// </summary>
-    public partial class SettingView : UserControl
+    public partial class ChangePassSuccessView : Window
     {
-        public SettingView()
+        public ChangePassSuccessView()
         {
             InitializeComponent();
         }
 
-        private void btnAcount_Click(object sender, RoutedEventArgs e)
+        private void btnOKPass_Click(object sender, RoutedEventArgs e)
         {
-            homeFrame.NavigationService.Navigate(new ChangePasswordView());
+            this.Close();
         }
-
-        private void btnSecurity_Click(object sender, RoutedEventArgs e)
-        {
-            homeFrame.NavigationService.Navigate(new SecuritySettingView());
-        }
-
-        
     }
 }
