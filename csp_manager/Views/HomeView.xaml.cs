@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -21,11 +22,13 @@ namespace csp_manager.Views
     /// </summary>
     public partial class HomeView : UserControl, INotifyPropertyChanged
     {
+
         private Visibility isShowDialog;
         private String icPlant;
         private String icStatistics;
         private String icSetting;
         private String icHistory;
+        private String icCart;
 
         public Visibility IsShowDialog
         {
@@ -68,6 +71,14 @@ namespace csp_manager.Views
                 OnPropertyChanged(nameof(IcHistory));
             }
         }
+        public string IcCart
+        {
+            get => icCart; set
+            {
+                icCart = value;
+                OnPropertyChanged(nameof(IcCart));
+            }
+        }
         public int user_id;
 
         public HomeView(int user_id = 0)
@@ -81,6 +92,20 @@ namespace csp_manager.Views
             IcStatistics = "pack://application:,,,/Res/Icons/ic_statistics.png";
             IcSetting = "pack://application:,,,/Res/Icons/ic_setting.png";
             IcHistory = "pack://application:,,,/Res/Icons/ic_history.png";
+            IcCart = "pack://application:,,,/Res/Icons/ic_cart.png";
+
+            var aTimer = new Timer(500);
+            aTimer.Elapsed += new ElapsedEventHandler(Icon_Cart);
+            aTimer.Enabled = true;
+        }
+
+        private void Icon_Cart(object source, ElapsedEventArgs e)
+        {
+            List<AllListingPlantView.ICart> p_arr = AllListingPlantView.p_arr;
+            if (p_arr.Count > 0)
+                IcCart = "pack://application:,,,/Res/Icons/ic_cart_color.png";
+            else
+                IcCart = "pack://application:,,,/Res/Icons/ic_cart.png";
         }
 
         private void btnAllList_Click(object sender, RoutedEventArgs e)
@@ -192,6 +217,9 @@ namespace csp_manager.Views
                     var mainWindow = new AddItemView(this);
                     splashScreen.Close();
                     mainWindow.ShowDialog();
+                    if (mainWindow.DialogResult == true)
+                    {
+                    }
                 });
             });
         }

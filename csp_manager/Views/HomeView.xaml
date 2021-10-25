@@ -396,7 +396,7 @@
                             <Setter Property="Content">
                                 <Setter.Value>
                                     <Grid>
-                                        <Image Source="pack://application:,,,/Res/Icons/ic_cart.png" Width="20" Height="20" />
+                                        <Image Source="{Binding IcCart}" Width="20" Height="20" />
                                     </Grid>
                                 </Setter.Value>
                             </Setter>

@@ -50,19 +50,27 @@ namespace csp_manager.Views
             //lstAllPlant.Items.Add(new { PlantName = "Hoa cúc", NumberRemaining = 150000, NumberSell = 2000, Supplier = "Vườn hoa nhà Hòa", Price = 150000 });
             //lstAllPlant.Items.Add(new { PlantName = "Hoa bưởi", NumberRemaining = 150000, NumberSell = 2000, Supplier = "Vườn hoa nhà Hòa", Price = 150000 });
             //lstAllPlant.Items.Add(new { PlantName = "Hoa hướng dương", NumberRemaining = 150000, NumberSell = 2000, Supplier = "Vườn hoa nhà Hòa", Price = 150000 });
-            ListAllPlants();
+
+            List<plant_type> plant_Types = QD.GetPlantType();
+            plant_Types.Insert(0, new plant_type { pt_id = 0, pt_name = "TẤT CẢ" });
+            cbxPopUp.ItemsSource = plant_Types;
+            cbxPopUp.DisplayMemberPath = "pt_name";
+            cbxPopUp.SelectedValuePath = "pt_id";
+
+            //ListAllPlants();
         }
 
-        public void ListAllPlants()
+        public void ListAllPlants(int plant_type = 0)
         {
             lstAllPlant.Items.Clear();
             foreach (var el in QD.GetPlants())
             {
+                if (plant_type > 0 && el.plant_type_id != plant_type) continue;
                 //string fPath = @"http://www.clipartkid.com/images/817/pic-of-german-flag-clipart-best-VkuN37-clipart.jpeg";
-                string fPath = el.plant_img;
+                //string fPath = el.plant_img;
                 //string fPath = Environment.CurrentDirectory + @"\Upload\" + el.plant_img;
                 //if (!System.IO.File.Exists(fPath)) fPath = "pack://application:,,,/Res/Icons/ic_logo.png";
-                if (string.IsNullOrEmpty(fPath)) fPath = "pack://application:,,,/Res/Icons/ic_logo.png";
+                if (string.IsNullOrEmpty(el.plant_img)) el.plant_img = "pack://application:,,,/Res/Icons/ic_logo.png";
                 //else fPath = new Uri(fPath).AbsoluteUri;
                 //el.plant_img = fPath;
                 //lstAllPlant.Items.Add(new { PlantID = el.plant_id, PlantImage = fPath, PlantName = el.plant_name, NumberRemaining = 0, NumberSell = 0, Supplier = el.plant_supplier_name, Price = el.plant_price });
@@ -72,7 +80,17 @@ namespace csp_manager.Views
             }
         }
 
+        public void listAllPlants()
+        {
+            ListAllPlants();
+        }
 
+        private void cbxPopUp_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int id = (int)cbxPopUp.SelectedValue;
+            //MessageBox.Show(id.ToString());
+            ListAllPlants(id);
+        }
 
         private void btnAddToCart_Click(object sender, RoutedEventArgs e)
         {
@@ -103,7 +121,7 @@ namespace csp_manager.Views
         {
             var plant_id = (int)((Button)sender).Tag;
             //MessageBox.Show("Plant ID: " + plant_id);
-            Window edit = new EditInfoView(ListAllPlants, plant_id);
+            Window edit = new EditInfoView(listAllPlants, plant_id);
             edit.ShowDialog();
         }
     }

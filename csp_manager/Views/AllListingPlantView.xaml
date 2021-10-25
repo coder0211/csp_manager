@@ -126,18 +126,18 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <ComboBox 
-                    Grid.Column="3"
-                    Grid.ColumnSpan="2" 
-                    Style="{StaticResource ComboboxStyle}"
-                    FontSize="20" 
-                    Width="150"
-                    Margin="15 15 -50 15"
-                    Background="LightGray" Name="cbxPopUp"
-                    >
-                <ComboBoxItem IsSelected="True" >TẤT CẢ</ComboBoxItem>
+                Grid.Column="3"
+                Grid.ColumnSpan="2" 
+                Style="{StaticResource ComboboxStyle}"
+                FontSize="20" 
+                Width="150"
+                Margin="15 15 -50 15"
+                Background="LightGray" Name="cbxPopUp"
+                SelectionChanged="cbxPopUp_SelectionChanged"
+                DisplayMemberPath="pt_name" SelectedValuePath="pt_id" SelectedIndex="0">
+                <!--<ComboBoxItem IsSelected="True" >TẤT CẢ</ComboBoxItem>
                 <ComboBoxItem>Cây ăn quả</ComboBoxItem>
-                <ComboBoxItem>Hoa</ComboBoxItem>
-
+                <ComboBoxItem>Hoa</ComboBoxItem>-->
             </ComboBox>
         </Grid>
         <!--<ScrollViewer Grid.ColumnSpan="2" Grid.Row="1" >

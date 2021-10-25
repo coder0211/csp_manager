@@ -109,11 +109,12 @@ namespace csp_manager.Views
         }
         private void btnComplete_Click(object sender, RoutedEventArgs e)
         {
-            if (txtCustomerName.Text.Length == 0) { MessageBox.Show("Vui lòng nhập tên khách hàng!"); return; }
-            if (txtPhoneNumber.Text.Length == 0) { MessageBox.Show("Vui lòng nhập số điện thoại khách hàng!"); return; }
-            if (txtCustomerLocation.Text.Length == 0) { MessageBox.Show("Vui lòng nhập địa chỉ khách hàng!"); return; }
             if (lstCart.Items.Count > 0)
             {
+                if (txtCustomerName.Text.Length == 0) { MessageBox.Show("Vui lòng nhập tên khách hàng!"); return; }
+                if (txtPhoneNumber.Text.Length == 0) { MessageBox.Show("Vui lòng nhập số điện thoại khách hàng!"); return; }
+                if (txtCustomerLocation.Text.Length == 0) { MessageBox.Show("Vui lòng nhập địa chỉ khách hàng!"); return; }
+
                 invoices invoice = new invoices();
                 invoice.user_id = _homeView.user_id;
                 invoice.customer_name = txtCustomerName.Text;

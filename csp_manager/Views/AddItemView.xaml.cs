@@ -21,6 +21,7 @@ using csp_manager.DataContext;
 using csp_manager.DataQuery;
 using csp_manager.UploadImage;
 using Microsoft.Win32;
+using static csp_manager.Views.AllListingPlantView;
 
 namespace csp_manager.Views
 {
@@ -171,10 +172,12 @@ namespace csp_manager.Views
                 {
                     MessageBox.Show("Thêm sản phẩm thành công nhưng không thể cập nhật ảnh! Vui lòng cập nhật sau.");
                 }
+                DialogResult = true;
                 Close();
             }
             else
             {
+                DialogResult = false;
                 MessageBox.Show("Có lỗi xảy ra!");
             }
         }

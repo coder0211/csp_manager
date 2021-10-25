@@ -370,6 +370,9 @@
   <ItemGroup>
     <Resource Include="Res\Images\image_bg_setting.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\Icons\ic_cart_color.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

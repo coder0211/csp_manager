@@ -33,6 +33,7 @@ namespace csp_manager.Views
             //lstHistory.Items.Add(new { STT = "7", Name = "Nguyễn Văn Thành Phát", Date = "16/09/2021", Totals = "4.300.000 vnđ" });
             //lstHistory.Items.Add(new { STT = "8", Name = "Nguyễn Đức Hòa", Date = "16/09/2021", Totals = "1.330.000 vnđ" });
 
+            txtToday.Text = DateTime.Now.ToShortDateString();
             LoadInvoices();
         }
 
