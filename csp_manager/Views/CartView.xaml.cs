@@ -22,7 +22,6 @@ namespace csp_manager.Views
     /// </summary>
     public partial class CartView : Window
     {
-
         HomeView _homeView;
 
         private QueryData QD = new QueryData();
@@ -47,6 +46,7 @@ namespace csp_manager.Views
             //lstCart.Items.Add(new { Name = "Hoa hồng", Quantity = "x50", Price = "1.750.000 vnđ" });
             //lstCart.Items.Add(new { Name = "Hoa hồng", Quantity = "x50", Price = "1.750.000 vnđ" });
 
+            LoadCart();
             LoadCart();
         }
 
@@ -109,11 +109,13 @@ namespace csp_manager.Views
         }
         private void btnComplete_Click(object sender, RoutedEventArgs e)
         {
-            int count = lstCart.Items.Count;
-            if (count > 0)
+            if (txtCustomerName.Text.Length == 0) { MessageBox.Show("Vui lòng nhập tên khách hàng!"); return; }
+            if (txtPhoneNumber.Text.Length == 0) { MessageBox.Show("Vui lòng nhập số điện thoại khách hàng!"); return; }
+            if (txtCustomerLocation.Text.Length == 0) { MessageBox.Show("Vui lòng nhập địa chỉ khách hàng!"); return; }
+            if (lstCart.Items.Count > 0)
             {
                 invoices invoice = new invoices();
-                invoice.user_id = 0;
+                invoice.user_id = _homeView.user_id;
                 invoice.customer_name = txtCustomerName.Text;
                 invoice.customer_phone_number = txtPhoneNumber.Text;
                 invoice.customer_address = txtCustomerLocation.Text;
@@ -121,7 +123,7 @@ namespace csp_manager.Views
                 invoice.invoice_total = TongTien;
                 invoice.invoice_created_at = DateTime.Now;
                 int invoice_id = QD.PostInvoice(invoice, out string err);
-                if (err != "") MessageBox.Show(err);
+                if (!string.IsNullOrEmpty(err)) MessageBox.Show(err);
                 if (invoice_id > 0)
                 {
                     //QD.PostInvoiceDetail(new invoice_details { }, out err);
@@ -129,8 +131,12 @@ namespace csp_manager.Views
                     {
                         QD.PostInvoiceDetail(new invoice_details { invoice_id = invoice_id, plant_id = el.Plant.plant_id, plant_amount = el.Quantity }, out err);
                     }
+                    lstCart.Items.Clear();
+                    p_arr.Clear();
+
                     Window Complete = new OrderSuccessView();
                     Complete.ShowDialog();
+                    Close();
                 }
             }
             else

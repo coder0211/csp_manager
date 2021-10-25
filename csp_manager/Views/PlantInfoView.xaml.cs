@@ -52,7 +52,7 @@ namespace csp_manager.Views
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = true;
-            GetQuantity = int.Parse(txtQuantity.Text == "" ? "0" : txtQuantity.Text);
+            GetQuantity = int.Parse(txtQuantity.Text == "" ? "1" : txtQuantity.Text);
             Close();
         }
 

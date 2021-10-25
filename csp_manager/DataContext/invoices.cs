@@ -30,7 +30,6 @@ namespace csp_manager.DataContext
         public string customer_address { get; set; }
 
         [Column(TypeName = "ntext")]
-        [Required]
         public string invoice_note { get; set; }
 
         public int invoice_total { get; set; }

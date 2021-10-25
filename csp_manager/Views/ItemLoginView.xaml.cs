@@ -1,4 +1,5 @@
-﻿using System;
+﻿using csp_manager.DataQuery;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,11 +20,13 @@ namespace csp_manager.Views
     /// Interaction logic for ItemLoginView.xaml
     /// </summary>
 
-  
+
 
 
     public partial class ItemLoginView : UserControl
     {
+        QueryData QD = new QueryData();
+
         private bool isMemorize;
 
         public bool IsMemorize { get => isMemorize; set => isMemorize = value; }
@@ -45,8 +48,20 @@ namespace csp_manager.Views
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            Window mainWindow = Application.Current.MainWindow;
-            mainWindow.Content = new VerifyEmailView();
+            if (txtEmail.Text.Length > 0 && txtPassword.Text.Length > 0)
+            {
+                int r = QD.Login(txtEmail.Text, txtPassword.Text);
+                if (r == -1) MessageBox.Show("Tìm khoản không tìm thấy!");
+                else if (r == 0) MessageBox.Show("Mật khẩu không chính xác!");
+                else
+                {
+                    //Window mainWindow = Application.Current.MainWindow;
+                    //mainWindow.Content = new VerifyEmailView();
+                    Window mainWindow = Application.Current.MainWindow;
+                    mainWindow.Content = new HomeView(r);
+                }
+            }
+            else MessageBox.Show("Vui lòng nhập email và mật khẩu!");
         }
 
         private void btnMemorize_Click(object sender, RoutedEventArgs e)
@@ -61,7 +76,7 @@ namespace csp_manager.Views
             {
                 btnMemorize.Background = new SolidColorBrush(Color.FromRgb(95, 175, 87));
             }
-           
+
         }
     }
 }

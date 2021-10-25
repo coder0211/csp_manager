@@ -68,10 +68,12 @@ namespace csp_manager.Views
                 OnPropertyChanged(nameof(IcHistory));
             }
         }
+        public int user_id;
 
-        public HomeView()
+        public HomeView(int user_id = 0)
         {
             InitializeComponent();
+            this.user_id = user_id;
             this.DataContext = this;
             homeFrame.Content = new AllListingPlantView();
             IsShowDialog = Visibility.Hidden;

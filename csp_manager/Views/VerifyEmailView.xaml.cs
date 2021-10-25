@@ -20,9 +20,12 @@ namespace csp_manager.Views
     /// </summary>
     public partial class VerifyEmailView : UserControl
     {
-        public VerifyEmailView()
+        public int user_id;
+
+        public VerifyEmailView(int user_id = 0)
         {
             InitializeComponent();
+            this.user_id = user_id;
         }
 
         private void txtVerifyEmail_TextChanged(object sender, TextChangedEventArgs e)
@@ -33,7 +36,7 @@ namespace csp_manager.Views
         private void btnVerify(object sender, RoutedEventArgs e)
         {
             Window mainWindow = Application.Current.MainWindow;
-            mainWindow.Content = new HomeView();
+            mainWindow.Content = new HomeView(user_id);
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)

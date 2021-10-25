@@ -15,6 +15,55 @@ namespace csp_manager.DataQuery
     //}
     class QueryData
     {
+        Func f = new Func();
+        // Hàm Login trả về: -1: Tài khoản không có / 0: Sai mật khẩu / >=1: Đăng nhập thành công!
+        public int Login(string email, string pass)
+        {
+            string pass_md5 = f.CreateMD5(pass);
+            using (var dbContext = new CSPDbModel())
+            {
+                users x = dbContext.users.SingleOrDefault(s => s.user_email == email);
+                if (x == null) return -1;
+                else
+                {
+                    if (x.user_password.Equals(pass_md5)) return x.user_id;
+                    else return 0;
+                }
+            }
+        }
+        public int Reg(string fullname, string email, string pass, out string err)
+        {
+            err = string.Empty;
+            try
+            {
+                using (var dbContext = new CSPDbModel())
+                {
+                    users x = dbContext.users.SingleOrDefault(s => s.user_email == email);
+                    if (x == null)
+                    {
+                        x = new users();
+                        x.user_fullname = fullname;
+                        x.user_email = email;
+                        x.user_password = f.CreateMD5(pass);
+                        x.user_created_at = DateTime.Now;
+                        dbContext.users.Add(x);
+                        dbContext.SaveChanges();
+                        return x.user_id;
+                    }
+                    else
+                    {
+                        err = "Email đã tồn tại!";
+                        return 0;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                err = e.Message;
+                return -1;
+            }
+        }
+
         public List<plant_type> GetPlantType()
         {
             using (var dbContext = new CSPDbModel())
@@ -93,6 +142,14 @@ namespace csp_manager.DataQuery
             {
                 err = e.Message;
                 return false;
+            }
+        }
+
+        public List<invoices> GetInvoices()
+        {
+            using (var dbContext = new CSPDbModel())
+            {
+                return dbContext.invoices.ToList();
             }
         }
         public int PostInvoice(invoices invoice, out string err)
