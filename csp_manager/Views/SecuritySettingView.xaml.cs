@@ -32,7 +32,7 @@ namespace csp_manager.Views
             IsMemorize = !IsMemorize;
             if (isMemorize == true)
             {
-                btnMemorize.Background = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+                btnMemorize.Background = new SolidColorBrush(Color.FromRgb(255, 255, 0));
             }
 
             else
