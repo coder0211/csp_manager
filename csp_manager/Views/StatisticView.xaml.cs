@@ -1,4 +1,6 @@
-﻿using System;
+﻿using csp_manager.DataContext;
+using csp_manager.DataQuery;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -22,12 +24,15 @@ namespace csp_manager.Views
     /// </summary>
     public partial class StatisticView : UserControl, INotifyPropertyChanged
     {
+        Func f = new Func();
+
         public class Line
         {
             public Point From { get; set; }
             public Point To { get; set; }
             public SolidColorBrush Stroke { get; set; }
             public float StrokeThickness { get; set; }
+            public string Total { get; set; }
         }
         private ObservableCollection<Line> lines;
         public ObservableCollection<Line> Lines
@@ -61,22 +66,23 @@ namespace csp_manager.Views
             InitializeComponent();
             Lines = new ObservableCollection<Line>
             {
-                new Line { From = new Point(X_axis, Y_axis), To = new Point(X_axis, 210), Stroke = Brushes.Red, StrokeThickness = 3 },
-                new Line { From = new Point(X_axis + 42, Y_axis), To = new Point(X_axis + 42, 235), Stroke = Brushes.Green, StrokeThickness = 3 },
-                new Line { From = new Point(X_axis + 83, Y_axis), To = new Point(X_axis + 83, 220), Stroke = Brushes.Red, StrokeThickness = 3 },
-                new Line { From = new Point(X_axis + 124, Y_axis), To = new Point(X_axis + 124, 250), Stroke = Brushes.Red, StrokeThickness = 3 },
-                new Line { From = new Point(X_axis + 165, Y_axis), To = new Point(X_axis + 165, 270), Stroke = Brushes.Red, StrokeThickness = 3 },
-                new Line { From = new Point(X_axis + 206, Y_axis), To = new Point(X_axis + 206, 280), Stroke = Brushes.Red, StrokeThickness = 3 },
-                new Line { From = new Point(X_axis + 247, Y_axis), To = new Point(X_axis + 247, 240), Stroke = Brushes.Green, StrokeThickness = 3 },
-                new Line { From = new Point(X_axis + 288, Y_axis), To = new Point(X_axis + 288, 230), Stroke = Brushes.Green, StrokeThickness = 3 },
-                new Line { From = new Point(X_axis + 329, Y_axis), To = new Point(X_axis + 329, 225), Stroke = Brushes.Green, StrokeThickness = 3 },
-                new Line { From = new Point(X_axis + 370, Y_axis), To = new Point(X_axis + 370, 230), Stroke = Brushes.Red, StrokeThickness = 3 },
-                new Line { From = new Point(X_axis + 411, Y_axis), To = new Point(X_axis + 411, 225), Stroke = Brushes.Green, StrokeThickness = 3 },
-                new Line { From = new Point(X_axis + 452, Y_axis), To = new Point(X_axis + 452, 300), Stroke = Brushes.Red, StrokeThickness = 3 }
+                new Line { },
+                new Line { },
+                new Line { },
+                new Line { },
+                new Line { },
+                new Line { },
+                new Line { },
+                new Line { },
+                new Line { },
+                new Line { },
+                new Line { },
+                new Line { }
             };
             //InitializeComponent();
             DataContext = this;
             setYear();
+            ThongKe();
         }
 
         private void OnDoWork(object sender, DoWorkEventArgs e)
@@ -94,8 +100,11 @@ namespace csp_manager.Views
         }
         private void btnYearUp_Click(object sender, RoutedEventArgs e)
         {
-            setYear(1);
-            ThongKe();
+            if (DateTime.Now.Year > getYear())
+            {
+                setYear(1);
+                ThongKe();
+            }
         }
         private void btnYearDown_Click(object sender, RoutedEventArgs e)
         {
@@ -105,24 +114,68 @@ namespace csp_manager.Views
         public void ThongKe()
         {
             int y = getYear();
+            //int m = DateTime.Now.Month;
+            QueryData QD = new QueryData();
+
             SolidColorBrush stk = y % 2 == 0 ? Brushes.Green : Brushes.Red;
-            //SolidColorBrush stk = Brushes.Red;
+            //Lines = new ObservableCollection<Line>
+            //{
+            //    new Line { From = new Point(X_axis, Y_axis), To = new Point(X_axis, 210), Stroke = stk, StrokeThickness = 3 },
+            //    new Line { From = new Point(X_axis + 42, Y_axis), To = new Point(X_axis + 42, 235), Stroke = stk, StrokeThickness = 3 },
+            //    new Line { From = new Point(X_axis + 83, Y_axis), To = new Point(X_axis + 83, 220), Stroke = stk, StrokeThickness = 3 },
+            //    new Line { From = new Point(X_axis + 124, Y_axis), To = new Point(X_axis + 124, 250), Stroke = stk, StrokeThickness = 3 },
+            //    new Line { From = new Point(X_axis + 165, Y_axis), To = new Point(X_axis + 165, 270), Stroke = stk, StrokeThickness = 3 },
+            //    new Line { From = new Point(X_axis + 206, Y_axis), To = new Point(X_axis + 206, 280), Stroke = stk, StrokeThickness = 3 },
+            //    new Line { From = new Point(X_axis + 247, Y_axis), To = new Point(X_axis + 247, 240), Stroke = stk, StrokeThickness = 3 },
+            //    new Line { From = new Point(X_axis + 288, Y_axis), To = new Point(X_axis + 288, 230), Stroke = stk, StrokeThickness = 3 },
+            //    new Line { From = new Point(X_axis + 329, Y_axis), To = new Point(X_axis + 329, 225), Stroke =stk, StrokeThickness = 3 },
+            //    new Line { From = new Point(X_axis + 370, Y_axis), To = new Point(X_axis + 370, 230), Stroke = stk, StrokeThickness = 3 },
+            //    new Line { From = new Point(X_axis + 411, Y_axis), To = new Point(X_axis + 411, 225), Stroke = stk, StrokeThickness = 3 },
+            //    new Line { From = new Point(X_axis + 452, Y_axis), To = new Point(X_axis + 452, 300), Stroke = stk, StrokeThickness = 3 }
+            //};
             Lines = new ObservableCollection<Line>
             {
-                new Line { From = new Point(X_axis, Y_axis), To = new Point(X_axis, 210), Stroke = stk, StrokeThickness = 3 },
-                new Line { From = new Point(X_axis + 42, Y_axis), To = new Point(X_axis + 42, 235), Stroke = stk, StrokeThickness = 3 },
-                new Line { From = new Point(X_axis + 83, Y_axis), To = new Point(X_axis + 83, 220), Stroke = stk, StrokeThickness = 3 },
-                new Line { From = new Point(X_axis + 124, Y_axis), To = new Point(X_axis + 124, 250), Stroke = stk, StrokeThickness = 3 },
-                new Line { From = new Point(X_axis + 165, Y_axis), To = new Point(X_axis + 165, 270), Stroke = stk, StrokeThickness = 3 },
-                new Line { From = new Point(X_axis + 206, Y_axis), To = new Point(X_axis + 206, 280), Stroke = stk, StrokeThickness = 3 },
-                new Line { From = new Point(X_axis + 247, Y_axis), To = new Point(X_axis + 247, 240), Stroke = stk, StrokeThickness = 3 },
-                new Line { From = new Point(X_axis + 288, Y_axis), To = new Point(X_axis + 288, 230), Stroke = stk, StrokeThickness = 3 },
-                new Line { From = new Point(X_axis + 329, Y_axis), To = new Point(X_axis + 329, 225), Stroke =stk, StrokeThickness = 3 },
-                new Line { From = new Point(X_axis + 370, Y_axis), To = new Point(X_axis + 370, 230), Stroke = stk, StrokeThickness = 3 },
-                new Line { From = new Point(X_axis + 411, Y_axis), To = new Point(X_axis + 411, 225), Stroke = stk, StrokeThickness = 3 },
-                new Line { From = new Point(X_axis + 452, Y_axis), To = new Point(X_axis + 452, 300), Stroke = stk, StrokeThickness = 3 }
+                new Line { },
+                new Line { },
+                new Line { },
+                new Line { },
+                new Line { },
+                new Line { },
+                new Line { },
+                new Line { },
+                new Line { },
+                new Line { },
+                new Line { },
+                new Line { }
             };
-            //DataContext = this;
+            // Trục Y đi từ trên cao xuống thấp: 210 -> 440
+            List<Income> Incomes = new List<Income>();
+            List<invoices> inv = QD.GetInvoices(getYear());
+            int inc_total = 0, inc_max = 0;
+            for (int i = 0; i < 12; i++)
+            {
+                //int inc = QD.GetIncomes(y, i + 1);
+                int inc = 0;
+                foreach (var el in inv)
+                {
+                    if (el.invoice_created_at.Month == i + 1) inc += el.invoice_total;
+                }
+                Incomes.Add(new Income { Year = y, Month = i + 1, Total = inc });
+                inc_total += inc;
+                if (inc_max < inc) inc_max = inc;
+            }
+            txtTBT.Text = f.NumberToStr(inc_total / 12);
+            txtTDT.Text = f.NumberToStr(inc_total);
+            if (inc_total > 0)
+                for (int i = 0; i < 12; i++)
+                {
+                    if (Incomes[i].Total == 0) continue;
+                    double Y_axis_ = Y_axis - (Incomes[i].Total == inc_max ? 210 : Math.Round((double)Incomes[i].Total / inc_max * 230));
+                    Lines[i] = new Line { From = new Point(X_axis + i * 40 + i + 1, Y_axis), To = new Point(X_axis + i * 40 + i + 1, Y_axis_), Stroke = stk, StrokeThickness = 3, Total = f.NumberToStr(Incomes[i].Total) };
+                    //MessageBox.Show((i + 1) + "," + ((double)Incomes[i].Total / inc_max * 230));
+                }
+            //Lines[11] = new Line { From = new Point(X_axis + 11 * 40 + 11 + 1, Y_axis), To = new Point(X_axis + 11 * 40 + 11 + 1, 350), Stroke = stk, StrokeThickness = 3 };
+            //Lines[10] = new Line { From = new Point(X_axis + 10 * 40 + 10 + 1, Y_axis), To = new Point(X_axis + 10 * 40 + 10 + 1, 350), Stroke = stk, StrokeThickness = 3 };
         }
     }
 }

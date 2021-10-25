@@ -13,6 +13,13 @@ namespace csp_manager.DataQuery
     //    public int pt_id { get; set; }
     //    public string pt_name { get; set; }
     //}
+    public class Income
+    {
+        public int Year { get; set; }
+        public int Month { get; set; }
+        public int Total { get; set; }
+    }
+
     class QueryData
     {
         Func f = new Func();
@@ -152,6 +159,14 @@ namespace csp_manager.DataQuery
                 return dbContext.invoices.ToList();
             }
         }
+        public List<invoices> GetInvoices(int year)
+        {
+            using (var dbContext = new CSPDbModel())
+            {
+                return dbContext.invoices.Where(w => w.invoice_created_at.Year == year).ToList();
+            }
+        }
+
         public int PostInvoice(invoices invoice, out string err)
         {
             err = string.Empty;
@@ -188,5 +203,34 @@ namespace csp_manager.DataQuery
                 return false;
             }
         }
+
+        public int GetIncomes(int year)
+        {
+            using (var dbContext = new CSPDbModel())
+            {
+                return dbContext.invoices.Where(s => s.invoice_created_at.Year == year).Distinct().Sum(r => r.invoice_total);
+            }
+        }
+        public int GetIncomes(int year, int month)
+        {
+            try
+            {
+                using (var dbContext = new CSPDbModel())
+                {
+                    return dbContext.invoices.Where(s => s.invoice_created_at.Year == year && s.invoice_created_at.Month == month).Distinct().Sum(r => r.invoice_total);
+                }
+            }
+            catch (Exception e)
+            {
+                return 0;
+            }
+        }
+        //public int GetIncomesMax(int year)
+        //{
+        //    using (var dbContext = new CSPDbModel())
+        //    {
+        //        return dbContext.invoices.Where(s => s.invoice_created_at.Year == year).Distinct().Max(r => r.invoice_total);
+        //    }
+        //}
     }
 }
