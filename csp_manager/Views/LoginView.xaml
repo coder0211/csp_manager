@@ -124,7 +124,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button  x:Name="btnInfor"
+        <!--<Button  x:Name="btnInfor"
                     Grid.Column="7"              
                     Foreground="White"
                     FontWeight="Thin"
@@ -150,7 +150,7 @@
                     </Border>
                 </ControlTemplate>
             </Button.Template>
-        </Button>
+        </Button>-->
 
         <Separator x:Name="ColorLogin" Grid.Column="5" Height="2" Background="White" Margin="15,35 ,15,0">
             <Separator.LayoutTransform>
