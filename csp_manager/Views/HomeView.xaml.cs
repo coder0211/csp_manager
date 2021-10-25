@@ -219,6 +219,7 @@ namespace csp_manager.Views
                     mainWindow.ShowDialog();
                     if (mainWindow.DialogResult == true)
                     {
+                        homeFrame.Refresh();
                     }
                 });
             });
