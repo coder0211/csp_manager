@@ -107,7 +107,8 @@
             </TextBox>
             <TextBox x:Name="txtTempPrice"
                 TextChanged="txtTempPrice_TextChanged"
-                Grid.Row="7"    
+                IsReadOnly="True"
+                Grid.Row="7"
                 Grid.RowSpan="3"
                 VerticalAlignment="Bottom"
                 VerticalContentAlignment="Center"

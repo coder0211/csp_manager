@@ -23,17 +23,17 @@ namespace csp_manager.DataContext
         [StringLength(50)]
         public string customer_name { get; set; }
 
-        [Required]
         [StringLength(50)]
         public string customer_phone_number { get; set; }
 
         [Column(TypeName = "ntext")]
-        [Required]
         public string customer_address { get; set; }
 
         [Column(TypeName = "ntext")]
         [Required]
         public string invoice_note { get; set; }
+
+        public int invoice_total { get; set; }
 
         public DateTime invoice_created_at { get; set; }
 

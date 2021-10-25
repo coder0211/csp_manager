@@ -23,12 +23,14 @@ namespace csp_manager.Views
     public partial class PlantInfoView : Window
     {
         QueryData QD = new QueryData();
+        Func f = new Func();
+        private plants plant;
 
         public PlantInfoView(int plant_id)
         {
             InitializeComponent();
 
-            plants plant = QD.GetPlant(plant_id, out string err);
+            plant = QD.GetPlant(plant_id, out string err);
             plant_name.Text = plant.plant_name;
             plant_amount.Text = plant.plant_amount.ToString();
             plant_price.Text = plant.plant_price.ToString();
@@ -39,21 +41,26 @@ namespace csp_manager.Views
             imgUpload.Height = double.NaN;
         }
 
+        public static int GetQuantity;
+
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = false;
-            this.Close();
+            Close();
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = true;
-            this.Close();
+            GetQuantity = int.Parse(txtQuantity.Text == "" ? "0" : txtQuantity.Text);
+            Close();
         }
 
         private void txtQuantity_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            bool err = int.TryParse(txtQuantity.Text, out int q);
+            if (!err) txtTempPrice.Text = "Số lượng phải là số!";
+            else txtTempPrice.Text = f.NumberToStr((int)(plant.plant_price * q));
         }
 
         private void txtTempPrice_TextChanged(object sender, TextChangedEventArgs e)

@@ -26,7 +26,13 @@ namespace csp_manager.Views
     {
         QueryData QD = new QueryData();
         public delegate void LoadAllPlants();
-        public static List<int> p_arr = new List<int>();
+
+        public class ICart
+        {
+            public int Id { get; set; }
+            public int Quantity { get; set; }
+        }
+        public static List<ICart> p_arr = new List<ICart>();
 
         public class Plant_
         {
@@ -76,10 +82,15 @@ namespace csp_manager.Views
             infoItemAdd.ShowDialog();
             if (infoItemAdd.DialogResult == true)
             {
-                int x = p_arr.Find(y => y == plant_id);
+                //ICart x = p_arr.FindAll(y => y.id == plant_id);
+                var x = p_arr.Find(delegate (ICart r)
+                {
+                    return r.Id == plant_id;
+                });
                 //MessageBox.Show(x.ToString());
-                if (x == 0)
-                    p_arr.Add(plant_id);
+                if (x == null)
+                    p_arr.Add(new ICart { Id = plant_id, Quantity = PlantInfoView.GetQuantity });
+                else x.Quantity = PlantInfoView.GetQuantity;
             }
         }
 

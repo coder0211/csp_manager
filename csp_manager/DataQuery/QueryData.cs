@@ -95,5 +95,41 @@ namespace csp_manager.DataQuery
                 return false;
             }
         }
+        public int PostInvoice(invoices invoice, out string err)
+        {
+            err = string.Empty;
+            try
+            {
+                using (var dbContext = new CSPDbModel())
+                {
+                    dbContext.invoices.Add(invoice);
+                    dbContext.SaveChanges();
+                    return invoice.invoice_id;
+                }
+            }
+            catch (Exception e)
+            {
+                err = e.Message;
+                return 0;
+            }
+        }
+        public bool PostInvoiceDetail(invoice_details invoice_detail, out string err)
+        {
+            err = string.Empty;
+            try
+            {
+                using (var dbContext = new CSPDbModel())
+                {
+                    dbContext.invoice_details.Add(invoice_detail);
+                    dbContext.SaveChanges();
+                    return true;
+                }
+            }
+            catch (Exception e)
+            {
+                err = e.Message;
+                return false;
+            }
+        }
     }
 }

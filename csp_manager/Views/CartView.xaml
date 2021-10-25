@@ -12,8 +12,8 @@
              WindowStartupLocation ="CenterScreen"
              Height="568" Width="800">
     <Border 
-                Margin="15 0 15 0"
-                CornerRadius="20">
+        Margin="15 0 15 0"
+        CornerRadius="20">
         <Border.Background>
             <ImageBrush ImageSource="pack://application:,,,/Res/Images/image_bg_cart.png"/>
         </Border.Background>
@@ -22,7 +22,6 @@
                 <ColumnDefinition Width="290"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-
             <Grid Grid.Column="0">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
@@ -265,13 +264,12 @@
                     <TextBox.Template>
                         <ControlTemplate TargetType="TextBox">
                             <Border
-                                            Padding="10 0 0 0"
-                                            Height="85"
-                                            Width="238"
-                                            CornerRadius="15"                                          
-                                            BorderBrush="White"
-                                            BorderThickness="1"
-                                            >
+                                Padding="10 0 0 0"
+                                Height="85"
+                                Width="238"
+                                CornerRadius="15"                                          
+                                BorderBrush="White"
+                                BorderThickness="1">
                                 <Grid>
                                     <ScrollViewer x:Name="PART_ContentHost"/>
                                     <TextBlock 
@@ -295,9 +293,6 @@
                         </ControlTemplate>
                     </TextBox.Template>
                 </TextBox>
-
-
-
             </Grid>
 
             <Border Grid.Column="1 " Background="White" CornerRadius="0 20 20 0">
@@ -416,33 +411,33 @@
                                                         <Grid>
                                                             <Rectangle RadiusX="12" RadiusY="12">
                                                                 <Rectangle.Fill>
-                                                                    <ImageBrush x:Name="myImage" ImageSource="{Binding PlantImage}" Stretch="UniformToFill" />
+                                                                    <ImageBrush x:Name="myImage" ImageSource="{Binding Path=Plant.plant_img}" Stretch="UniformToFill" />
                                                                 </Rectangle.Fill>
                                                             </Rectangle>
                                                         </Grid>
                                                     </Border>
                                                     <TextBlock Grid.Column="2" Grid.ColumnSpan="2"
-                                                        Text="{Binding Name}"
+                                                        Text="{Binding Path=Plant.plant_name}"
                                                         FontWeight="Normal"
                                                         VerticalAlignment="Center"
                                                         HorizontalAlignment="Left"                  
                                                         Foreground="Black"
                                                         FontSize="16"/>
                                                     <TextBlock Grid.Column="4" Grid.ColumnSpan="2"
-                                                        Text="{Binding Quantity}"
+                                                        Text="{Binding Path=Quantity}"
                                                         FontWeight="Normal"
                                                         VerticalAlignment="Center"
                                                         HorizontalAlignment="Center"                  
                                                         Foreground="#5FAF57"
                                                         FontSize="16"/>
                                                     <TextBlock Grid.Column="6" Grid.ColumnSpan="3"
-                                                        Text="{Binding Price}"
+                                                        Text="{Binding Path=Plant.plant_price, StringFormat=N0}"
                                                          FontWeight="Normal"
                                                         VerticalAlignment="Center"
                                                         HorizontalAlignment="Center"                  
                                                         Foreground="#E04F5F"
                                                         FontSize="16"/>
-                                                    <Button Grid.Column="10" Click="btnDeleteItem_Click" Tag="{Binding PlantID}">
+                                                    <Button Grid.Column="10" Click="btnDeleteItem_Click" Tag="{Binding Path=Plant.plant_id}">
                                                         <Button.Style>
                                                             <Style TargetType="Button">
                                                                 <!--<Setter Property="Content" Value="X"/>-->
@@ -507,27 +502,27 @@
                                         <ColumnDefinition/>
                                         <ColumnDefinition/>
                                     </Grid.ColumnDefinitions>
-
-                                    <TextBlock     
-                                    Grid.Column="0"
-                                    Grid.ColumnSpan="5"
-                                Text="7.000.000"
-                                FontWeight="Bold"
-                                VerticalAlignment="Center"
-                                HorizontalAlignment="Center"
-                                Margin="0 0 0 0"
-                                Foreground="#E04F5F"
-                                FontSize="22"/>
-                                    <TextBlock    
-                                Grid.Column="5"
-                                Grid.ColumnSpan="3"
-                                Text=" vnđ"
-                                FontWeight="Bold"
-                                VerticalAlignment="Center"
-                                HorizontalAlignment="Left"
-                                Margin="0 0 0 0"
-                                Foreground="#E04F5F"
-                                FontSize="20"/>
+                                    <TextBlock
+                                        x:Name="txtTongTien"
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="5"
+                                        Text="0"
+                                        FontWeight="Bold"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"
+                                        Margin="0 0 0 0"
+                                        Foreground="#E04F5F"
+                                        FontSize="22"/>
+                                    <TextBlock
+                                        Grid.Column="5"
+                                        Grid.ColumnSpan="3"
+                                        Text="VNĐ"
+                                        FontWeight="Bold"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Left"
+                                        Margin="0 0 0 0"
+                                        Foreground="#E04F5F"
+                                        FontSize="20"/>
                                 </Grid>
                             </Border>
                         </Grid>
@@ -598,12 +593,12 @@
                                 </Button.Style>
                                 <Button.Template>
                                     <ControlTemplate TargetType ="Button">
-                                        <Border    
+                                        <Border
                                             Height="40"
                                              Width="100"
                                             CornerRadius="20"
                                             Background="{TemplateBinding Background}">
-                                            <ContentPresenter   
+                                            <ContentPresenter
                                             HorizontalAlignment="Center"
                                             VerticalAlignment="Center"/>
                                         </Border>
@@ -613,12 +608,13 @@
                             <Button Grid.Column="8" Grid.ColumnSpan="4"
                                     Content="Hoàn thành"
                                     Foreground="White"
-                                    FontWeight="Bold"                        
+                                    FontWeight="Bold"
                                     FontSize="16" Click="btnComplete_Click"
                                     Margin="-30 -40 0 0">
                                 <Button.Style>
                                     <Style TargetType="Button">
-                                        <Setter Property="Background" Value="#FFE286"/>
+                                        <Setter Property="Background" Value="#FFFF9B00"/>
+                                        <!--FFE286-->
                                         <Setter Property="Cursor" Value="Hand"/>
                                         <Style.Triggers>
                                             <Trigger Property="IsMouseCaptured" Value="True">
@@ -629,19 +625,18 @@
                                 </Button.Style>
                                 <Button.Template>
                                     <ControlTemplate TargetType ="Button">
-                                        <Border    
+                                        <Border
                                             Height="40"
-                                             Width="130"
+                                            Width="130"
                                             CornerRadius="20"
                                             Background="{TemplateBinding Background}">
-                                            <ContentPresenter   
+                                            <ContentPresenter
                                             HorizontalAlignment="Center"
                                             VerticalAlignment="Center"/>
                                         </Border>
                                     </ControlTemplate>
                                 </Button.Template>
                             </Button>
-
                         </Grid>
                     </Border>
                 </Grid>

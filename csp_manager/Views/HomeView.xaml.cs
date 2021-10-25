@@ -155,7 +155,7 @@ namespace csp_manager.Views
             //dialogFrame.Content = new CartView(this);
             //IsShowDialog = Visibility.Visible;
 
-            List<int> p_arr = AllListingPlantView.p_arr;
+            List<AllListingPlantView.ICart> p_arr = AllListingPlantView.p_arr;
             if (p_arr.Count > 0)
             {
                 Window Cart = new CartView(this);
