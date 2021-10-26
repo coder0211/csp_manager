@@ -30,6 +30,12 @@ namespace csp_manager.Views
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
         {
+
+            this.Hide();
+            Window mainWindow = Application.Current.MainWindow;
+            mainWindow.Close();
+            Window loginWindow = new MainWindow();
+            loginWindow.ShowDialog();
             this.Close();
         }
         private void btnNoLogout_Click(object sender, RoutedEventArgs e)

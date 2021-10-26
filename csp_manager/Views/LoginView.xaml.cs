@@ -26,7 +26,7 @@ namespace csp_manager.Views
 
 
         public LoginView()
-        {
+        {           
             InitializeComponent();
             LoginFrame.Content = new ItemLoginView();
             ColorLogin.Background = new SolidColorBrush(Color.FromRgb(255, 255, 255));

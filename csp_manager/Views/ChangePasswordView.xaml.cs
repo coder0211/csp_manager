@@ -44,6 +44,9 @@ namespace csp_manager.Views
         {
             Window OKPass = new ChangePassSuccessView();
             OKPass.ShowDialog();
+            txtNewPassword.Text = "";
+            txtConfirmNewPassword.Text = "";
+            txtOldPass.Text = "";
         }
     }
 }

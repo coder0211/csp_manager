@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:csp_manager"
         mc:Ignorable="d"
         WindowStyle="SingleBorderWindow"
+        WindowStartupLocation="CenterScreen"
         ResizeMode="CanMinimize"
         Title="CSP Manager" Height="650" Width="1000">
     <DockPanel>
