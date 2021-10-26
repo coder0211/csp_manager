@@ -27,11 +27,6 @@ namespace csp_manager.Views
         private QueryData QD = new QueryData();
         private List<AllListingPlantView.ICart> p_arr = AllListingPlantView.p_arr;
         private Func f = new Func();
-        class Plant_
-        {
-            public plants Plant { get; set; }
-            public int Quantity { get; set; }
-        }
         int TongTien = 0;
 
         public CartView(HomeView homeView)

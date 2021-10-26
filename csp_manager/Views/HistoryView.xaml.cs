@@ -1,6 +1,8 @@
-﻿using csp_manager.DataQuery;
+﻿using csp_manager.DataContext;
+using csp_manager.DataQuery;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +21,14 @@ namespace csp_manager.Views
     /// <summary>
     /// Interaction logic for HistoryView.xaml
     /// </summary>
+    public class Invoice
+    {
+        public int STT { get; set; }
+        public string Name { get; set; }
+        public string Date { get; set; }
+        public string Total { get; set; }
+    }
+
     public partial class HistoryView : UserControl
     {
         public HistoryView()
@@ -44,13 +54,21 @@ namespace csp_manager.Views
             Func f = new Func();
             foreach (var v in QD.GetInvoices())
             {
-                lstHistory.Items.Add(new { STT = v.invoice_id, Name = v.customer_name, Date = v.invoice_created_at.ToShortDateString(), Totals = f.NumberToStr(v.invoice_total) + " VNĐ" });
+                lstHistory.Items.Add(new Invoice { STT = v.invoice_id, Name = v.customer_name, Date = v.invoice_created_at.ToShortDateString(), Total = f.NumberToStr(v.invoice_total) + " VNĐ" });
             }
         }
 
         private void lstHistory_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            var item = (ListView)sender;
+            var el = (Invoice)item.SelectedItem;
+            if (el != null)
+            {
+                //MessageBox.Show(el.STT.ToString());
+                Window detailsView = new DetailsView(el.STT);
+                detailsView.ShowDialog();
+                item.SelectedIndex = -1;
+            }
         }
     }
 }

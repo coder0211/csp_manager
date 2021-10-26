@@ -64,6 +64,15 @@ namespace csp_manager.Views
         public StatisticView()
         {
             InitializeComponent();
+
+            InitLines();
+            DataContext = this;
+            setYear();
+            ThongKe();
+        }
+
+        private void InitLines()
+        {
             Lines = new ObservableCollection<Line>
             {
                 new Line { },
@@ -79,15 +88,6 @@ namespace csp_manager.Views
                 new Line { },
                 new Line { }
             };
-            //InitializeComponent();
-            DataContext = this;
-            setYear();
-            ThongKe();
-        }
-
-        private void OnDoWork(object sender, DoWorkEventArgs e)
-        {
-            Task.Delay(5000).Wait();
         }
 
         private void setYear(int y = 0)
@@ -133,21 +133,7 @@ namespace csp_manager.Views
             //    new Line { From = new Point(X_axis + 411, Y_axis), To = new Point(X_axis + 411, 225), Stroke = stk, StrokeThickness = 3 },
             //    new Line { From = new Point(X_axis + 452, Y_axis), To = new Point(X_axis + 452, 300), Stroke = stk, StrokeThickness = 3 }
             //};
-            Lines = new ObservableCollection<Line>
-            {
-                new Line { },
-                new Line { },
-                new Line { },
-                new Line { },
-                new Line { },
-                new Line { },
-                new Line { },
-                new Line { },
-                new Line { },
-                new Line { },
-                new Line { },
-                new Line { }
-            };
+            InitLines();
             // Trục Y đi từ trên cao xuống thấp: 210 -> 440
             List<Income> Incomes = new List<Income>();
             List<invoices> inv = QD.GetInvoices(getYear());
@@ -174,8 +160,6 @@ namespace csp_manager.Views
                     Lines[i] = new Line { From = new Point(X_axis + i * 40 + i + 1, Y_axis), To = new Point(X_axis + i * 40 + i + 1, Y_axis_), Stroke = stk, StrokeThickness = 3, Total = f.NumberToStr(Incomes[i].Total) };
                     //MessageBox.Show((i + 1) + "," + ((double)Incomes[i].Total / inc_max * 230));
                 }
-            //Lines[11] = new Line { From = new Point(X_axis + 11 * 40 + 11 + 1, Y_axis), To = new Point(X_axis + 11 * 40 + 11 + 1, 350), Stroke = stk, StrokeThickness = 3 };
-            //Lines[10] = new Line { From = new Point(X_axis + 10 * 40 + 10 + 1, Y_axis), To = new Point(X_axis + 10 * 40 + 10 + 1, 350), Stroke = stk, StrokeThickness = 3 };
         }
     }
 }

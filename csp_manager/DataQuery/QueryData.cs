@@ -13,6 +13,12 @@ namespace csp_manager.DataQuery
     //    public int pt_id { get; set; }
     //    public string pt_name { get; set; }
     //}
+            class Plant_
+        {
+            public plants Plant { get; set; }
+            public int Quantity { get; set; }
+        }
+
     public class Income
     {
         public int Year { get; set; }
@@ -166,7 +172,22 @@ namespace csp_manager.DataQuery
                 return dbContext.invoices.Where(w => w.invoice_created_at.Year == year).ToList();
             }
         }
-
+        public invoices GetInvoice(int invoice_id, out string err)
+        {
+            err = string.Empty;
+            try
+            {
+                using (var dbContext = new CSPDbModel())
+                {
+                    return dbContext.invoices.SingleOrDefault(s => s.invoice_id == invoice_id);
+                }
+            }
+            catch (Exception e)
+            {
+                err = e.Message;
+                return null;
+            }
+        }
         public int PostInvoice(invoices invoice, out string err)
         {
             err = string.Empty;
@@ -183,6 +204,13 @@ namespace csp_manager.DataQuery
             {
                 err = e.Message;
                 return 0;
+            }
+        }
+        public List<invoice_details> GetInvoiceDetails(int invoice_id)
+        {
+            using (var dbContext = new CSPDbModel())
+            {
+                return dbContext.invoice_details.Where(w => w.invoice_id == invoice_id).ToList();
             }
         }
         public bool PostInvoiceDetail(invoice_details invoice_detail, out string err)

@@ -75,7 +75,7 @@
                 </Grid.ColumnDefinitions>
                 <TextBlock Grid.Column="1"      
                     Grid.ColumnSpan="3"
-                    Text="STT "
+                    Text="Mã HĐ"
                     FontWeight="Bold"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Left"                               
@@ -83,7 +83,7 @@
                     FontSize="18"/>
                 <TextBlock Grid.Column="3"      
                     Grid.ColumnSpan="3"
-                    Text="Tên Khách Hàng "
+                    Text="Tên khách hàng"
                     FontWeight="Bold"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Left"                               
@@ -125,6 +125,7 @@
                             <Setter Property="Background" Value="Transparent"/>
                             <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
                             <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+                            <Setter Property="Focusable" Value="True" />
                             <Setter Property="Padding" Value="2,0,0,0"/>
                             <Setter Property="Template">
                                 <Setter.Value>
@@ -133,9 +134,12 @@
                                             <ContentPresenter />
                                         </Border>
                                         <ControlTemplate.Triggers>
-                                            <Trigger Property="IsSelected" Value="true">
-                                                <Setter TargetName="Border" Property="Background"
-                                                    Value="lightgray"/>
+                                            <!--<Trigger Property="IsSelected" Value="true">
+                                                <Setter TargetName="Border" Property="Background" Value="lightgray"/>
+                                                <Setter Property="Foreground" Value="Blue"/>
+                                            </Trigger>-->
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="Border" Property="Background" Value="#F3F3F3" />
                                             </Trigger>
                                         </ControlTemplate.Triggers>
                                     </ControlTemplate>
@@ -188,10 +192,10 @@
                                                 FontSize="16"/>
                                         <TextBlock Grid.Column="10"      
                                                 Grid.ColumnSpan="3"
-                                                Text="{Binding Totals}"
+                                                Text="{Binding Total}"
                                                 FontWeight="Medium"
                                                 VerticalAlignment="Center"
-                                                HorizontalAlignment="Left"                               
+                                                HorizontalAlignment="Right"
                                                 Foreground="#E04F5F"
                                                 FontSize="16"/>
                                     </Grid>

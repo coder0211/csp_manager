@@ -291,12 +291,14 @@
                     <DataTemplate>
                         <DockPanel>
                             <Grid>
-                                <Border Height="110" 
+                                <Border Height="110"
                                 Width="750"
-                                Background="White"   
                                 Grid.Row="1"
                                 BorderThickness="1"
                                 CornerRadius="20">
+                                    <Border.Background>
+                                        <SolidColorBrush Color="White" Opacity="0.8" />
+                                    </Border.Background>
                                     <Grid>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition/>
@@ -339,7 +341,7 @@
                                                 </Rectangle>
                                             </Grid>
                                         </Border>
-                                        <TextBlock Grid.Column="2" Grid.ColumnSpan="3"
+                                        <TextBlock Grid.Column="2" Grid.ColumnSpan="4"
                                             Grid.RowSpan="5"
                                             Text="{Binding Path=p.plant_name}"
                                             FontWeight="Bold"
@@ -436,7 +438,7 @@
                                             Grid.Row="1" Grid.RowSpan="4"
                                             Height="30" Width="30"
                                             Click="btnEditInfo_Click"
-                                            Background="White"
+                                            Background="Transparent"
                                             Tag="{Binding Path=p.plant_id}">
                                             <Button.Style>
                                                 <Style TargetType="Button">
@@ -450,7 +452,7 @@
                                                         Height="20"
                                                         Width="20"                                            
                                                         Background="{TemplateBinding Background}">
-                                                        <Image Source="pack://application:,,,/Res/Icons/ic_edit.png"/>
+                                                        <Image Source="pack://application:,,,/Res/Icons/ic_edit.png" ToolTip="Chỉnh sửa sản phẩm" />
                                                     </Border>
                                                 </ControlTemplate>
                                             </Button.Template>
