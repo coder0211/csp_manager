@@ -13,11 +13,11 @@ namespace csp_manager.DataQuery
     //    public int pt_id { get; set; }
     //    public string pt_name { get; set; }
     //}
-            class Plant_
-        {
-            public plants Plant { get; set; }
-            public int Quantity { get; set; }
-        }
+    class Plant_
+    {
+        public plants Plant { get; set; }
+        public int Quantity { get; set; }
+    }
 
     public class Income
     {
@@ -76,6 +76,44 @@ namespace csp_manager.DataQuery
                 return -1;
             }
         }
+        public bool ChangePass(int user_id, string pass_old, string pass_new, out string err)
+        {
+            err = string.Empty;
+            try
+            {
+                string pass_md5 = f.CreateMD5(pass_old);
+                string pass_md5_ = f.CreateMD5(pass_new);
+                using (var dbContext = new CSPDbModel())
+                {
+                    users x = dbContext.users.SingleOrDefault(s => s.user_id == user_id);
+                    if (x == null)
+                    {
+                        err = "Tài khoản không tìm thấy!";
+                        return false;
+                    }
+                    else
+                    {
+                        if (x.user_password.Equals(pass_md5))
+                        {
+                            x.user_password = pass_md5_;
+                            dbContext.SaveChanges();
+                            return true;
+
+                        }
+                        else
+                        {
+                            err = "Mật khẩu cũ không chính xác!";
+                            return false;
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                err = e.Message;
+                return false;
+            }
+        }
 
         public List<plant_type> GetPlantType()
         {
@@ -84,11 +122,19 @@ namespace csp_manager.DataQuery
                 return dbContext.plant_type.ToList();
             }
         }
-        public List<plants> GetPlants()
+        //public List<plants> GetPlants()
+        //{
+        //    using (var dbContext = new CSPDbModel())
+        //    {
+        //        return dbContext.plants.ToList();
+        //    }
+        //}
+        public List<plants> GetPlants(string search = "")
         {
             using (var dbContext = new CSPDbModel())
             {
-                return dbContext.plants.ToList();
+                if (string.IsNullOrEmpty(search)) return dbContext.plants.ToList();
+                else return dbContext.plants.Where(oh => oh.plant_name.ToLower().Contains(search.ToLower())).ToList();
             }
         }
         public plants GetPlant(int plant_id, out string err)

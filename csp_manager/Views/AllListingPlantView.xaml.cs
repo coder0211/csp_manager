@@ -33,6 +33,7 @@ namespace csp_manager.Views
             public int Quantity { get; set; }
         }
         public static List<ICart> p_arr = new List<ICart>();
+        private string search;
 
         public class Plant_
         {
@@ -40,8 +41,9 @@ namespace csp_manager.Views
             public string NumberSell { get; set; }
         }
 
-        public AllListingPlantView()
+        public AllListingPlantView(string search = "")
         {
+            this.search = search;
             InitializeComponent();
 
             //lstAllPlant.Items.Add(new { PlantName = "Hoa lan", NumberRemaining = 150000, NumberSell = 2000, Supplier = "Vườn hoa nhà Hòa", Price = 150000 });
@@ -63,7 +65,7 @@ namespace csp_manager.Views
         public void ListAllPlants(int plant_type = 0)
         {
             lstAllPlant.Items.Clear();
-            foreach (var el in QD.GetPlants())
+            foreach (var el in QD.GetPlants(search))
             {
                 if (plant_type > 0 && el.plant_type_id != plant_type) continue;
                 //string fPath = @"http://www.clipartkid.com/images/817/pic-of-german-flag-clipart-best-VkuN37-clipart.jpeg";

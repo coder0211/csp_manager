@@ -297,19 +297,18 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Image 
-                       Height="25"
-                       Width="25"
-                       Source="pack://application:,,,/Res/Icons/ic_search.png"></Image>
+                    Height="25"
+                    Width="25"
+                    Source="pack://application:,,,/Res/Icons/ic_search.png"></Image>
                 <TextBox x:Name="txtSearch"
-                             TextChanged="txtSearch_TextChanged"
-                             Grid.Column="1"
-                             Grid.ColumnSpan="9"
-                             VerticalAlignment="Center"
-                             VerticalContentAlignment="Center"
-                             Foreground="#333333"    
-                             FontWeight="Medium"
-                             FontSize="16"
-                            >
+                    TextChanged="txtSearch_TextChanged"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="9"
+                    VerticalAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Foreground="#333333"    
+                    FontWeight="Medium"
+                    FontSize="16">
                     <TextBox.Style>
                         <Style TargetType = "TextBox">
                             <Setter Property="Cursor" Value="IBeam"/>
@@ -326,7 +325,7 @@
                                     <ScrollViewer x:Name="PART_ContentHost"/>
                                     <TextBlock 
                                             IsHitTestVisible="False"
-                                            Text="Tìm kiếm ..."
+                                            Text="Tìm kiếm ... (nhập ít nhất 3 kí tự)"
                                             Foreground="#C4C4C4"
                                             VerticalAlignment="Center"
                                             HorizontalAlignment="Left"

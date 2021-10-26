@@ -192,12 +192,13 @@
                                                 HorizontalAlignment="Left"                               
                                                 Foreground="#666666"
                                                 FontSize="16"/>
-                                        <TextBlock Grid.Column="10"      
+                                        <TextBlock Grid.Column="10"
                                                 Grid.ColumnSpan="3"
                                                 Text="{Binding Total}"
                                                 FontWeight="Medium"
                                                 VerticalAlignment="Center"
                                                 HorizontalAlignment="Right"
+                                                Margin="0 0 10 0"
                                                 Foreground="#E04F5F"
                                                 FontSize="16"/>
                                     </Grid>

@@ -20,14 +20,17 @@ namespace csp_manager.Views
     /// </summary>
     public partial class SettingView : UserControl
     {
-        public SettingView()
+        private int user_id;
+
+        public SettingView(int user_id = 0)
         {
+            this.user_id = user_id;
             InitializeComponent();
         }
 
         private void btnAcount_Click(object sender, RoutedEventArgs e)
         {
-            homeFrame.NavigationService.Navigate(new ChangePasswordView());
+            homeFrame.NavigationService.Navigate(new ChangePasswordView(user_id));
         }
 
         private void btnSecurity_Click(object sender, RoutedEventArgs e)
@@ -35,6 +38,6 @@ namespace csp_manager.Views
             homeFrame.NavigationService.Navigate(new SecuritySettingView());
         }
 
-        
+
     }
 }

@@ -108,9 +108,9 @@ namespace csp_manager.Views
                 IcCart = "pack://application:,,,/Res/Icons/ic_cart.png";
         }
 
-        private void btnAllList_Click(object sender, RoutedEventArgs e)
+        public void Search(string s = "")
         {
-            homeFrame.NavigationService.Navigate(new AllListingPlantView());
+            homeFrame.NavigationService.Navigate(new AllListingPlantView(s));
             btnStatistic.Foreground = new SolidColorBrush(Color.FromRgb(20, 20, 20));
             btnSetting.Foreground = new SolidColorBrush(Color.FromRgb(20, 20, 20));
             btnHistory.Foreground = new SolidColorBrush(Color.FromRgb(20, 20, 20));
@@ -119,6 +119,12 @@ namespace csp_manager.Views
             IcStatistics = "pack://application:,,,/Res/Icons/ic_statistics.png";
             IcSetting = "pack://application:,,,/Res/Icons/ic_setting.png";
             IcHistory = "pack://application:,,,/Res/Icons/ic_history.png";
+        }
+
+        private bool isSearch = false;
+        private void btnAllList_Click(object sender, RoutedEventArgs e)
+        {
+            Search();
         }
 
         private void btnStatistic_Click(object sender, RoutedEventArgs e)
@@ -136,7 +142,7 @@ namespace csp_manager.Views
 
         private void btnSetting_Click(object sender, RoutedEventArgs e)
         {
-            homeFrame.NavigationService.Navigate(new SettingView());
+            homeFrame.NavigationService.Navigate(new SettingView(user_id));
             btnAllList.Foreground = new SolidColorBrush(Color.FromRgb(20, 20, 20));
             btnStatistic.Foreground = new SolidColorBrush(Color.FromRgb(20, 20, 20));
             btnHistory.Foreground = new SolidColorBrush(Color.FromRgb(20, 20, 20));
@@ -168,8 +174,21 @@ namespace csp_manager.Views
 
         private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            if (txtSearch.Text.Length >= 3)
+            {
+                Search(txtSearch.Text);
+                isSearch = true;
+            }
+            else
+            {
+                if (isSearch)
+                {
+                    Search();
+                    isSearch = false;
+                }
+            }
         }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected void OnPropertyChanged(string propertyName = null)
