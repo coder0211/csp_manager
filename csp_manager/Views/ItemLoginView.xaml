@@ -232,7 +232,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button
+        <!--<Button
             Width="100"
             Grid.Row="8"
             Content="Quên mật khẩu?"
@@ -261,6 +261,6 @@
                     </Border>
                 </ControlTemplate>
             </Button.Template>
-        </Button>
+        </Button>-->
     </Grid>
 </UserControl>

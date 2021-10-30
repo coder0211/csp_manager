@@ -109,6 +109,12 @@
                     FontSize="18"/>
             </Grid>
         </Border>
+        <Border Height="40" Width="150"
+                CornerRadius="20" Background="#FFFFFF" Grid.Row="1" Margin="-60 0 0 0" Grid.Column="12" Grid.ColumnSpan="4">
+            <DatePicker x:Name="dtpNgay" Width="130" VerticalAlignment="Center" BorderThickness="0"/>
+        </Border>
+        
+        
         <Grid Grid.Row="3" Grid.Column="0"
                 Grid.ColumnSpan="16" Grid.RowSpan="10">
             <Border  Width="700" Height="390"
