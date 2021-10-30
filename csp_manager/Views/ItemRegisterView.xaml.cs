@@ -60,7 +60,7 @@ namespace csp_manager.Views
                         else
                         {
                             Window mainWindow = Application.Current.MainWindow;
-                            mainWindow.Content = new VerifyEmailView(r);
+                            mainWindow.Content = new HomeView(r);
                         }
                     }
                     else MessageBox.Show("Mật khẩu nhập lại không trùng khớp!");

@@ -490,40 +490,90 @@
                             </Border>
                         </Grid>
                     </Border>
-                    <Border Grid.Row="3" >
-                        <Button     x:Name="btnCloseDetails"
+                    <Grid Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="6" Grid.ColumnSpan="4" >
+                            <Button     x:Name="btnCloseDetails"
                                     Content="Đóng"
                                     Foreground="White"
                                     FontWeight="Bold"                        
                                     FontSize="16" Click="btnCloseDetails_Click"
-                                    Margin="240 0 0 0">
-                            <Button.Style>
-                                <Style TargetType="Button">
-                                    <Setter Property="Background" Value="#E04F5F"/>
-                                    <Setter Property="Cursor" Value="Hand"/>
-                                    
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseCaptured" Value="True">
-                                            <Setter Property="Background" Value="#BFDFBC"/>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Button.Style>
-                            <Button.Template>
-                                <ControlTemplate TargetType ="Button">
-                                    <Border    
+                                   >
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Setter Property="Background" Value="#E04F5F"/>
+                                        <Setter Property="Cursor" Value="Hand"/>
+
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseCaptured" Value="True">
+                                                <Setter Property="Background" Value="#BFDFBC"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                                <Button.Template>
+                                    <ControlTemplate TargetType ="Button">
+                                        <Border    
                                             Height="40"
-                                            Width="160"
+                                            Width="130"
                                             CornerRadius="20"
                                             Background="{TemplateBinding Background}">
-                                        <ContentPresenter   
+                                            <ContentPresenter   
                                             HorizontalAlignment="Center"
                                             VerticalAlignment="Center"/>
-                                    </Border>
-                                </ControlTemplate>
-                            </Button.Template>
-                        </Button>
-                    </Border>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                        </Border>
+                        <Border Grid.Column="3" Grid.ColumnSpan="4" >
+                            <Button     x:Name="btnPrintDetails"
+                                    Content="Xuất HĐ"
+                                    Foreground="White"
+                                    FontWeight="Bold"                        
+                                    FontSize="16" Click="btnPrintDetails_Click"
+                                   >
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Setter Property="Background" Value="#5FAF57"/>
+                                        <Setter Property="Cursor" Value="Hand"/>
+
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseCaptured" Value="True">
+                                                <Setter Property="Background" Value="#BFDFBC"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                                <Button.Template>
+                                    <ControlTemplate TargetType ="Button">
+                                        <Border    
+                                            Height="40"
+                                            Width="130"
+                                            CornerRadius="20"
+                                            Background="{TemplateBinding Background}">
+                                            <ContentPresenter   
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                        </Border>
+                    </Grid>
+                    
+                    
                 </Grid>
             </Border>
         </Grid>

@@ -73,5 +73,10 @@ namespace csp_manager.Views
         {
             this.Close();
         }
+
+        private void btnPrintDetails_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
