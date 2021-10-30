@@ -2,23 +2,18 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.Entity.Core.Objects;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace csp_manager.DataQuery
 {
-    //public class PlantTypeDTO
-    //{
-    //    public int pt_id { get; set; }
-    //    public string pt_name { get; set; }
-    //}
     class Plant_
     {
         public plants Plant { get; set; }
         public int Quantity { get; set; }
     }
-
     public class Income
     {
         public int Year { get; set; }
@@ -137,6 +132,10 @@ namespace csp_manager.DataQuery
                 else return dbContext.plants.Where(oh => oh.plant_name.ToLower().Contains(search.ToLower())).ToList();
             }
         }
+        public List<Plant_> GetPlantsWithSold()
+        {
+            return null;
+        }
         public plants GetPlant(int plant_id, out string err)
         {
             err = string.Empty;
@@ -252,6 +251,13 @@ namespace csp_manager.DataQuery
                 return 0;
             }
         }
+        public List<invoice_details> GetInvoiceDetails()
+        {
+            using (var dbContext = new CSPDbModel())
+            {
+                return dbContext.invoice_details.ToList();
+            }
+        }
         public List<invoice_details> GetInvoiceDetails(int invoice_id)
         {
             using (var dbContext = new CSPDbModel())
@@ -299,12 +305,19 @@ namespace csp_manager.DataQuery
                 return 0;
             }
         }
-        //public int GetIncomesMax(int year)
-        //{
-        //    using (var dbContext = new CSPDbModel())
-        //    {
-        //        return dbContext.invoices.Where(s => s.invoice_created_at.Year == year).Distinct().Max(r => r.invoice_total);
-        //    }
-        //}
+        public int GetQuantitySold(int plant_id)
+        {
+            try
+            {
+                using (var dbContext = new CSPDbModel())
+                {
+                    return dbContext.invoice_details.Where(s => s.plant_id == plant_id).Distinct().Sum(r => r.plant_amount);
+                }
+            }
+            catch (Exception e)
+            {
+                return 0;
+            }
+        }
     }
 }

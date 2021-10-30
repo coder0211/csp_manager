@@ -65,6 +65,7 @@ namespace csp_manager.Views
         public void ListAllPlants(int plant_type = 0)
         {
             lstAllPlant.Items.Clear();
+            List<invoice_details> invd = QD.GetInvoiceDetails();
             foreach (var el in QD.GetPlants(search))
             {
                 if (plant_type > 0 && el.plant_type_id != plant_type) continue;
@@ -77,7 +78,7 @@ namespace csp_manager.Views
                 //el.plant_img = fPath;
                 //lstAllPlant.Items.Add(new { PlantID = el.plant_id, PlantImage = fPath, PlantName = el.plant_name, NumberRemaining = 0, NumberSell = 0, Supplier = el.plant_supplier_name, Price = el.plant_price });
                 if (string.IsNullOrEmpty(el.plant_supplier_name)) el.plant_supplier_name = "ĐVQL CSPLANT";
-                lstAllPlant.Items.Add(new Plant_ { p = el, NumberSell = "1230" });
+                lstAllPlant.Items.Add(new Plant_ { p = el, NumberSell = invd.Where(w => w.plant_id == el.plant_id).Sum(s => s.plant_amount).ToString() });
                 //MessageBox.Show(el.ToString());
             }
         }

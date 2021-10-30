@@ -58,7 +58,8 @@
                    FontSize="14"/>
                 <TextBox x:Name="txtCustomerName"
                     TextChanged="txtCustomerName_TextChanged"
-                    Grid.Row="3"   
+                    IsReadOnly="True"
+                    Grid.Row="3"
                     Grid.RowSpan="2"
                     VerticalAlignment="Bottom"
                     VerticalContentAlignment="Center"
@@ -116,6 +117,7 @@
                     FontSize="14"/>
                 <TextBox x:Name="txtPhoneNumber"
                     TextChanged="txtPhoneNumber_TextChanged"
+                    IsReadOnly="True"
                     Grid.Row="5"   
                     Grid.RowSpan="2"
                     VerticalAlignment="Bottom"
@@ -174,6 +176,7 @@
                     FontSize="14"/>
                 <TextBox x:Name="txtCustomerLocation"
                     TextChanged="txtCustomerLocation_TextChanged"
+                    IsReadOnly="True"
                     Grid.Row="7"   
                     Grid.RowSpan="3"
                     VerticalAlignment="Bottom"
@@ -230,18 +233,18 @@
                    Foreground="White"
                    FontSize="14"/>
                 <TextBox x:Name="txtCustomerNote"
-                             TextChanged="txtCustomerNote_TextChanged"
-                             Grid.Row="10"   
-                             Grid.RowSpan="4"
-                             VerticalAlignment="Bottom"
-                             VerticalContentAlignment="Top"
-                             HorizontalContentAlignment="Left"
-                             TextWrapping="Wrap"
-                             BorderThickness="0"
-                             Foreground="White"
-                             CaretBrush="Gray"
-                             Margin="0 0 0 45"
-                             >
+                    TextChanged="txtCustomerNote_TextChanged"
+                    IsReadOnly="True"
+                    Grid.Row="10"
+                    Grid.RowSpan="4"
+                    VerticalAlignment="Bottom"
+                    VerticalContentAlignment="Top"
+                    HorizontalContentAlignment="Left"
+                    TextWrapping="Wrap"
+                    BorderThickness="0"
+                    Foreground="White"
+                    CaretBrush="Gray"
+                    Margin="0 0 0 45">
                     <TextBox.Style>
                         <Style TargetType = "TextBox">
                             <Setter Property="Cursor" Value="IBeam"/>

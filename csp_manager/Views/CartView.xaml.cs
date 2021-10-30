@@ -42,7 +42,6 @@ namespace csp_manager.Views
             //lstCart.Items.Add(new { Name = "Hoa hồng", Quantity = "x50", Price = "1.750.000 vnđ" });
 
             LoadCart();
-            LoadCart();
         }
 
         private void LoadCart()
@@ -53,13 +52,14 @@ namespace csp_manager.Views
             foreach (var v in p_arr)
             {
                 plants plant = QD.GetPlant(v.Id, out string err);
-                s += v.Id + ",";
+                if (plant.plant_amount < v.Quantity)
+                    s += plant.plant_name + ": thiếu " + (v.Quantity - plant.plant_amount) + "\n";
                 lstCart.Items.Add(new Plant_ { Plant = plant, Quantity = v.Quantity });
                 tongtien += (int)plant.plant_price * v.Quantity;
             }
             TongTien = tongtien;
             txtTongTien.Text = f.NumberToStr(tongtien);
-            //MessageBox.Show(s);
+            if (!string.IsNullOrEmpty(s)) MessageBox.Show("Các mặt hàng sau không đủ số lượng:\n" + s, "Cảnh báo hết hàng!");
         }
 
         private void TempBut_Click(object sender, RoutedEventArgs e)
@@ -125,6 +125,9 @@ namespace csp_manager.Views
                     //QD.PostInvoiceDetail(new invoice_details { }, out err);
                     foreach (Plant_ el in lstCart.Items)
                     {
+                        int amount = (int)(el.Plant.plant_amount - el.Quantity);
+                        el.Plant.plant_amount = amount < 0 ? 0 : amount;
+                        QD.UpdatePlant(el.Plant, out err);
                         QD.PostInvoiceDetail(new invoice_details { invoice_id = invoice_id, plant_id = el.Plant.plant_id, plant_amount = el.Quantity }, out err);
                     }
                     lstCart.Items.Clear();
@@ -132,12 +135,14 @@ namespace csp_manager.Views
 
                     Window Complete = new OrderSuccessView();
                     Complete.ShowDialog();
+                    DialogResult = true;
                     Close();
                 }
             }
             else
             {
                 MessageBox.Show("Bạn chưa có sản phẩm nào trong giỏ hàng!");
+                DialogResult = false;
                 Close();
             }
         }
