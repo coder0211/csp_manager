@@ -103,8 +103,8 @@
     <Compile Include="Views\ChangePassSuccessView.xaml.cs">
       <DependentUpon>ChangePassSuccessView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ChangePassWarning1.xaml.cs">
-      <DependentUpon>ChangePassWarning1.xaml</DependentUpon>
+    <Compile Include="Views\ChangePassWarning1View.xaml.cs">
+      <DependentUpon>ChangePassWarning1View.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ChangePassWarning2View.xaml.cs">
       <DependentUpon>ChangePassWarning2View.xaml</DependentUpon>
@@ -159,9 +159,6 @@
     </Compile>
     <Compile Include="Views\LogoutWarning.xaml.cs">
       <DependentUpon>LogoutWarning.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\NoFindAccountView.xaml.cs">
-      <DependentUpon>NoFindAccountView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\OrderSuccessView.xaml.cs">
       <DependentUpon>OrderSuccessView.xaml</DependentUpon>
@@ -226,7 +223,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ChangePassWarning1.xaml">
+    <Page Include="Views\ChangePassWarning1View.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -301,10 +298,6 @@
     <Page Include="Views\LogoutWarning.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\NoFindAccountView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\OrderSuccessView.xaml">
       <Generator>MSBuild:Compile</Generator>
