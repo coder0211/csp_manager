@@ -77,12 +77,13 @@
                                 HorizontalAlignment="Center"  
                                 Margin="5,0,0,0"/>
                             <Popup Name="Popup"  
-                                    Placement="Bottom"  
+                                    Placement="Bottom" 
                                     IsOpen="{TemplateBinding IsDropDownOpen}"  
-                                    AllowsTransparency="True"   
+                                    AllowsTransparency="True"                                    
                                     Focusable="False"  
                                     PopupAnimation="Slide">
                                 <Grid Name="DropDown"  
+                                      Background="White"
                                         SnapsToDevicePixels="True"          
                                         MinWidth="{TemplateBinding ActualWidth}"  
                                         MaxHeight="{TemplateBinding MaxDropDownHeight}">
@@ -132,7 +133,7 @@
                 FontSize="20" 
                 Width="150"
                 Margin="15 15 -50 15"
-                Background="LightGray" Name="cbxPopUp"
+                Background="White" Name="cbxPopUp"
                 SelectionChanged="cbxPopUp_SelectionChanged"
                 DisplayMemberPath="pt_name" SelectedValuePath="pt_id" SelectedIndex="0">
                 <!--<ComboBoxItem IsSelected="True" >TẤT CẢ</ComboBoxItem>

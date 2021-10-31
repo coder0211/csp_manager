@@ -102,7 +102,7 @@
                                 <Setter Property="Content">
                                     <Setter.Value>
                                         <Grid>
-                                            <TextBlock Text="Bảo mật" FontSize="22" />
+                                            <TextBlock Text="Thông tin" FontSize="22" />
                                         </Grid>
                                     </Setter.Value>
                                 </Setter>
