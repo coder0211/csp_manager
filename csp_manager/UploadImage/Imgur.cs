@@ -13,11 +13,11 @@ namespace csp_manager.UploadImage
 {
     class Imgur
     {
-        private string Client_ID = "e3ceb3492ab989f";
-        private string Client_secret = "7bd00c04f8a051c9f1e4754017367f4a201181de";
+        //private string Client_ID = "e3ceb3492ab989f";
+        //private string Client_secret = "7bd00c04f8a051c9f1e4754017367f4a201181de";
 
         private string access_token = "3c373ccca908274966051fcfa0ad8fe0ba9c3feb";
-        private string refresh_token = "9e8f569d3e7bbcab053c60a71fbab33cca6c6aef";
+        //private string refresh_token = "9e8f569d3e7bbcab053c60a71fbab33cca6c6aef";
 
         private string album_hash = "l4ZMoAR";
 
@@ -45,7 +45,7 @@ namespace csp_manager.UploadImage
                 string url = match.ToString().Replace("link\":\"", "").Replace("\"", "").Replace("\\/", "/");
                 return url;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return "";
             }
@@ -67,7 +67,7 @@ namespace csp_manager.UploadImage
                 string url = match.ToString().Replace("success\":", "").Replace(",", "");
                 return url == "true" ? true : false;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }

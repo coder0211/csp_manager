@@ -117,7 +117,8 @@ namespace csp_manager.Views
             //int m = DateTime.Now.Month;
             QueryData QD = new QueryData();
 
-            SolidColorBrush stk = y % 2 == 0 ? Brushes.Green : Brushes.Red;
+            //SolidColorBrush stk = y % 2 == 0 ? Brushes.Green : Brushes.Red;
+            SolidColorBrush stk = Brushes.Green;
             //Lines = new ObservableCollection<Line>
             //{
             //    new Line { From = new Point(X_axis, Y_axis), To = new Point(X_axis, 210), Stroke = stk, StrokeThickness = 3 },
@@ -157,6 +158,7 @@ namespace csp_manager.Views
                 {
                     if (Incomes[i].Total == 0) continue;
                     double Y_axis_ = Y_axis - (Incomes[i].Total == inc_max ? 210 : Math.Round((double)Incomes[i].Total / inc_max * 230));
+                    stk = i == 0 ? Brushes.Green : (Incomes[i].Total > Incomes[i - 1].Total ? Brushes.Green : Brushes.Red);
                     Lines[i] = new Line { From = new Point(X_axis + i * 40 + i + 1, Y_axis), To = new Point(X_axis + i * 40 + i + 1, Y_axis_), Stroke = stk, StrokeThickness = 3, Total = f.NumberToStr(Incomes[i].Total) };
                     //MessageBox.Show((i + 1) + "," + ((double)Incomes[i].Total / inc_max * 230));
                 }

@@ -1,4 +1,5 @@
-﻿using csp_manager.Views;
+﻿using csp_manager.DataQuery;
+using csp_manager.Views;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -16,6 +17,8 @@ namespace csp_manager
     {
         protected override void OnStartup(StartupEventArgs e)
         {
+            QueryData QD = new QueryData();
+            _ = QD.TestConnect();
             MainWindow = new MainWindow
             {
                 WindowStartupLocation = WindowStartupLocation.CenterScreen

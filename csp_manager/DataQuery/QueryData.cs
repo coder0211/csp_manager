@@ -24,6 +24,15 @@ namespace csp_manager.DataQuery
     class QueryData
     {
         Func f = new Func();
+
+        public bool TestConnect()
+        {
+            using (var dbContext = new CSPDbModel())
+            {
+                return dbContext.Database.Exists();
+            }
+        }
+
         // Hàm Login trả về: -1: Tài khoản không có / 0: Sai mật khẩu / >=1: Đăng nhập thành công!
         public int Login(string email, string pass)
         {
@@ -50,8 +59,8 @@ namespace csp_manager.DataQuery
                     if (x == null)
                     {
                         x = new users();
-                        x.user_fullname = fullname;
-                        x.user_email = email;
+                        x.user_fullname = fullname.ToLower();
+                        x.user_email = email.ToLower();
                         x.user_password = f.CreateMD5(pass);
                         x.user_created_at = DateTime.Now;
                         dbContext.users.Add(x);
@@ -217,6 +226,13 @@ namespace csp_manager.DataQuery
                 return dbContext.invoices.Where(w => w.invoice_created_at.Year == year).ToList();
             }
         }
+        public List<invoices> GetInvoices(int year, int month)
+        {
+            using (var dbContext = new CSPDbModel())
+            {
+                return dbContext.invoices.Where(w => w.invoice_created_at.Year == year && w.invoice_created_at.Month == month).ToList();
+            }
+        }
         public invoices GetInvoice(int invoice_id, out string err)
         {
             err = string.Empty;
@@ -300,7 +316,7 @@ namespace csp_manager.DataQuery
                     return dbContext.invoices.Where(s => s.invoice_created_at.Year == year && s.invoice_created_at.Month == month).Distinct().Sum(r => r.invoice_total);
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return 0;
             }
@@ -314,7 +330,7 @@ namespace csp_manager.DataQuery
                     return dbContext.invoice_details.Where(s => s.plant_id == plant_id).Distinct().Sum(r => r.plant_amount);
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return 0;
             }

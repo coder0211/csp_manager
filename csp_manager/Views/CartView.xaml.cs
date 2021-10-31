@@ -59,7 +59,17 @@ namespace csp_manager.Views
             }
             TongTien = tongtien;
             txtTongTien.Text = f.NumberToStr(tongtien);
-            if (!string.IsNullOrEmpty(s)) MessageBox.Show("Các mặt hàng sau không đủ số lượng:\n" + s, "Cảnh báo hết hàng!");
+            if (!string.IsNullOrEmpty(s))
+            {
+                MessageBox.Show("Các mặt hàng sau không đủ số lượng:\n" + s, "Cảnh báo hết hàng!");
+                btnComplete.IsEnabled = false;
+                btnComplete.Background = new SolidColorBrush(Color.FromArgb(255, 255, 208, 136));
+            }
+            else
+            {
+                btnComplete.IsEnabled = true;
+                btnComplete.Background = new SolidColorBrush(Color.FromArgb(255, 255, 155, 0));
+            }
         }
 
         private void TempBut_Click(object sender, RoutedEventArgs e)
@@ -133,9 +143,9 @@ namespace csp_manager.Views
                     lstCart.Items.Clear();
                     p_arr.Clear();
 
+                    DialogResult = true;
                     Window Complete = new OrderSuccessView();
                     Complete.ShowDialog();
-                    DialogResult = true;
                     Close();
                 }
             }

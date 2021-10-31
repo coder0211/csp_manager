@@ -48,9 +48,9 @@ namespace csp_manager.Views
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            if (txtEmail.Text.Length > 0 && txtPassword.Text.Length > 0)
+            if (txtEmail.Text.Length > 0 && txtPassword.Password.Length > 0)
             {
-                int r = QD.Login(txtEmail.Text, txtPassword.Text);
+                int r = QD.Login(txtEmail.Text, txtPassword.Password);
                 if (r == -1) MessageBox.Show("Tìm khoản không tìm thấy!");
                 else if (r == 0) MessageBox.Show("Mật khẩu không chính xác!");
                 else

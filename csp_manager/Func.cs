@@ -13,6 +13,10 @@ namespace csp_manager
         {
             return string.Format("{0:n0}", number);
         }
+        public string NumberToStr(long number)
+        {
+            return string.Format("{0:n0}", number);
+        }
 
         private static Random random = new Random();
         public string RandomString(int length)

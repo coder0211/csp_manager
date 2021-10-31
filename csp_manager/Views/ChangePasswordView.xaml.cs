@@ -48,9 +48,9 @@ namespace csp_manager.Views
         {
             if (txtOldPass.Text.Length > 0 && txtNewPassword.Text.Length > 0 && txtConfirmNewPassword.Text.Length > 0)
             {
-                if (txtNewPassword.Text.Contains(txtConfirmNewPassword.Text))
+                if (string.Equals(txtNewPassword.Text, txtConfirmNewPassword.Text))
                 {
-                    if (txtOldPass.Text.Contains(txtNewPassword.Text)) MessageBox.Show("Mật khẩu cũ và mới phải khác nhau!");
+                    if (string.Equals(txtOldPass.Text, txtNewPassword.Text)) MessageBox.Show("Mật khẩu cũ và mới phải khác nhau!");
                     else
                     {
                         QueryData QD = new QueryData();

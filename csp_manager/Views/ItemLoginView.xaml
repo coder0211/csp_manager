@@ -91,7 +91,7 @@
             FontWeight="Medium"
             Margin="40,18,0,15"
             Text="Mật khẩu"/>
-        <TextBox x:Name="txtPassword"
+        <!--<TextBox x:Name="txtPassword"
                 TextChanged="txtPassword_TextChanged"
                 Grid.Row="4"
                 Grid.RowSpan="2"
@@ -138,7 +138,56 @@
                     </Border>
                 </ControlTemplate>
             </TextBox.Template>
-        </TextBox>
+        </TextBox>-->
+        <PasswordBox x:Name="txtPassword"
+                Grid.Row="4"
+                Grid.RowSpan="2"
+                VerticalAlignment="Center"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Left"
+                           
+                BorderThickness="0"
+                Foreground="#828282"
+                Background="#F3F3F3"
+                Margin="30,30,30,0">
+            <PasswordBox.Style>
+                <Style TargetType = "PasswordBox">
+                    <Setter Property="Cursor" Value="IBeam"/>
+                    <Setter Property="FontWeight" Value="Light"/>
+                </Style>
+            </PasswordBox.Style>
+            <PasswordBox.Template>
+                <ControlTemplate TargetType="PasswordBox">
+                    <Border
+                        Padding="15,0,15,0"
+                        Height="40"
+                        CornerRadius="20"
+                        Background="{TemplateBinding Background}">
+                        <Grid>
+                            <ScrollViewer x:Name="PART_ContentHost"/>
+                            <TextBlock 
+                                IsHitTestVisible="False"
+                                Text="*********"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Left"
+                                Visibility="Collapsed"
+                                Name="txtPrompt">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text, ElementName=txtPassword}" Value="">
+                                                <Setter Property="Visibility" Value="Visible" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </PasswordBox.Template>
+        </PasswordBox>
         <Grid Grid.Row="6">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>

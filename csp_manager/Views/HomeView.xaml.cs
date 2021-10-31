@@ -207,9 +207,7 @@ namespace csp_manager.Views
                 Window Cart = new CartView(this);
                 Cart.ShowDialog();
                 if (Cart.DialogResult == true)
-                {
                     Search();
-                }
             }
             else
             {
@@ -241,9 +239,7 @@ namespace csp_manager.Views
                     splashScreen.Close();
                     mainWindow.ShowDialog();
                     if (mainWindow.DialogResult == true)
-                    {
                         Search();
-                    }
                 });
             });
         }
