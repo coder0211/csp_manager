@@ -143,7 +143,7 @@ namespace csp_manager.Views
             result = int.TryParse(txtQuantity.Text, out int plant_amount);
             plant.plant_amount = result ? plant_amount : 0;
 
-            plant.plant_unit = txtUnit.Text;
+
 
             result = int.TryParse(txtPrice.Text, out int plant_price);
             plant.plant_price = result ? plant_price : 0;

@@ -264,20 +264,18 @@
                             Margin="10 -10 0 0"
                             Foreground="#959595"
                             FontSize="15"/>
-                        <TextBlock Grid.Column="1"                 
+                        <!--<TextBlock Grid.Column="1"                 
                             Text="Đơn vị"
                             FontWeight="DemiBold"
                             VerticalAlignment="Center"
                             HorizontalAlignment="Left"
                             Margin="10 -10 0 0"
                             Foreground="#959595"
-                            FontSize="15"/>
+                            FontSize="15"/>-->
                     </Grid>
                     <Grid Grid.Row="4" Grid.RowSpan="2">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="150"/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
+                       
+                       
                         <TextBox x:Name="txtQuantity"
                              TextChanged="txtQuantity_TextChanged"
                              Grid.Column="0"                          
@@ -288,7 +286,7 @@
                              BorderThickness="0"
                              Foreground="Gray"
                              CaretBrush="Gray"
-                             Margin="10,0,20,0">
+                             Margin="10,0,40,0">
                             <TextBox.Style>
                                 <Style TargetType = "TextBox">
                                     <Setter Property="Cursor" Value="IBeam"/>
@@ -327,7 +325,7 @@
                                 </ControlTemplate>
                             </TextBox.Template>
                         </TextBox>
-                        <TextBox x:Name="txtUnit"
+                        <!--<TextBox x:Name="txtUnit"
                              TextChanged="txtUnit_TextChanged"
                              Grid.Column="1"                          
                              VerticalAlignment="Bottom"
@@ -375,7 +373,7 @@
                                     </Border>
                                 </ControlTemplate>
                             </TextBox.Template>
-                        </TextBox>
+                        </TextBox>-->
                     </Grid>
                     <Grid Grid.Row="6">
                         <Grid.ColumnDefinitions>

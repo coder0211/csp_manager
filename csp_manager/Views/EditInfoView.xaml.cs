@@ -141,8 +141,6 @@ namespace csp_manager.Views
             result = int.TryParse(txtEditQuantity.Text, out int plant_amount);
             plant.plant_amount = result ? plant_amount : 0;
 
-            plant.plant_unit = txtEditUnit.Text;
-
             result = int.TryParse(txtEditPrice.Text, out int plant_price);
             plant.plant_price = result ? plant_price : 0;
 
@@ -173,6 +171,11 @@ namespace csp_manager.Views
             {
                 MessageBox.Show("Không thể cập nhật sản phẩm!");
             }
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
