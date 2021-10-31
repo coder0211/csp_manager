@@ -189,7 +189,7 @@ namespace csp_manager.Views
                 }
                 else
                 {
-
+                    MessageBox.Show("Mặt hàng này đã có trong hoá đơn, không thể xoá!");
                 }
             }
         }
