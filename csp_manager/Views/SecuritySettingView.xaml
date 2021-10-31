@@ -28,22 +28,37 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="1" Grid.RowSpan="2" 
-                       Text="Bảo mật"
+                       Text="Thông tin"
                        FontWeight="Bold"
                        VerticalAlignment="Center"
                        HorizontalAlignment="Left"
                        Margin="40 0 0 0"
                        Foreground="White"
                        FontSize="28"/>
-            <TextBlock Grid.Row="2" Grid.RowSpan="3" 
-                       Text="Khuyến cáo nên bật tính năng này"
+            <TextBlock Grid.Row="2" Grid.RowSpan="4" 
+                       TextWrapping="Wrap"
                        FontWeight="Normal"
                        VerticalAlignment="Center"
                        HorizontalAlignment="Left"
                        Margin="30 0 0 0"
                        Foreground="White"
-                       FontSize="20"/>
-            <Grid Grid.Row="4">
+                       FontSize="20">
+                Đây là phần mềm quản lý vườn ươm do nhóm NoName thực hiện và phát triển.           
+            </TextBlock>
+            <TextBlock Grid.Row="5" Grid.RowSpan="3" 
+                       TextWrapping="Wrap"
+                       FontWeight="Normal"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       Margin="30 0 0 0"
+                       Foreground="White"
+                       FontSize="14">
+               Mọi chi tiết liên hệ:<LineBreak/>
+                +84-395254369 (Nguyễn Đức Hòa)<LineBreak/>
+                +84-902662247 (Nguyễn Thiên Minh)<LineBreak/>
+                +84-777100449 (Nguyễn Văn Thành Phát)
+            </TextBlock>
+            <!--<Grid Grid.Row="4">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
@@ -99,7 +114,7 @@
                     </Button.Template>
                 </Button>
 
-            </Grid>
+            </Grid>-->
         </Grid>
     </Border>
 </UserControl>
