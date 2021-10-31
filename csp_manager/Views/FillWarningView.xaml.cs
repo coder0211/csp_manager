@@ -26,7 +26,7 @@ namespace csp_manager.Views
 
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
-
+            Close();
         }
     }
 }

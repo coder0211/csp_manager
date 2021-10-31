@@ -51,7 +51,10 @@ namespace csp_manager.Views
             if (txtEmail.Text.Length > 0 && txtPassword.Password.Length > 0)
             {
                 int r = QD.Login(txtEmail.Text, txtPassword.Password);
-                if (r == -1) MessageBox.Show("Tìm khoản không tìm thấy!");
+                if (r == -1) {
+                    Window noFindAccountView = new NoFindAccountView();
+                    noFindAccountView.ShowDialog();
+                }
                 else if (r == 0)
                 {
                     Window passwordWarning = new PasswordWarning();

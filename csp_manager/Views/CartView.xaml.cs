@@ -105,6 +105,7 @@ namespace csp_manager.Views
             {
                 lstCart.Items.Clear();
                 p_arr.Clear();
+                Close();
             }
 
         }

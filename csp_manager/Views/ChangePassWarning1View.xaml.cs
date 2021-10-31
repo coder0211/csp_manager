@@ -17,16 +17,16 @@ namespace csp_manager.Views
     /// <summary>
     /// Interaction logic for ChangePassWarning1.xaml
     /// </summary>
-    public partial class ChangePassWarning1 : Window
+    public partial class ChangePassWarning1View : Window
     {
-        public ChangePassWarning1()
+        public ChangePassWarning1View()
         {
             InitializeComponent();
         }
 
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
-
+            Close();
         }
     }
 }

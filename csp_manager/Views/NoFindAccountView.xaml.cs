@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace csp_manager.Views
 {
     /// <summary>
-    /// Interaction logic for PasswordWarning.xaml
+    /// Interaction logic for NoFindAccountView.xaml
     /// </summary>
-    public partial class PasswordWarning : Window
+    public partial class NoFindAccountView : Window
     {
-        public PasswordWarning()
+        public NoFindAccountView()
         {
             InitializeComponent();
         }

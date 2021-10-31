@@ -50,7 +50,11 @@ namespace csp_manager.Views
             {
                 if (string.Equals(txtNewPassword.Text, txtConfirmNewPassword.Text))
                 {
-                    if (string.Equals(txtOldPass.Text, txtNewPassword.Text)) MessageBox.Show("Mật khẩu cũ và mới phải khác nhau!");
+                    if (string.Equals(txtOldPass.Text, txtNewPassword.Text))
+                    {
+                        Window changePassWarning1View = new ChangePassWarning1View();
+                        changePassWarning1View.ShowDialog();
+                    }
                     else
                     {
                         QueryData QD = new QueryData();
@@ -66,9 +70,17 @@ namespace csp_manager.Views
                         else MessageBox.Show(err);
                     }
                 }
-                else MessageBox.Show("Mật khẩu nhập lại không trùng khớp!");
+                else
+                {
+                    Window changePassWarning2View = new ChangePassWarning2View();
+                    changePassWarning2View.ShowDialog();
+                }
             }
-            else MessageBox.Show("Hãy nhập thông tin đầy đủ!");
+            else
+            {
+                Window fillInfoWarningView = new FillInfoWarningView();
+                fillInfoWarningView.ShowDialog();
+            }
         }
     }
 }
