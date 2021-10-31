@@ -63,11 +63,23 @@ namespace csp_manager.Views
                             mainWindow.Content = new HomeView(r);
                         }
                     }
-                    else MessageBox.Show("Mật khẩu nhập lại không trùng khớp!");
+                    else
+                    {
+                        Window changePassWarning2View = new ChangePassWarning2View();
+                        changePassWarning2View.ShowDialog();
+                    }
                 }
-                else MessageBox.Show("Email không hợp lệ!");
+                else
+                {
+                    Window emailWarningView = new EmailWarningView();
+                    emailWarningView.ShowDialog();
+                }
             }
-            else MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
+            else
+            {
+                Window fillInfoWarningView = new FillInfoWarningView();
+                fillInfoWarningView.ShowDialog();
+            }
         }
 
         private void txtEmail_TextChanged(object sender, TextChangedEventArgs e)

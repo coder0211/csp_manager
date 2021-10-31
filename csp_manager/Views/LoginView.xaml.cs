@@ -22,11 +22,8 @@ namespace csp_manager.Views
     /// </summary>
     public partial class LoginView : UserControl
     {
-       
-
-
         public LoginView()
-        {           
+        {
             InitializeComponent();
             LoginFrame.Content = new ItemLoginView();
             ColorLogin.Background = new SolidColorBrush(Color.FromRgb(255, 255, 255));
@@ -36,13 +33,13 @@ namespace csp_manager.Views
         {
             LoginFrame.NavigationService.Navigate(new ItemLoginView());
             ColorLogin.Background = new SolidColorBrush(Color.FromRgb(255, 255, 255));
-            ColorRegister.Background = new SolidColorBrush(Color.FromRgb(95,175,87));
+            ColorRegister.Background = new SolidColorBrush(Color.FromRgb(95, 175, 87));
         }
 
         private void btnResigter_Click(object sender, RoutedEventArgs e)
         {
             LoginFrame.NavigationService.Navigate(new ItemRegisterView());
-            ColorLogin.Background = new SolidColorBrush(Color.FromRgb(95,175,87));
+            ColorLogin.Background = new SolidColorBrush(Color.FromRgb(95, 175, 87));
             ColorRegister.Background = new SolidColorBrush(Color.FromRgb(255, 255, 255));
         }
 

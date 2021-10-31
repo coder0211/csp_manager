@@ -52,7 +52,11 @@ namespace csp_manager.Views
             {
                 int r = QD.Login(txtEmail.Text, txtPassword.Password);
                 if (r == -1) MessageBox.Show("Tìm khoản không tìm thấy!");
-                else if (r == 0) MessageBox.Show("Mật khẩu không chính xác!");
+                else if (r == 0)
+                {
+                    Window passwordWarning = new PasswordWarning();
+                    passwordWarning.ShowDialog();
+                }
                 else
                 {
                     //Window mainWindow = Application.Current.MainWindow;
@@ -61,7 +65,11 @@ namespace csp_manager.Views
                     mainWindow.Content = new HomeView(r);
                 }
             }
-            else MessageBox.Show("Vui lòng nhập email và mật khẩu!");
+            else
+            {
+                Window fillWarningView = new FillWarningView();
+                fillWarningView.ShowDialog();
+            }
         }
 
         private void btnMemorize_Click(object sender, RoutedEventArgs e)

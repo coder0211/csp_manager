@@ -33,7 +33,7 @@ namespace csp_manager.Views
             plant = QD.GetPlant(plant_id, out string err);
             plant_name.Text = plant.plant_name;
             plant_amount.Text = plant.plant_amount.ToString();
-            plant_price.Text = plant.plant_price.ToString();
+            plant_price.Text = f.NumberToStr((int)plant.plant_price);
             plant_supplier_name.Text = "ĐVQL CSPLANT";
             plant_note.Text = plant.plant_note;
             imgUpload.Source = new BitmapImage(new Uri(string.IsNullOrEmpty(plant.plant_img) ? "pack://application:,,,/Res/Icons/ic_logo.png" : plant.plant_img));
