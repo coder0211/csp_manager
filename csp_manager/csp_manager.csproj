@@ -76,12 +76,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DataContext\CSPDbModel.cs" />
-    <Compile Include="DataContext\invoice.cs" />
+    <Compile Include="DataContext\invoices.cs" />
     <Compile Include="DataContext\invoice_details.cs" />
-    <Compile Include="DataContext\plant.cs" />
+    <Compile Include="DataContext\plants.cs" />
     <Compile Include="DataContext\plant_type.cs" />
-    <Compile Include="DataContext\sysdiagram.cs" />
-    <Compile Include="DataContext\user.cs" />
+    <Compile Include="DataContext\sysdiagrams.cs" />
+    <Compile Include="DataContext\users.cs" />
     <Compile Include="DataQuery\QueryData.cs" />
     <Compile Include="Func.cs" />
     <Compile Include="Product.cs" />

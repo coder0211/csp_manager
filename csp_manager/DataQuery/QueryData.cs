@@ -195,7 +195,6 @@ namespace csp_manager.DataQuery
                     if (plantUpdate.plant_name != plant.plant_name) plantUpdate.plant_name = plant.plant_name;
                     if (plantUpdate.plant_img != plant.plant_img) plantUpdate.plant_img = plant.plant_img;
                     if (plantUpdate.plant_amount != plant.plant_amount) plantUpdate.plant_amount = plant.plant_amount;
-                    if (plantUpdate.plant_unit != plant.plant_unit) plantUpdate.plant_unit = plant.plant_unit;
                     if (plantUpdate.plant_price != plant.plant_price) plantUpdate.plant_price = plant.plant_price;
                     if (plantUpdate.plant_note != plant.plant_note) plantUpdate.plant_note = plant.plant_note;
                     if (plantUpdate.plant_type_id != plant.plant_type_id) plantUpdate.plant_type_id = plant.plant_type_id;

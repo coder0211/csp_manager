@@ -26,9 +26,6 @@ namespace csp_manager.DataContext
 
         public int? plant_amount { get; set; }
 
-        [StringLength(50)]
-        public string plant_unit { get; set; }
-
         [Column(TypeName = "ntext")]
         public string plant_note { get; set; }
 

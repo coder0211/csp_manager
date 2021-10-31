@@ -51,7 +51,6 @@ namespace csp_manager.Views
 
             txtNamePlant.Text = plant.plant_name;
             txtEditQuantity.Text = Convert.ToString(plant.plant_amount);
-            txtEditUnit.Text = plant.plant_unit;
             txtEditPrice.Text = Convert.ToString(plant.plant_price);
             txtEditNote.Text = plant.plant_note;
             txtEditSupplier.Text = plant.plant_supplier_name;
