@@ -20,6 +20,8 @@ namespace csp_manager.DataContext
 
         public int plant_amount { get; set; }
 
+        public int plant_price { get; set; }
+
         public virtual invoices invoices { get; set; }
 
         public virtual plants plants { get; set; }

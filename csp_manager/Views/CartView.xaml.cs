@@ -54,7 +54,7 @@ namespace csp_manager.Views
                 plants plant = QD.GetPlant(v.Id, out string err);
                 if (plant.plant_amount < v.Quantity)
                     s += plant.plant_name + ": thiếu " + (v.Quantity - plant.plant_amount) + "\n";
-                lstCart.Items.Add(new Plant_ { Plant = plant, Quantity = v.Quantity });
+                lstCart.Items.Add(new Plant_ { Plant = plant, Price = (int)plant.plant_price, Quantity = v.Quantity });
                 tongtien += (int)plant.plant_price * v.Quantity;
             }
             TongTien = tongtien;
@@ -137,8 +137,8 @@ namespace csp_manager.Views
                     {
                         int amount = (int)(el.Plant.plant_amount - el.Quantity);
                         el.Plant.plant_amount = amount < 0 ? 0 : amount;
-                        QD.UpdatePlant(el.Plant, out err);
-                        QD.PostInvoiceDetail(new invoice_details { invoice_id = invoice_id, plant_id = el.Plant.plant_id, plant_amount = el.Quantity }, out err);
+                        QD.UpdatePlant(el.Plant, out _);
+                        QD.PostInvoiceDetail(new invoice_details { invoice_id = invoice_id, plant_id = el.Plant.plant_id, plant_amount = el.Quantity, plant_price = (int)el.Plant.plant_price }, out _);
                     }
                     lstCart.Items.Clear();
                     p_arr.Clear();
@@ -165,7 +165,7 @@ namespace csp_manager.Views
         private void btnDeleteItem_Click(object sender, RoutedEventArgs e)
         {
             Window deleteItem = new DeleteOneItemWarningView();
-            bool? dialogResult = deleteItem.ShowDialog();
+            deleteItem.ShowDialog();
             //MessageBox.Show(dialogResult.ToString());
             if (deleteItem.DialogResult == true)
             {

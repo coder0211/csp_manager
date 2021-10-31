@@ -35,15 +35,15 @@ namespace csp_manager.Views
             txtPhoneNumber.Text = inv.customer_phone_number;
             txtCustomerLocation.Text = inv.customer_address;
             List<invoice_details> invd = QD.GetInvoiceDetails(invoice_id);
-            long tongtien = 0;
+            //long tongtien = 0;
             foreach (var el in invd)
             {
                 //MessageBox.Show(el.plants.ToString());
                 el.plants = QD.GetPlant(el.plant_id, out err);
-                lstDetails.Items.Add(new Plant_ { Plant = el.plants, Quantity = el.plant_amount });
-                tongtien += (long)el.plants.plant_price * el.plant_amount;
+                lstDetails.Items.Add(new Plant_ { Plant = el.plants, Price = el.plant_price, Quantity = el.plant_amount });
+                //tongtien += (long)el.plants.plant_price * el.plant_amount;
             }
-            txtTongTien.Text = f.NumberToStr(tongtien);
+            txtTongTien.Text = f.NumberToStr(inv.invoice_total);
         }
 
         private void txtCustomerName_TextChanged(object sender, TextChangedEventArgs e)
@@ -121,12 +121,12 @@ namespace csp_manager.Views
                 ws.Cells[row, col++] = i++;
                 ws.Cells[row, col++] = lvi.Plant.plant_name;
                 ws.Cells[row, col++] = lvi.Quantity;
-                ws.Cells[row++, col++] = lvi.Plant.plant_price;
+                ws.Cells[row++, col++] = lvi.Price;
                 tongtien += (long)lvi.Plant.plant_price * lvi.Quantity;
             }
             ws.Cells[row, 1].Font.Bold = true;
             ws.Cells[row, 1] = "Tổng tiền";
-            ws.Cells[row, 4] = f.NumberToStr(tongtien);
+            ws.Cells[row, 4] = tongtien;
 
             ws.Range[ws.Cells[row, 1], ws.Cells[row, 3]].Merge();
             ws.Columns.AutoFit();

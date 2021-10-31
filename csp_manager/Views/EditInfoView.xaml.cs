@@ -26,6 +26,9 @@ namespace csp_manager.Views
     /// </summary>
     public partial class EditInfoView : Window
     {
+        Func f = new Func();
+        //UpImgLocal upImg = new UpImgLocal();
+        Imgur upImg = new Imgur();
 
         QueryData QD = new QueryData();
         private plants plant;
@@ -128,10 +131,6 @@ namespace csp_manager.Views
                 return;
             }
 
-            Func f = new Func();
-            //UpImgLocal upImg = new UpImgLocal();
-            Imgur upImg = new Imgur();
-
             bool result = int.TryParse(cbxType.SelectedValue.ToString(), out int pt_id);
             plant.plant_type_id = pt_id;
 
@@ -174,7 +173,25 @@ namespace csp_manager.Views
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
+            Window deleteItem = new DeleteOneItemWarningView();
+            deleteItem.ShowDialog();
+            if (deleteItem.DialogResult == true)
+            {
+                if (QD.GetQuantitySold(plant.plant_id) == 0)
+                {
+                    if (plant.plant_img.Length > 0)
+                    {
+                        upImg.Delete(plant.plant_img);
+                    }
+                    QD.DeletePlant(plant.plant_id);
+                    Close();
+                    loadAllPlants();
+                }
+                else
+                {
 
+                }
+            }
         }
     }
 }
