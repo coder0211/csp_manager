@@ -288,8 +288,8 @@
             Foreground="#3F9D36"
             FontSize="16" Grid.Column="3" />
 
-        <Border BorderThickness="1" Grid.Row="17"
-            Background="#97D590" Grid.Column="0" Grid.ColumnSpan="4" />
+        <!--<Border BorderThickness="1" Grid.Row="17"
+            Background="#97D590" Grid.Column="0" Grid.ColumnSpan="4" />-->
 
     </Grid>
 </UserControl>
