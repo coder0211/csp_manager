@@ -103,6 +103,12 @@
     <Compile Include="Views\ChangePassSuccessView.xaml.cs">
       <DependentUpon>ChangePassSuccessView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ChangePassWarning1.xaml.cs">
+      <DependentUpon>ChangePassWarning1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChangePassWarning2View.xaml.cs">
+      <DependentUpon>ChangePassWarning2View.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ChangePasswordView.xaml.cs">
       <DependentUpon>ChangePasswordView.xaml</DependentUpon>
     </Compile>
@@ -127,6 +133,15 @@
     <Compile Include="Views\EditSuccessView.xaml.cs">
       <DependentUpon>EditSuccessView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\EmailWarningView.xaml.cs">
+      <DependentUpon>EmailWarningView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FillInfoWarningView.xaml.cs">
+      <DependentUpon>FillInfoWarningView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FillWarningView.xaml.cs">
+      <DependentUpon>FillWarningView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\HistoryView.xaml.cs">
       <DependentUpon>HistoryView.xaml</DependentUpon>
     </Compile>
@@ -147,6 +162,9 @@
     </Compile>
     <Compile Include="Views\OrderSuccessView.xaml.cs">
       <DependentUpon>OrderSuccessView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PasswordWarning.xaml.cs">
+      <DependentUpon>PasswordWarning.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PlantInfoView.xaml.cs">
       <DependentUpon>PlantInfoView.xaml</DependentUpon>
@@ -205,6 +223,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\ChangePassWarning1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ChangePassWarning2View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ChangePasswordView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -237,6 +263,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\EmailWarningView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FillInfoWarningView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FillWarningView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\HistoryView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -264,6 +302,10 @@
     <Page Include="Views\OrderSuccessView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PasswordWarning.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\PlantInfoView.xaml">
       <Generator>MSBuild:Compile</Generator>
