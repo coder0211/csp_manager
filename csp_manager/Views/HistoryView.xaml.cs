@@ -46,12 +46,12 @@ namespace csp_manager.Views
             LoadInvoices();
         }
 
-        private void LoadInvoices(int y = 0, int m = 0)
+        private void LoadInvoices(int y = 0, int m = 0, int d = 0)
         {
             lstHistory.Items.Clear();
             QueryData QD = new QueryData();
             Func f = new Func();
-            List<invoices> inv = (y == 0 && m == 0) ? QD.GetInvoices() : QD.GetInvoices(y, m);
+            List<invoices> inv = (y == 0 && m == 0 && d == 0) ? QD.GetInvoices() : QD.GetInvoices(y, m, d);
             foreach (var v in inv)
             {
                 lstHistory.Items.Add(new Invoice { STT = v.invoice_id, Name = v.customer_name, Date = v.invoice_created_at.ToShortDateString(), Total = f.NumberToStr(v.invoice_total) + " VNĐ" });
@@ -74,7 +74,7 @@ namespace csp_manager.Views
         private void dtpNgay_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
             //MessageBox.Show(dtpNgay.SelectedDate.Value.Year.ToString());
-            LoadInvoices(dtpNgay.SelectedDate.Value.Year, dtpNgay.SelectedDate.Value.Month);
+            LoadInvoices(dtpNgay.SelectedDate.Value.Year, dtpNgay.SelectedDate.Value.Month, dtpNgay.SelectedDate.Value.Day);
         }
     }
 }

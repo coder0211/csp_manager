@@ -675,7 +675,7 @@
                     <Button   
                         Margin="-40,-15,0,0"
                         Grid.Column="1"                       
-                        Content="Cập nhât"
+                        Content="Cập nhật"
                         Foreground="White"
                         FontWeight="Bold"                        
                         FontSize="16" Click="btnEditComplete">

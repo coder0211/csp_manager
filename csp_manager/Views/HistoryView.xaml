@@ -40,23 +40,23 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Grid.RowSpan="2"
-                   Grid.Column="1"
-                   Grid.ColumnSpan="3"
-                   Text="Lịch sử"
-                   FontWeight="Bold"
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Left"
-                   Margin="26 0 0 0"
-                   Foreground="White"
-                   FontSize="28"/>
+        <TextBlock
+            Grid.Row="0" Grid.RowSpan="2"
+            Grid.Column="1"
+            Grid.ColumnSpan="3"
+            Text="Lịch sử"
+            FontWeight="Bold"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Left"
+            Margin="26 0 0 0"
+            Foreground="White"
+            FontSize="28"/>
         <Line
             X1="43" Y1="20"  
             X2="130" Y2="20"  
             Stroke="White"  
             Margin="-15 0 0 0"
             StrokeThickness="3" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" />
-
         <Border Height="40" Width="700"
                 CornerRadius="20" Background="#FFFFFF"
                 Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="16">
@@ -109,7 +109,7 @@
                     FontSize="18"/>
             </Grid>
         </Border>
-        <Border Height="40" Width="150"
+        <Border Height="40" Width="148"
                 CornerRadius="20" Background="#FFFFFF" Grid.Row="1" Grid.Column="12" Grid.ColumnSpan="3">
             <DatePicker x:Name="dtpNgay" Width="130" VerticalAlignment="Center" BorderThickness="0" SelectedDateFormat="Short"
                 SelectedDateChanged="dtpNgay_SelectedDateChanged" />

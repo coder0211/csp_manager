@@ -39,6 +39,7 @@ namespace csp_manager.Views
             imgUpload.Source = new BitmapImage(new Uri(string.IsNullOrEmpty(plant.plant_img) ? "pack://application:,,,/Res/Icons/ic_logo.png" : plant.plant_img));
             imgUpload.Width = double.NaN;
             imgUpload.Height = double.NaN;
+            plant_sold.Text = f.NumberToStr(QD.GetQuantitySold(plant_id));
         }
 
         public static int GetQuantity;

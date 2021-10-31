@@ -12,6 +12,7 @@ namespace csp_manager.DataQuery
     class Plant_
     {
         public plants Plant { get; set; }
+        public int Price { get; set; }
         public int Quantity { get; set; }
     }
     public class Income
@@ -210,6 +211,20 @@ namespace csp_manager.DataQuery
                 return false;
             }
         }
+        public bool DeletePlant(int plant_id)
+        {
+            using (var dbContext = new CSPDbModel())
+            {
+                var p = dbContext.plants.SingleOrDefault(s => s.plant_id == plant_id);
+                if (p != null)
+                {
+                    dbContext.plants.Remove(p);
+                    dbContext.SaveChanges();
+                    return true;
+                }
+                return false;
+            }
+        }
 
         public List<invoices> GetInvoices()
         {
@@ -230,6 +245,13 @@ namespace csp_manager.DataQuery
             using (var dbContext = new CSPDbModel())
             {
                 return dbContext.invoices.Where(w => w.invoice_created_at.Year == year && w.invoice_created_at.Month == month).ToList();
+            }
+        }
+        public List<invoices> GetInvoices(int year, int month, int day)
+        {
+            using (var dbContext = new CSPDbModel())
+            {
+                return dbContext.invoices.Where(w => w.invoice_created_at.Year == year && w.invoice_created_at.Month == month && w.invoice_created_at.Day == day).ToList();
             }
         }
         public invoices GetInvoice(int invoice_id, out string err)

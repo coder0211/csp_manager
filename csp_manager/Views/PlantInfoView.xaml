@@ -354,6 +354,7 @@
                         Grid.Column="1"
                         Grid.ColumnSpan="4"
                         Text="0 Cây"
+                        Name="plant_sold"
                         FontWeight="Medium"
                         VerticalAlignment="Center"
                         HorizontalAlignment="Center"
