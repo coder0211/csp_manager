@@ -143,10 +143,7 @@
                                             <ContentPresenter />
                                         </Border>
                                         <ControlTemplate.Triggers>
-                                            <!--<Trigger Property="IsSelected" Value="true">
-                                                <Setter TargetName="Border" Property="Background" Value="lightgray"/>
-                                                <Setter Property="Foreground" Value="Blue"/>
-                                            </Trigger>-->
+                                            
                                             <Trigger Property="IsMouseOver" Value="True">
                                                 <Setter TargetName="Border" Property="Background" Value="#F3F3F3" />
                                             </Trigger>

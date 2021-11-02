@@ -124,33 +124,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <!--<Button  x:Name="btnInfor"
-                    Grid.Column="7"              
-                    Foreground="White"
-                    FontWeight="Thin"
-                    HorizontalContentAlignment="Left"
-                    Content="Thông tin"
-                    FontSize="18 " Click="btnInfor_Click" >
-            <Button.Style>
-                <Style TargetType="Button">
-                    <Setter Property="Background" Value="Transparent"/>
-                    <Setter Property="Cursor" Value="Hand"/>
-                   
-                </Style>
-            </Button.Style>
-            <Button.Template>
-                <ControlTemplate TargetType ="Button">
-                    <Border    
-                        Height="40"
-                        Background="{TemplateBinding Background}"
-                        CornerRadius="20">
-                        <ContentPresenter   
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>-->
+        
 
         <Separator x:Name="ColorLogin" Grid.Column="5" Height="2" Background="White" Margin="15,35 ,15,0">
             <Separator.LayoutTransform>

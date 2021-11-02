@@ -263,7 +263,7 @@
             Foreground="Black"
             FontSize="18" Grid.Column="3" />
 
-        <!--<Canvas Grid.ColumnSpan="4" Margin="175,31,156,29" Grid.RowSpan="10" Grid.Row="6"/>-->
+       
         <ItemsControl ItemsSource="{Binding Lines, Mode=TwoWay}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -288,8 +288,7 @@
             Foreground="#3F9D36"
             FontSize="16" Grid.Column="3" />
 
-        <!--<Border BorderThickness="1" Grid.Row="17"
-            Background="#97D590" Grid.Column="0" Grid.ColumnSpan="4" />-->
+        
 
     </Grid>
 </UserControl>

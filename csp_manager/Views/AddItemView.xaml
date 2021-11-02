@@ -264,14 +264,7 @@
                             Margin="10 -10 0 0"
                             Foreground="#959595"
                             FontSize="15"/>
-                        <!--<TextBlock Grid.Column="1"                 
-                            Text="Đơn vị"
-                            FontWeight="DemiBold"
-                            VerticalAlignment="Center"
-                            HorizontalAlignment="Left"
-                            Margin="10 -10 0 0"
-                            Foreground="#959595"
-                            FontSize="15"/>-->
+                        
                     </Grid>
                     <Grid Grid.Row="4" Grid.RowSpan="2">
                        
@@ -325,55 +318,7 @@
                                 </ControlTemplate>
                             </TextBox.Template>
                         </TextBox>
-                        <!--<TextBox x:Name="txtUnit"
-                             TextChanged="txtUnit_TextChanged"
-                             Grid.Column="1"                          
-                             VerticalAlignment="Bottom"
-                             VerticalContentAlignment="Center"
-                             HorizontalContentAlignment="Left"
-                             TextWrapping="Wrap"
-                             BorderThickness="0"
-                             Foreground="Gray"
-                             CaretBrush="Gray"
-                             Margin="-15,0,41,0">
-                            <TextBox.Style>
-                                <Style TargetType = "TextBox">
-                                    <Setter Property="Cursor" Value="IBeam"/>
-                                    <Setter Property="FontWeight" Value="Light"/>
-                                </Style>
-                            </TextBox.Style>
-                            <TextBox.Template>
-                                <ControlTemplate TargetType="TextBox">
-                                    <Border
-                                            Padding="10 0 0 0"
-                                            Height="35"
-                                            CornerRadius="10"
-                                            Background="{TemplateBinding Background}"
-                                            BorderBrush="Gray"
-                                            BorderThickness="1">
-                                        <Grid>
-                                            <ScrollViewer x:Name="PART_ContentHost"/>
-                                            <TextBlock 
-                                            IsHitTestVisible="False"                                             
-                                            VerticalAlignment="Center"
-                                            HorizontalAlignment="Left"
-                                            Margin="10,0,0,0">
-                                                <TextBlock.Style>
-                                                    <Style TargetType="TextBlock">
-                                                        <Setter Property="Visibility" Value="Collapsed"/>
-                                                        <Style.Triggers>
-                                                            <DataTrigger Binding="{Binding Text, ElementName=txtUnit}" Value="">
-                                                                <Setter Property="Visibility" Value="Visible"/>
-                                                            </DataTrigger>
-                                                        </Style.Triggers>
-                                                    </Style>
-                                                </TextBlock.Style>
-                                            </TextBlock>
-                                        </Grid>
-                                    </Border>
-                                </ControlTemplate>
-                            </TextBox.Template>
-                        </TextBox>-->
+                        
                     </Grid>
                     <Grid Grid.Row="6">
                         <Grid.ColumnDefinitions>
@@ -458,16 +403,6 @@
                                         Height="35">
                             <ComboBox Style="{StaticResource ComboboxStyle}" Height="35" Background="LightGray" Name="cbxType"
                                         DisplayMemberPath="pt_name" SelectedValuePath="pt_id" SelectedIndex="0">
-                                <!--<ComboBox.ItemTemplate>
-                                        <DataTemplate>
-                                            <StackPanel Orientation="Horizontal">
-                                                <TextBlock Text="{Binding Path=pt_name}"/>
-                                            </StackPanel>
-                                        </DataTemplate>
-                                    </ComboBox.ItemTemplate>-->
-                                <!--<ComboBoxItem IsSelected="True">Hoa</ComboBoxItem>
-                                    <ComboBoxItem>Cây ăn quả</ComboBoxItem>
-                                    <ComboBoxItem>Cây nông nghiệp</ComboBoxItem>-->
                             </ComboBox>
                         </StackPanel>
 

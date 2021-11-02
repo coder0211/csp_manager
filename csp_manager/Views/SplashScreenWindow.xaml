@@ -13,10 +13,6 @@
         <ProgressBar x:Name="progressBar" />
         <TextBlock HorizontalAlignment="Center"
             VerticalAlignment="Center">Loading...</TextBlock>
-        <!--<Image
-            x:Name="loadingGif"
-            Height="150"
-            Source="pack://application:,,,/Resources/Animation_PackMan.gif"
-            VerticalAlignment="Center" HorizontalAlignment="Center" />-->
+       
     </Grid>
 </Window>

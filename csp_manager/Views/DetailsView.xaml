@@ -394,7 +394,7 @@
                                                         Margin="0 0 0 0"
                                                         Height="71"
                                                         Background="LightGray">
-                                                        <!--<Image Source="{Binding PlantImage}" Stretch="UniformToFill" />-->
+                                                        
                                                         <Grid>
                                                             <Rectangle RadiusX="12" RadiusY="12">
                                                                 <Rectangle.Fill>

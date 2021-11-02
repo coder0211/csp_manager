@@ -46,12 +46,7 @@ namespace csp_manager.Views
             this.search = search;
             InitializeComponent();
 
-            //lstAllPlant.Items.Add(new { PlantName = "Hoa lan", NumberRemaining = 150000, NumberSell = 2000, Supplier = "Vườn hoa nhà Hòa", Price = 150000 });
-            //lstAllPlant.Items.Add(new { PlantName = "Hoa hồng", NumberRemaining = 80000, NumberSell = 2000, Supplier = "Vườn hoa nhà Hòa", Price = 80000 });
-            //lstAllPlant.Items.Add(new { PlantName = "Hoa lan", NumberRemaining = 150000, NumberSell = 2000, Supplier = "Vườn hoa nhà Hòa", Price = 150000 });
-            //lstAllPlant.Items.Add(new { PlantName = "Hoa cúc", NumberRemaining = 150000, NumberSell = 2000, Supplier = "Vườn hoa nhà Hòa", Price = 150000 });
-            //lstAllPlant.Items.Add(new { PlantName = "Hoa bưởi", NumberRemaining = 150000, NumberSell = 2000, Supplier = "Vườn hoa nhà Hòa", Price = 150000 });
-            //lstAllPlant.Items.Add(new { PlantName = "Hoa hướng dương", NumberRemaining = 150000, NumberSell = 2000, Supplier = "Vườn hoa nhà Hòa", Price = 150000 });
+            
 
             List<plant_type> plant_Types = QD.GetPlantType();
             plant_Types.Insert(0, new plant_type { pt_id = 0, pt_name = "TẤT CẢ" });
@@ -59,7 +54,7 @@ namespace csp_manager.Views
             cbxPopUp.DisplayMemberPath = "pt_name";
             cbxPopUp.SelectedValuePath = "pt_id";
 
-            //ListAllPlants();
+            
         }
 
         public void ListAllPlants(int plant_type = 0)
