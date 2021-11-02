@@ -127,6 +127,7 @@ namespace csp_manager.DataQuery
                 return dbContext.plant_type.ToList();
             }
         }
+
         //public List<plants> GetPlants()
         //{
         //    using (var dbContext = new CSPDbModel())
@@ -321,27 +322,6 @@ namespace csp_manager.DataQuery
             }
         }
 
-        public int GetIncomes(int year)
-        {
-            using (var dbContext = new CSPDbModel())
-            {
-                return dbContext.invoices.Where(s => s.invoice_created_at.Year == year).Distinct().Sum(r => r.invoice_total);
-            }
-        }
-        public int GetIncomes(int year, int month)
-        {
-            try
-            {
-                using (var dbContext = new CSPDbModel())
-                {
-                    return dbContext.invoices.Where(s => s.invoice_created_at.Year == year && s.invoice_created_at.Month == month).Distinct().Sum(r => r.invoice_total);
-                }
-            }
-            catch (Exception)
-            {
-                return 0;
-            }
-        }
         public int GetQuantitySold(int plant_id)
         {
             try
